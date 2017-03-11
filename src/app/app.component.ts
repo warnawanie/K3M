@@ -19,6 +19,8 @@ import { AduanSendPage } from '../pages/aduan-send/aduan-send';
 import { ContactPage } from '../pages/contact/contact';
 import { LoopBackConfig} from './shared/sdk';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
+import { FaqPage } from '../pages/faq/faq';
+
 
 @Component({
   templateUrl: 'app.html'

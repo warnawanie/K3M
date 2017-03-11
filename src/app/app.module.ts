@@ -18,6 +18,7 @@ import { TentangPage } from '../pages/tentang/tentang';
 import { SosialPage } from '../pages/sosial/sosial';
 import { AduanSendPage } from '../pages/aduan-send/aduan-send';
 import { ContactPage } from '../pages/contact/contact';
+import { FaqPage } from '../pages/faq/faq';
 import { PengumumanService } from '../providers/pengumuman-service';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
@@ -49,7 +50,8 @@ export function createTranslateLoader(http: Http) {
     SosialPage,
     AduanSendPage,
     ContactPage,
-    PengumumanDetailsPage
+    PengumumanDetailsPage,
+    FaqPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -78,7 +80,8 @@ export function createTranslateLoader(http: Http) {
     SosialPage,
     AduanSendPage,
     ContactPage,
-    PengumumanDetailsPage
+    PengumumanDetailsPage,
+    FaqPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PengumumanService, Storage]
 })

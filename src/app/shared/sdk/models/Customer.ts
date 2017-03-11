@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  Report
+} from '../index';
 
 declare var Object: any;
 export interface CustomerInterface {
@@ -22,6 +25,7 @@ export interface CustomerInterface {
   emailVerified?: boolean;
   verificationToken?: string;
   id?: number;
+  reports?: Report[];
   accessTokens?: any[];
 }
 
@@ -46,6 +50,7 @@ export class Customer implements CustomerInterface {
   emailVerified: boolean;
   verificationToken: string;
   id: number;
+  reports: Report[];
   accessTokens: any[];
   constructor(data?: CustomerInterface) {
     Object.assign(this, data);
@@ -160,6 +165,11 @@ export class Customer implements CustomerInterface {
         },
       },
       relations: {
+        reports: {
+          name: 'reports',
+          type: 'Report[]',
+          model: 'Report'
+        },
         accessTokens: {
           name: 'accessTokens',
           type: 'any[]',

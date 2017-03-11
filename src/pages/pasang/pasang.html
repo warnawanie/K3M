@@ -11,9 +11,117 @@
 
 
 
+
 <ion-content padding>
 
- <img src="assets/images/pasang_surut_dummy.png">
+
+  <ion-row>
+    <ion-col width-100 text-right class="date-top"><ion-datetime displayFormat="DDDD DD MMM YYYY" [(ngModel)]="myDate" disabled></ion-datetime></ion-col>
+  </ion-row>
+
+
+
+
+
+  <ion-row>
+
+<ion-item class="pasang-state">
+  <ion-label>{{ "SELECT_STATE" | translate }}</ion-label>
+  <ion-select name="state_id">
+    <ion-option *ngFor="let state of states" (click)="goTo(post)" value="{{state.id}}">{{state.name}}</ion-option>
+
+  </ion-select>
+</ion-item>
+
+  </ion-row>
+
+
+
+
+<ion-row>
+
+    <ion-list class="pasang-wrap">
+
+
+  <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+    <h3>
+     Langkawi Kedah
+      <ion-icon color="success" [name]="isGroupShown(1) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(1)">
+
+      <div class="data-wrap">
+      <ion-row>
+        
+          <h1 class="date-details-info">Isnin, 06 Mac 2017</h1>
+      </ion-row>
+
+        <ion-row>
+          <div class="content-details-info">
+
+            <ion-row class="content-details-header">
+              <ion-col width-50>Masa</ion-col>
+               <ion-col width-50>Ketinggian (cm)</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>2:0</ion-col>
+               <ion-col width-50>56</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>18:45</ion-col>
+               <ion-col width-50>164</ion-col>
+            </ion-row>
+
+          </div>
+
+      </ion-row>
+      </div>
+
+
+ <div class="data-wrap">
+      <ion-row>
+        
+          <h1 class="date-details-info">Selasa, 07 Mac 2017</h1>
+      </ion-row>
+
+        <ion-row>
+          <div class="content-details-info">
+
+            <ion-row class="content-details-header">
+              <ion-col width-50>Masa</ion-col>
+               <ion-col width-50>Ketinggian (cm)</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>2:0</ion-col>
+               <ion-col width-50>56</ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col width-50>18:45</ion-col>
+               <ion-col width-50>164</ion-col>
+            </ion-row>
+
+          </div>
+
+      </ion-row>
+      </div>
+    
+
+    </div>
+  </ion-item>
+
+
+
+</ion-list>
+
+
+  </ion-row>
+
+
+
 
 
 </ion-content>

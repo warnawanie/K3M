@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { ReportType } from '../../models/ReportType';
 import { Report } from '../../models/Report';
+import { State } from '../../models/State';
 import { Emergency } from '../../models/Emergency';
 import { Announcement } from '../../models/Announcement';
 import { Customer } from '../../models/Customer';
@@ -14,6 +15,7 @@ export class SDKModels {
   private models: Models = {
     ReportType: ReportType,
     Report: Report,
+    State: State,
     Emergency: Emergency,
     Announcement: Announcement,
     Customer: Customer,

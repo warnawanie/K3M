@@ -3,6 +3,8 @@
 declare var Object: any;
 export interface EmergencyInterface {
   customer_id: number;
+  latitude?: number;
+  longitude?: number;
   admin_notes?: string;
   created_at?: Date;
   updated_at?: Date;
@@ -11,6 +13,8 @@ export interface EmergencyInterface {
 
 export class Emergency implements EmergencyInterface {
   customer_id: number;
+  latitude: number;
+  longitude: number;
   admin_notes: string;
   created_at: Date;
   updated_at: Date;
@@ -48,6 +52,14 @@ export class Emergency implements EmergencyInterface {
       properties: {
         customer_id: {
           name: 'customer_id',
+          type: 'number'
+        },
+        latitude: {
+          name: 'latitude',
+          type: 'number'
+        },
+        longitude: {
+          name: 'longitude',
           type: 'number'
         },
         admin_notes: {

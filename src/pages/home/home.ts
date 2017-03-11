@@ -6,6 +6,7 @@ import { PengumumanPage } from '../pengumuman/pengumuman';
 import { TalianPage } from '../talian/talian';
 import { AduanPage } from '../aduan/aduan';
 import { SosPage } from '../sos/sos';
+import { FaqPage } from '../faq/faq';
 import { TentangPage } from '../tentang/tentang';
 import { SosialPage } from '../sosial/sosial';
 import { TranslateService } from 'ng2-translate';
@@ -15,6 +16,7 @@ import { TranslateService } from 'ng2-translate';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
   loader: any;
 
@@ -58,6 +60,15 @@ export class HomePage {
    onGoToPasang(){
     this.navCtrl.push(PasangPage);
   }
+
+  onGoToFaq(){
+    this.navCtrl.push(FaqPage);
+  }
+  onGoToForum(){
+    this.navCtrl.push(PasangPage);
+  }
+
+
   translateToMandarin(){
   this.translateService.use('cn');
  }

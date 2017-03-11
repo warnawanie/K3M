@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  Customer
+} from '../index';
 
 declare var Object: any;
 export interface ReportInterface {
@@ -17,6 +20,7 @@ export interface ReportInterface {
   created_at?: Date;
   updated_at?: Date;
   id?: number;
+  customer?: Customer;
 }
 
 export class Report implements ReportInterface {
@@ -35,6 +39,7 @@ export class Report implements ReportInterface {
   created_at: Date;
   updated_at: Date;
   id: number;
+  customer: Customer;
   constructor(data?: ReportInterface) {
     Object.assign(this, data);
   }
@@ -128,6 +133,11 @@ export class Report implements ReportInterface {
         },
       },
       relations: {
+        customer: {
+          name: 'customer',
+          type: 'Customer',
+          model: 'Customer'
+        },
       }
     }
   }

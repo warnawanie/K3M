@@ -1,3 +1,97 @@
 page-pasang {
 
+
+.date-top .datetime-disabled {
+    color: #FFF;
+    opacity: 1 !important;
+}
+
+.pasang-state {
+    background: #4FC2E7;
+    /* border: none !important; */
+    border-radius: 4px;
+    border-bottom: 4px solid #3DB1D8;
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+.pasang-state .item-inner{
+    border: none !important;
+}
+
+.pasang-state .select-icon-inner{
+    color: #FFF !important;
+}
+
+.pasang-wrap {
+    width: 100%;
+    margin-bottom: 10px !important;
+}
+
+.pasang-wrap .item-inner{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.pasang-wrap ion-item{
+    padding: 0px !important;
+    border: 0px !important;
+    margin: 0px !important;
+    background: transparent !important;
+    border-radius: 4px !important;
+}
+
+.pasang-wrap ion-label{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.pasang-wrap ion-label ion-row{
+    background: #FFF;
+    padding: 15px;
+}
+
+.content-details-info{
+    border: 1px solid #00A79D;
+    width: 100%;
+
+}
+.content-details-info ion-col{
+    border: 1px solid #00A79D;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+h1.date-details-info {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.pasang-wrap ion-label ion-row.content-details-header{
+    background: #58C3BA !important;
+    color: #FFF;
+    font-weight: bold;
+}
+.pasang-wrap ion-label ion-row.content-details-header ion-col{
+    padding: 15px;
+        font-size: 1.5rem;
+}
+.pasang-wrap h3{
+    background: #58C3BA;
+    border-radius: 4px;
+    border-bottom: 5px solid #3DBEAF;
+    padding: 13px 25px;
+    color: #FFF;
+    font-weight: bold;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.content-details-info ion-row{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.pasang-wrap h3 ion-icon{
+
+float: right;
+}
+
 }
