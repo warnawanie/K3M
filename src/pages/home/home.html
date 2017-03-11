@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><ion-title> K3M</ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content>
+<ion-slides pager>
+
+  <ion-slide>
+    <img src="assets/images/pengumuman/slide1.png">
+  </ion-slide>
+
+  <ion-slide>
+    <img src="assets/images/pengumuman/slide2.png">
+  </ion-slide>
+
+   <ion-slide>
+    <img src="assets/images/pengumuman/slide3.png">
+  </ion-slide>
+
+
+</ion-slides>
+
+
+
+<ion-row>
+
+<button ion-button block (click)="translateToMalay()">
+    {{ "BTN_MALAY" | translate }}
+    </button>
+
+  <button ion-button block (click)="translateToMandarin()">
+      {{ "BTN_CHINESE" | translate }}
+  </button>
+
+
+</ion-row>
+ 
+
+
+
+<ion-grid text-center class="home-grid">
+  <ion-row>
+    <ion-col width-33><img src="assets/images/cuaca.png" (click)="onGoToCuaca()"><div class="icon-label">{{ "INFO_CUACA" | translate }}</div></ion-col>
+    <ion-col width-33><img src="assets/images/surut.png" (click)="onGoToPasang()"><div class="icon-label">{{ "INFO_PASANG_SURUT" | translate }}</div></ion-col>
+    <ion-col width-33><img src="assets/images/pengumuman.png" (click)="onGoToPengumuman()"><div class="icon-label">{{ "PENGUMUMAN" | translate }}</div></ion-col>
+  </ion-row>
+    <ion-row>
+    <ion-col width-33><img src="assets/images/talianKecemasan.png" (click)="onGoToTalian()"><div class="icon-label">{{ "TALIAN_KECEMASAN" | translate }}</div></ion-col>
+    <ion-col width-33><img src="assets/images/aduan.png" (click)="onGoToAduan()"><div class="icon-label">{{ "ADUAN" | translate }}</div></ion-col>
+    <ion-col width-33><img src="assets/images/sos.png" (click)="onGoToSos()"><div class="icon-label">{{ "SOS" | translate }}</div></ion-col>
+  </ion-row>
+    <ion-row>
+    <ion-col width-33 class="icon-left"><img src="assets/images/tentang.png" (click)="onGoToTentang()"><div class="icon-label">{{ "TENTANG" | translate }}</div></ion-col>
+    <ion-col width-33 class="icon-right"><img src="assets/images/socialMedia.png" (click)="onGoToSosial()"><div class="icon-label">{{ "MEDIA_SOSIAL" | translate }}</div></ion-col>
+  </ion-row>
+</ion-grid>
+
+
+
+
+
+</ion-content>
+
+
+
+<ion-footer class="footer-apps">
+
+  <ion-grid>
+  <ion-row>
+    <ion-col width-50 text-left><img src="assets/images/maritim.png" ></ion-col>
+
+    <ion-col width-50 text-right><img src="assets/images/tldm.png" ></ion-col>
+
+
+  </ion-row>
+  </ion-grid>
+
+</ion-footer>

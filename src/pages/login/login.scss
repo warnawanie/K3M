@@ -1,0 +1,56 @@
+.ios, .md {
+
+
+    .ios ion-nav > .ion-page > ion-content.statusbar-padding:first-child .scroll-content{
+     padding-top: 0px !important;
+}
+
+::-webkit-input-placeholder {
+  color: #58595B;
+}
+::-moz-placeholder {
+  color: #58595B;
+}
+:-ms-input-placeholder {
+  color: #58595B;
+}
+:-moz-placeholder {
+  color: #58595B;
+}
+
+page-login { 
+     .scroll-content{    
+        background: url('../assets/images/login.png') no-repeat; 
+        background-size: cover; 
+        background-position: center; 
+        z-index: 2; 
+    }
+    ion-list.list {
+      margin: 0px;
+    }
+    ion-footer.sign-up-login.footer-action.footer a{
+      color: #FFF;
+      text-decoration: none;
+    }
+    .login-register-input {
+        position: absolute;
+        bottom: 50px;
+        text-align: center;
+    }
+    img.login-button {
+      width: 50%;
+      height: auto;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .item-block {
+        border: none !important;
+        margin-bottom: 10px;
+        border-radius: 4px !important;
+        width: 80%;
+        color:#58595B;
+        margin: 0px auto 5px auto;
+    }
+
+}
+}

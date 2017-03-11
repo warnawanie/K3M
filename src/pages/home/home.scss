@@ -1,0 +1,30 @@
+page-home {
+
+    ion-slides{
+        height: auto;
+    }
+    ion-col[width-33]{
+        margin: auto;
+    }
+    .home-grid {
+    color: #FFF;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    }
+    .home-grid ion-col{
+        margin-bottom:20px;
+        margin-top:0px; 
+    }
+    .home-grid img{
+        width:70%;
+        height:auto;
+        margin-bottom: 10px;
+    }
+    .icon-left{
+        margin-right: 0px !important;
+    }
+    .icon-right{
+        margin-left: 0px !important;
+    }
+}

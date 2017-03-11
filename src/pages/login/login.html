@@ -1,0 +1,62 @@
+<ion-content class="loginWrap" scroll="false">
+  
+  
+  <ion-row padding class="login-register-input">
+      <ion-col>
+
+
+
+
+
+
+<form>
+   
+    
+    <!-- <label for="rememberMe">Remember Me:</label>
+    <input name="rememberMe" type="checkbox" [(ngModel)]="rememberMe"/> -->
+
+
+
+<ion-list>
+
+          <ion-item>
+            <ion-label><ion-icon ios="ios-contact-outline" md="md-contact"></ion-icon></ion-label>
+             <ion-input name="email" type="username" [(ngModel)]="account.username" placeholder="username"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label><ion-icon ios="ios-lock-outline" md="md-lock"></ion-icon></ion-label>
+            <ion-input name="password" type="password" [(ngModel)]="account.password" placeholder="password"></ion-input>
+          </ion-item>
+
+        </ion-list>
+
+        <ion-list>
+
+            <img src="assets/images/logMasukButton.png" class="login-button" (click)="login()">
+        
+        </ion-list>
+
+
+
+
+</form>
+
+
+
+
+
+
+
+      </ion-col>
+
+</ion-row>
+
+ 
+
+
+<ion-footer padding text-center class="sign-up-login footer-action">
+
+ <a href="#" (click)="onGoToRegister()">Daftar K3M</a>
+</ion-footer>
+</ion-content>

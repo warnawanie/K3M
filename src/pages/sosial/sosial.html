@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ "MEDIA_SOSIAL" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-col class="social-heading" text-center>
+      RAKAN MARITIM
+    </ion-col>
+  </ion-row>
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+    <h3>
+     TLDM
+      <ion-icon color="success" item-right [name]="isGroupShown(1) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(1)">
+      <ion-row>
+      <img src="assets/images/socialFb.png"> www.facebook.com/royalmalaysiannavy
+      </ion-row>
+       <ion-row>
+      <img src="assets/images/socialTwitter.png"> www.twitter.com/tldm_rasmi
+      </ion-row>
+      <ion-row>
+      <img src="assets/images/scoialIg.png"> www.instagram.com/tldm_rasmi
+      </ion-row>
+      <ion-row>
+      <img src="assets/images/socialYoutube.png"> www.youtube.com/user/rmnwebmaster
+      </ion-row>
+      <ion-row>
+      <img src="assets/images/socialWeb.png"> www.navy.mil.my
+      </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(2)" [ngClass]="{active: isGroupShown(2)}">
+    <h3>
+     APMM
+      <ion-icon color="success" item-right [name]="isGroupShown(2) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(2)">
+      
+<ion-row>
+      <img src="assets/images/socialFb.png"> https://www.facebook.com/maritimmalaysia/
+      </ion-row>
+       <ion-row>
+      <img src="assets/images/socialTwitter.png"> https://twitter.com/KPMaritimmsia
+      </ion-row>
+      <ion-row>
+      <img src="assets/images/socialYoutube.png">https://www.youtube.com/user/MaritimMalaysia1
+      </ion-row>
+      <ion-row>
+      <img src="assets/images/socialWeb.png"> https://www.mmea.gov.my
+      </ion-row>
+
+    </div>
+  </ion-item>
+</ion-list>
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(3)" [ngClass]="{active: isGroupShown(3)}">
+    <h3>
+     PDRM
+      <ion-icon color="success" item-right [name]="isGroupShown(3) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(3)">
+
+        <ion-row>
+      <img src="assets/images/socialFb.png"> https://www.facebook.com/PolisDirajaMalaysia
+      </ion-row>
+       <ion-row>
+      <img src="assets/images/socialTwitter.png"> https://twitter.com/pdrmsia
+      </ion-row>
+      <ion-row>
+      <img src="assets/images/scoialIg.png">https://www.instagram.com/pdrmsia_official
+      </ion-row>
+
+      <ion-row>
+      <img src="assets/images/socialWeb.png"> https://www.rmp.gov.my
+      </ion-row>
+
+
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+</ion-content>
+
+
+<ion-footer class="footer-apps">
+
+  <ion-grid>
+  <ion-row>
+    <ion-col width-50 text-left><img src="assets/images/maritim.png" ></ion-col>
+
+    <ion-col width-50 text-right><img src="assets/images/tldm.png" ></ion-col>
+
+
+  </ion-row>
+  </ion-grid>
+
+</ion-footer>

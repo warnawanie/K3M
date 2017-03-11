@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{ "PENGUMUMAN" | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content padding>
+
+<ion-list>
+    <ion-item *ngFor="let post of posts" (click)="goTo(post)">
+
+        <h2>{{post.title}}</h2>
+      <p>{{post.content}}</p>
+
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+
+
+<ion-footer class="footer-apps">
+
+  <ion-grid>
+  <ion-row>
+    <ion-col width-50 text-left><img src="assets/images/maritim.png" ></ion-col>
+
+    <ion-col width-50 text-right><img src="assets/images/tldm.png" ></ion-col>
+
+
+  </ion-row>
+  </ion-grid>
+
+</ion-footer>

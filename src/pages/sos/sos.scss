@@ -1,0 +1,53 @@
+.ios, .md {
+ 
+    page-sos {
+ 
+      .scroll-content {
+        height: 100%
+      }
+ 
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+ 
+ .sos-location {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.green-button{
+  
+   color: #fff;
+    background-color: #32db64;
+    width: 49%;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.sos-container{
+  position: absolute;
+  bottom: 100px;
+  background: #FFF;
+}
+.sos-heading{
+  text-align: center;
+}
+.red-button{
+  color: #fff;
+    background-color: #f53d3d;
+
+    width: 49%;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+
+    }
+ 
+}

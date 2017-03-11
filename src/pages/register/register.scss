@@ -1,0 +1,42 @@
+page-register {
+
+    .scroll-content{    
+        background:#337a9d url('../assets/images/register.png') no-repeat; 
+        background-size: cover; 
+        background-position:center -50px; 
+        z-index: 2; 
+    }
+    .register-input{
+        text-align: center;
+    }
+    img.daftar-button {
+      width: 50%;
+      height: auto;
+      margin-top: 0px;
+      cursor: pointer;
+    }
+    .item-block {
+        border: none !important;
+        margin-bottom: 10px;
+        border-radius: 4px !important;
+        color:#58595B;
+        margin: 0px auto 5px auto;
+    }
+    ion-row.register-welcome {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    top: 130px;
+    /* margin-bottom: 75px; */
+    position: fixed;
+    width: 90%;
+    }
+
+    ion-row.register-input {
+    position: fixed;
+    bottom: 20px;
+    width: 92%;
+    
+    }
+
+}

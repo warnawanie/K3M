@@ -1,0 +1,23 @@
+page-talian {
+    .agensi-wrap{
+        border-radius: 4px;
+    }
+    .agensi-header{
+        background: #E55272;
+        border-bottom: 3px solid #E87996;
+        border-radius: 4px;
+        color: #FFF;
+        font-size: 14px;
+    }
+    ion-card-content {
+    font-size: 1.7rem !important;
+
+    } 
+    .agensi-wrap ion-icon{
+        margin-right: 10px;
+        
+    }
+    .card-info{
+        margin-bottom: 10px;
+    }
+}

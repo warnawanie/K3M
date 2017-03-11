@@ -1,0 +1,85 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DAFTAR</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="registerWrap" scroll="false">
+
+<ion-row padding class="register-welcome">
+  <ion-col>
+
+    Selamat Datang
+  </ion-col>
+
+</ion-row>
+
+<ion-row padding class="register-input">
+      <ion-col>
+
+
+
+
+
+
+<form>
+
+
+
+
+<ion-list>
+
+          <ion-item>
+            <ion-input name="fullname" type="text" [(ngModel)]="account.fullname" placeholder="Nama"></ion-input>
+          </ion-item>
+
+          <ion-item>
+      
+            <ion-input name="username" type="text" [(ngModel)]="account.username" placeholder="Username"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+      
+            <ion-input name="ic_number" type="text" [(ngModel)]="account.ic_number" placeholder="No KP"></ion-input>
+          </ion-item>
+
+          <ion-item>
+    
+          <ion-input name="phone_number" type="text" [(ngModel)]="account.phone_number" placeholder="No Tel"></ion-input>
+          </ion-item>
+
+          <ion-item>
+          <ion-input name="email" type="email" [(ngModel)]="account.email" placeholder="Email" ></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input name="password" type="password" [(ngModel)]="account.password" placeholder="Kata Laluan"></ion-input>
+          </ion-item>
+
+        </ion-list>
+
+        <ion-list>
+
+
+            <img src="assets/images/daftarButton.png" class="daftar-button" (click)="register()">
+        
+        </ion-list>
+
+  </form>
+
+
+
+      </ion-col>
+
+</ion-row>
+
+</ion-content>
+
+<ion-footer padding text-center class="footer-apps">
+
+
+</ion-footer>
