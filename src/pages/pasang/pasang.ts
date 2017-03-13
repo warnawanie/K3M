@@ -66,11 +66,9 @@ export class PasangPage {
 
 
 
-    responseData(id) {
-
-    this.tideLocationApi.getForecast({
-      location_id: id
-    }).subscribe(
+  private responseData(location : any) {
+      console.log(location);
+    this.tideLocationApi.getForecast(location.id).subscribe(
       data => {
         //this.responses = data;
         console.log(data);
