@@ -27,7 +27,7 @@ export class AduanPage {
           this.aduan.ic_number = data.ic_number;
           this.aduan.phone_number = data.phone_number;
         
-          // console.log(this.aduanData);
+         // console.log(this.aduan.name);
         }
      ); 
 

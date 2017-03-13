@@ -15,8 +15,8 @@
     "RADIO_PENGADU": "Peralatan Radio",
     "POSISI_PENGADU": "Posisi",
     "MASA_PENGADU": "Masa Kejadian",
-    "INFO_CUACA": "Info Cuaca",
-    "INFO_PASANG_SURUT": "Info Pasang Surut",
+    "INFO_CUACA": "Cuaca",
+    "INFO_PASANG_SURUT": "Pasang Surut",
     "PENGUMUMAN": "Pengumuman",
     "TALIAN_KECEMASAN": "Talian Kecemasan",
     "SOS": "SOS",
@@ -24,7 +24,8 @@
     "ADUAN": "Aduan",
     "MEDIA_SOSIAL": "Media Sosial",
     "SELECT_STATE": "Pilih Negeri",
-    "JADUAL_RAMALAN_PASANG_SURUT": "JADUAN RAMALAN PASANG SURUT"
+    "JADUAL_RAMALAN_PASANG_SURUT": "JADUAN RAMALAN PASANG SURUT",
+    "FORUM": "FORUM"
     
 
 }

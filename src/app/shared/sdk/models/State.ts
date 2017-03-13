@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Report
+  Report,
+  TideLocation
 } from '../index';
 
 declare var Object: any;
@@ -10,6 +11,7 @@ export interface StateInterface {
   updated_at?: Date;
   id?: number;
   reports?: Report[];
+  locations?: TideLocation[];
 }
 
 export class State implements StateInterface {
@@ -18,6 +20,7 @@ export class State implements StateInterface {
   updated_at: Date;
   id: number;
   reports: Report[];
+  locations: TideLocation[];
   constructor(data?: StateInterface) {
     Object.assign(this, data);
   }
@@ -71,6 +74,11 @@ export class State implements StateInterface {
           name: 'reports',
           type: 'Report[]',
           model: 'Report'
+        },
+        locations: {
+          name: 'locations',
+          type: 'TideLocation[]',
+          model: 'TideLocation'
         },
       }
     }

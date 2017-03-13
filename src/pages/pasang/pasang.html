@@ -20,35 +20,38 @@
   </ion-row>
 
 
-
-
-
   <ion-row>
 
 <ion-item class="pasang-state">
   <ion-label>{{ "SELECT_STATE" | translate }}</ion-label>
-  <ion-select name="state_id">
-    <ion-option *ngFor="let state of states" (click)="goTo(post)" value="{{state.id}}">{{state.name}}</ion-option>
 
+  <ion-select name="state_id" [(ngModel)]="state_id" (ionChange)="optionsFn();">
+    <ion-option *ngFor="let state of states" value="{{state.id}}">{{state.name}}</ion-option>
   </ion-select>
 </ion-item>
 
   </ion-row>
 
+  
+<ion-row *ngFor="let location of locations">
 
 
 
-<ion-row>
+  
 
     <ion-list class="pasang-wrap">
 
 
-  <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+  <ion-item text-wrap (click)="toggleGroup(location.id)" [ngClass]="{active: isGroupShown(location.id)}">
     <h3>
-     Langkawi Kedah
-      <ion-icon color="success" [name]="isGroupShown(1) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    
+
+     <button ion-button (click)="responseData(location.id)">{{location.name}} - {{location.id}}</button>
+
+
+      <ion-icon color="success" [name]="isGroupShown(location.id) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
-    <div *ngIf="isGroupShown(1)">
+    <div *ngIf="isGroupShown(location.id)">
 
       <div class="data-wrap">
       <ion-row>

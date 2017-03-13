@@ -53,6 +53,8 @@ import { ReportApi } from './services/custom/Report';
 import { StateApi } from './services/custom/State';
 import { EmergencyApi } from './services/custom/Emergency';
 import { AnnouncementApi } from './services/custom/Announcement';
+import { TideApi } from './services/custom/Tide';
+import { TideLocationApi } from './services/custom/TideLocation';
 import { CustomerApi } from './services/custom/Customer';
 /**
 * @module SDKBrowserModule
@@ -90,6 +92,8 @@ export class SDKBrowserModule {
         StateApi,
         EmergencyApi,
         AnnouncementApi,
+        TideApi,
+        TideLocationApi,
         CustomerApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
