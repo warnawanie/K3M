@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>faq</ion-title>
+    <ion-title>FAQ</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +15,17 @@
 
 <ion-content padding>
 
+
+  <ion-list class="faq-wrap">
+  <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+    <h3>
+     TLDM
+      <ion-icon color="success" item-right [name]="isGroupShown(1) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(1)">
+      <ion-row>
+
 </ion-content>
+
+
+

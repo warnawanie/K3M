@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { State}  from '../../app/shared/sdk/models';
 import { StateApi }  from '../../app/shared/sdk/services';
 import { TideLocation}  from '../../app/shared/sdk/models';
 import { TideLocationApi }  from '../../app/shared/sdk/services';
+
 
 @Component({
   selector: 'page-pasang',
@@ -61,16 +62,11 @@ export class PasangPage {
     
   }
 
-
-
-
-
-
   private responseData(location : any) {
       console.log(location);
     this.tideLocationApi.getForecast(location.id).subscribe(
       data => {
-        //this.responses = data;
+        this.responses = data;
         console.log(data);
     }, 
     err => {

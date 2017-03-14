@@ -54,9 +54,20 @@
     <div *ngIf="isGroupShown(location.id)">
 
       <div class="data-wrap">
+
+        <ion-list>
+    <ion-item *ngFor="let response of responses">
+
+{{response.today.min.date}}
+
+    </ion-item>
+  </ion-list>
+
+
+
       <ion-row>
         
-          <h1 class="date-details-info">Isnin, 06 Mac 2017</h1>
+          <h1 class="date-details-info"></h1>
       </ion-row>
 
         <ion-row>
