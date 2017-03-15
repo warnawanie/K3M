@@ -1,4 +1,4 @@
-import { Component, Pipe } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { State}  from '../../app/shared/sdk/models';
@@ -19,6 +19,7 @@ export class PasangPage {
   locations:any;
   responses:any;
   tmp:any;
+  keys: String[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService, private stateApi:StateApi, private tideLocationApi:TideLocationApi) {
 
@@ -62,21 +63,27 @@ export class PasangPage {
     
   }
 
+
+
   private responseData(location : any) {
       console.log(location);
-    this.tideLocationApi.getForecast(location.id).subscribe(
-      data => {
-        this.responses = data;
-        console.log(data);
-    }, 
-    err => {
-        console.log("Oops!");
-    }
+    this.tideLocationApi.getForecast(location.id)
+      .subscribe(
+        data => {
+          this.responses = data;
+        //  this.keys = Object.keys(this.responses);
+          console.log(data);
+      }, 
+      err => {
+          console.log("Oops!");
+      }
     );
-
    // console.log(id);
   }
   
+
+
+
 
   myDate: String = new Date().toISOString();
 

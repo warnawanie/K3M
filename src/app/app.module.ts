@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { MyApp } from './app.component';
+import { TidesForecast } from '../pipes/tides-forecast';  
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { LoginPage } from '../pages/login/login';
@@ -22,10 +23,8 @@ import { FaqPage } from '../pages/faq/faq';
 import { PengumumanService } from '../providers/pengumuman-service';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
-import { 
-  TranslateModule, 
-  TranslateStaticLoader, 
-  TranslateLoader } from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate/ng2-translate';
+
 
 
 export function createTranslateLoader(http: Http) {
@@ -51,7 +50,8 @@ export function createTranslateLoader(http: Http) {
     AduanSendPage,
     ContactPage,
     PengumumanDetailsPage,
-    FaqPage
+    FaqPage,
+    TidesForecast
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -86,3 +86,5 @@ export function createTranslateLoader(http: Http) {
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PengumumanService, Storage]
 })
 export class AppModule {}
+
+

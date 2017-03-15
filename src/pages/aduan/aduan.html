@@ -22,7 +22,10 @@
 <form>
 
 
-<input name="customer_id" type="text" [(ngModel)]="aduan.customer_id" placeholder="customer id" hidden/>
+<input name="customer_id" type="text" [(ngModel)]="aduan.customer_id"hidden/>
+<input name="name" type="text" [(ngModel)]="aduan.name" hidden/>
+<input name="ic_number" type="text" [(ngModel)]="aduan.ic_number" hidden/>
+<input name="phone_number" type="text" [(ngModel)]="aduan.phone_number" hidden/>
 
 
 <ion-item class="aduan-type">
@@ -37,14 +40,17 @@
   </ion-select>
 </ion-item>
 
-<ion-item>
 
-<ion-input name="name" type="text" [(ngModel)]="aduan.name" placeholder='{{ "NAMA_PENGADU" | translate }}'></ion-input>
 
-</ion-item>
+<ion-row>
 
-<ion-item><ion-input name="ic_number" type="text" [(ngModel)]="aduan.ic_number" placeholder='{{ "IC_PENGADU" | translate }}'></ion-input></ion-item>
-<ion-item><ion-input name="phone_number" type="text" [(ngModel)]="aduan.phone_number" placeholder='{{ "PHONE_PENGADU" | translate }}'></ion-input></ion-item>
+<ion-col width-50></ion-col>
+<ion-col width-50></ion-col>
+
+</ion-row>
+
+
+
 <ion-item><ion-input name="radio_details" type="text" [(ngModel)]="aduan.radio_details" placeholder='{{ "RADIO_PENGADU" | translate }}'></ion-input></ion-item>
 <ion-item><ion-input name="location" type="text" [(ngModel)]="aduan.location" placeholder='{{ "POSISI_PENGADU" | translate }}'></ion-input></ion-item>
 <ion-item><ion-input name="time" type="text" [(ngModel)]="aduan.time" placeholder='{{ "MASA_PENGADU" | translate }}'></ion-input></ion-item>

@@ -43,31 +43,21 @@
 
 
   <ion-item text-wrap (click)="toggleGroup(location.id)" [ngClass]="{active: isGroupShown(location.id)}">
-    <h3>
+    <h3 (click)="responseData(location)">
     
-
-     <button ion-button (click)="responseData(location)">{{location.name}} - {{location.id}}</button>
+    {{location.name}}
 
 
       <ion-icon color="success" [name]="isGroupShown(location.id) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
     <div *ngIf="isGroupShown(location.id)">
 
-      <div class="data-wrap">
-
-        <ion-list>
-    <ion-item *ngFor="let response of responses">
-
-{{response.today.min.date}}
-
-    </ion-item>
-  </ion-list>
-
+      <div class="data-wrap" *ngIf="responses">
 
 
       <ion-row>
         
-          <h1 class="date-details-info"></h1>
+          <h1 class="date-details-info">{{responses.today.min.date}} </h1>
       </ion-row>
 
         <ion-row>
@@ -79,13 +69,13 @@
             </ion-row>
 
             <ion-row>
-              <ion-col width-50>2:0</ion-col>
-               <ion-col width-50>56</ion-col>
+              <ion-col width-50>{{responses.today.min.time}}</ion-col>
+               <ion-col width-50>{{responses.today.min.height}}</ion-col>
             </ion-row>
 
             <ion-row>
-              <ion-col width-50>18:45</ion-col>
-               <ion-col width-50>164</ion-col>
+              <ion-col width-50>{{responses.today.max.time}}</ion-col>
+               <ion-col width-50>{{responses.today.max.height}}</ion-col>
             </ion-row>
 
           </div>
@@ -94,10 +84,10 @@
       </div>
 
 
- <div class="data-wrap">
+ <div class="data-wrap" *ngIf="responses">
       <ion-row>
         
-          <h1 class="date-details-info">Selasa, 07 Mac 2017</h1>
+          <h1 class="date-details-info">{{responses.tomorrow.min.date}}</h1>
       </ion-row>
 
         <ion-row>
@@ -108,14 +98,14 @@
                <ion-col width-50>Ketinggian (cm)</ion-col>
             </ion-row>
 
-            <ion-row>
-              <ion-col width-50>2:0</ion-col>
-               <ion-col width-50>56</ion-col>
+             <ion-row>
+              <ion-col width-50>{{responses.tomorrow.min.time}}</ion-col>
+               <ion-col width-50>{{responses.tomorrow.min.height}}</ion-col>
             </ion-row>
 
             <ion-row>
-              <ion-col width-50>18:45</ion-col>
-               <ion-col width-50>164</ion-col>
+              <ion-col width-50>{{responses.tomorrow.max.time}}</ion-col>
+               <ion-col width-50>{{responses.tomorrow.max.height}}</ion-col>
             </ion-row>
 
           </div>
