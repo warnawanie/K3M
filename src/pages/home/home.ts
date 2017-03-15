@@ -22,8 +22,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService) {
 
-    this.presentLoading();
-    this.loader.dismiss();
+    //this.presentLoading();
+    //this.loader.dismiss();
 
    // storage.ready().then(() => {
 
