@@ -20,6 +20,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { LoopBackConfig} from './shared/sdk';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
 import { FaqPage } from '../pages/faq/faq';
+import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
 
 
 @Component({

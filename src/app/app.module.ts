@@ -20,6 +20,7 @@ import { SosialPage } from '../pages/sosial/sosial';
 import { AduanSendPage } from '../pages/aduan-send/aduan-send';
 import { ContactPage } from '../pages/contact/contact';
 import { FaqPage } from '../pages/faq/faq';
+import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
 import { PengumumanService } from '../providers/pengumuman-service';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: Http) {
     ContactPage,
     PengumumanDetailsPage,
     FaqPage,
-    TidesForecast
+    TidesForecast,
+    EmergencySendPagePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -81,7 +83,8 @@ export function createTranslateLoader(http: Http) {
     AduanSendPage,
     ContactPage,
     PengumumanDetailsPage,
-    FaqPage
+    FaqPage,
+    EmergencySendPagePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PengumumanService, Storage]
 })

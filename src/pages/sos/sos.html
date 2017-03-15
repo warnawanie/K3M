@@ -4,13 +4,11 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{ "SOS" | translate }}
- <button ion-button (click)="getCoordinate()"><ion-icon name="add"></ion-icon>send</button>
+
 
 
     </ion-title>
-    <ion-buttons end>
-      <button ion-button (click)="addMarker()"><ion-icon name="add"></ion-icon>Set Lokasi</button>
-    </ion-buttons>  
+ 
   </ion-navbar>
 </ion-header>
 
@@ -20,8 +18,19 @@
 <ion-content>
   <div #map id="map"></div>  
 
-<ion-row class="sos-container" [style.visibility]= "sosShowHide">
-  submit data here
+<ion-row class="sos-container">
+<form>
+
+
+<input name="customer_id" type="text" [(ngModel)]="emergency.customer_id" hidden/>
+<ion-input type=number name="latitude" [(ngModel)]="emergency.latitude"></ion-input>
+    <ion-input type=number name="longitude" [(ngModel)]="emergency.longitude"></ion-input>
+
+
+    <img src="assets/images/submitButton.png" class="daftar-button" (click)="sendSos()">
+
+</form>
+
 </ion-row>
 
 </ion-content>
