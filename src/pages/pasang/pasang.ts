@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, LoadingController  } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { State}  from '../../app/shared/sdk/models';
 import { StateApi }  from '../../app/shared/sdk/services';
@@ -13,6 +13,7 @@ import { TideLocationApi }  from '../../app/shared/sdk/services';
 })
 export class PasangPage {
   shownGroup = null;
+  loader: any;
   states:any;
   state_id:number;
   //id:number;
@@ -21,7 +22,7 @@ export class PasangPage {
   tmp:any;
   keys: String[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService, private stateApi:StateApi, private tideLocationApi:TideLocationApi) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService, private stateApi:StateApi, private tideLocationApi:TideLocationApi, public loadingCtrl: LoadingController) {
 
     this.stateApi.find({
             "include":{
@@ -66,10 +67,17 @@ export class PasangPage {
 
 
   private responseData(location : any) {
+    this.loader = this.loadingCtrl.create({
+              content: "Loading"
+            });
+           this.loader.present();
+
       console.log(location);
     this.tideLocationApi.getForecast(location.id)
+    
       .subscribe(
         data => {
+          this.loader.dismiss();
           this.responses = data;
         //  this.keys = Object.keys(this.responses);
           console.log(data);
