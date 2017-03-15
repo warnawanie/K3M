@@ -21432,6 +21432,10 @@ page-home .icon-right {
   color: #58595B;
 }
 
+.ios .input-cover, .md .input-cover {
+  position: static;
+}
+
 .ios page-login .scroll-content, .md page-login .scroll-content {
   background: url("../assets/images/login.png") no-repeat;
   background-size: cover;

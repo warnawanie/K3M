@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController  } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, AlertController   } from 'ionic-angular';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
 import { Customer, AccessToken } from '../../app/shared/sdk/models';
@@ -17,7 +17,7 @@ export class LoginPage {
   public account: Customer = new Customer();
   public rememberMe: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
 
   //  storage.ready().then(() => {
        // set a key/value
@@ -43,30 +43,43 @@ export class LoginPage {
 
   login() {
 
-    this.loader = this.loadingCtrl.create({
-      content: "Loading"
-    });
- 
-
-    
-    this.loader.present();
- 
-        setTimeout(() => {
-            this.loader.dismiss();
-        }, 2000);
+         this.accountApi.login(this.account, 'user', this.rememberMe).subscribe((token: AccessToken) => { 
 
 
+              this.loader = this.loadingCtrl.create({
+                content: "Loading"
+              });    
+              this.loader.present();
 
-    this.accountApi.login(this.account, 'user', this.rememberMe).subscribe((token: AccessToken) =>
-      this.navCtrl.setRoot(HomePage));
+            this.navCtrl.setRoot(HomePage);  
+            this.loader.dismiss();              
+        },  error => {
+
+        
+          
+            let alert = this.alertCtrl.create({
+            title: 'Incorrect Username or Password',
+            subTitle: 'Try Again!',
+            buttons: ['OK']
+          });
+          alert.present();
+           //this.loader.dismiss();
+
+                });
+                
 
 
-      console.log(this);
+    //this.accountApi.login(this.account, 'user', this.rememberMe).subscribe((token: AccessToken) =>
+      //
+     // console.log(this);
   }
-  
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
 }
+
+
