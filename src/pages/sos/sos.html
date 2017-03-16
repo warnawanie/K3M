@@ -19,15 +19,16 @@
   <div #map id="map"></div>  
 
 <ion-row class="sos-container">
-<form>
+<form class="buttonSos">
 
 
 <input name="customer_id" type="text" [(ngModel)]="emergency.customer_id" hidden/>
-<ion-input type=number name="latitude" [(ngModel)]="emergency.latitude"></ion-input>
-    <ion-input type=number name="longitude" [(ngModel)]="emergency.longitude"></ion-input>
+<input type=number name="latitude" [(ngModel)]="emergency.latitude" hidden/>
+<input type=number name="longitude" [(ngModel)]="emergency.longitude" hidden/>
+
+<button ion-button block color="danger" (click)="sendSos()" class="sendSos">Hantar SOS</button>
 
 
-    <img src="assets/images/submitButton.png" class="daftar-button" (click)="sendSos()">
 
 </form>
 

@@ -21628,6 +21628,20 @@ page-register ion-row.register-input {
   text-align: center;
 }
 
+.ios page-sos .sendSos, .md page-sos .sendSos {
+  width: 100%;
+  margin: auto;
+}
+
+.ios page-sos .buttonSos, .md page-sos .buttonSos {
+  width: 95%;
+  margin: auto;
+}
+
+.ios page-sos ion-row.sos-container, .md page-sos ion-row.sos-container {
+  padding: 15px 0px;
+}
+
 .ios page-sos .green-button, .md page-sos .green-button {
   color: #fff;
   background-color: #32db64;

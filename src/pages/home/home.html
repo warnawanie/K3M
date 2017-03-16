@@ -13,6 +13,9 @@
 
 <ion-content>
 <ion-slides pager>
+ <ion-slide>
+    <img src="assets/images/pengumuman/slide4.jpg">
+  </ion-slide>
 
   <ion-slide>
     <img src="assets/images/pengumuman/slide1.png">
@@ -60,7 +63,7 @@
   </ion-row>
     <ion-row>
     <ion-col width-33><img src="assets/images/faq.png" (click)="onGoToFaq()"><div class="icon-label">{{ "FAQ" | translate }}</div></ion-col>
-    <ion-col width-33><img src="assets/images/forum.png" (click)="onGoToForum()"><div class="icon-label">{{ "FORUM" | translate }}</div></ion-col>
+    <ion-col width-33><img src="assets/images/forum.png" onclick="window.open('https://www.facebook.com/RoyalMalaysianNavy/', '_system', 'location=yes'); return false;"><div class="icon-label">{{ "FORUM" | translate }}</div></ion-col>
     <ion-col width-33><img src="assets/images/socialMedia.png" (click)="onGoToSosial()"><div class="icon-label">{{ "MEDIA_SOSIAL" | translate }}</div></ion-col>
   </ion-row>
 </ion-grid>

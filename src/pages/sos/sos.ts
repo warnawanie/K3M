@@ -84,7 +84,7 @@ export class SosPage {
     position: this.map.getCenter()
   });
  
-  let content = "<div class='sos-location'>4.2275° N, 100.5577° E</div><h4 class='sos-heading'>Hantar SOS?</h4> <div class='sos-action'><button ion-button class='green-button' (click)='getCoordinate()'>Ya</button> <button ion-button color='danger' class='red-button'>Tidak</button></div>";          
+  let content = "Lokasi Anda";          
  
 
  

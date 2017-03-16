@@ -26,7 +26,27 @@
     "SELECT_STATE": "Pilih Negeri",
     "JADUAL_RAMALAN_PASANG_SURUT": "JADUAN RAMALAN PASANG SURUT",
     "FORUM": "FORUM",
-    "TEST": "<strong>teyasoshajjsaj</strong>"
-    
-
+    "TEST": "<strong>teyasoshajjsaj</strong>",
+    "FAQ_QUESTION_1": "Apa itu aplikasi K3M?",
+    "FAQ_ANSWER_1": "Aplikasi K3M merupakan satu usaha kolaborasi TLDM & APMM yang bertujuan untuk memudahkan orang ramai khususnya komuniti maritim membuat aduan bagi hal-hal kecemasan, kerosakan, kemalangan dan sebagainya dengan lebih cepat dan berkesan dengan menggunakan telefon pintar. Aplikasi K3M juga membolehkan pengguna menghantar isyarat kecemasan (SOS) dan mendapatkan bantuan dari pihak penguatkuasa. Selain daripada itu, pengguna juga boleh menyemak status ramalan cuaca dan pasang surut semasa bagi memudahkan perancangan aktiviti maritim dijalankan.",
+    "FAQ_QUESTION_2": "Siapakah yang boleh menggunakan aplikasi K3M?",
+    "FAQ_ANSWER_2": "Aplikasi K3M boleh diguna pakai bagi yang terlibat di dalam industri di bawah:<br><br> • Perikanan <br>• Pelancongan <br>• Rekreasi <br>• Petroleum <br>• Lain-lain (media)",
+    "FAQ_QUESTION_3": "Bagaimana cara memuat turun aplikasi K3M?",
+    "FAQ_ANSWER_3": "Untuk memuat-turun aplikasi K3M:<br><br><strong>Pengguna Android</strong> <br>•Buka Play Store dalam telefon pintar android anda<br>•Cari -> K3M<br>•Klik -> Open<br>•Terus install ke telefon pintar anda.<br><br><strong>Pengguna iOs</strong><br>•Buka Apps Store dalam telefon pintar iOS anda<br>•Cari -> K3M<br>•Klik -> Open<br>•Terus install ke telefon pintar anda.",
+    "FAQ_QUESTION_4": "Apakah agensi yang terlibat dalam penggunaan aplikasi K3M?",
+    "FAQ_ANSWER_4": "• TLDM<br>• APMM<br>• PDRM<br>• Jabatan Imigresen Malaysia<br>• Jabatan Perikanan Malaysia<br>• Jabatan Laut Malaysia<br>• Jabatan Kastam Di Raja",
+    "FAQ_QUESTION_5": "Bagaimana cara untuk saya menghantar isyarat kecemasan (SOS) kepada pihak penguatkuasa?",
+    "FAQ_ANSWER_5": "Sekiranya berlaku kecemasan atau ancaman di laut, anda boleh menghantar isyarat kecemasan melalui menu SOS yang terdapat di dalam aplikasi K3M. Dengan menekan Butang Set Lokasi, koordinat lokasi semasa anda akan dihantar kepada agensi penguatkuasa. Anda perlu membuat pengesahan isyarat kecemasan dengan menekan Butang Hantar.",
+    "FAQ_QUESTION_6": "Apakah informasi yang terdapat di dalam aplikasi K3M? ",
+    "FAQ_ANSWER_6": "Berikut adalah maklumat dan informasi yang disediakan oleh aplikasi K3M yang boleh diguna pakai oleh komuniti maritim; <br><br>• Maklumat Ramalan Cuaca dan Pasang Surut.<br>• Maklumat Talian kecemasan <br>• Maklumat Pengumuman, aktiviti dan berita terkini tentang komuniti maritim",
+    "FAQ_QUESTION_7": "Bolehkah saya menghantar gambar atau video sebagai lampiran kepada aduan yang dibuat?",
+    "FAQ_ANSWER_7": "Ya boleh, pengguna boleh memuat naik gambar atau video melalui modul aduan yang disediakan.",
+    "FAQ_QUESTION_8": "Adakah anda perlu mendaftar setiap kali ingin log masuk ke dalam aplikasi K3M?",
+    "FAQ_ANSWER_8": "Tidak, anda tidak perlu mendaftar setiap kali ingin log masuk ke dalam aplikasi K3M.",
+    "FAQ_QUESTION_9": "Bagaimana saya boleh menggunakan aplikasi K3M ini dalam Bahasa Mandarin?",
+    "FAQ_ANSWER_9": "Dari menu utama,klik  pada Bahasa Mandarin di bahagian atas menu untuk membolehkan anda melayari aplikasi ini dalam Bahasa Mandarin.",
+    "FAQ_QUESTION_10": "Apakah yang perlu saya lakukan sekiranya lupa kata laluan?",
+    "FAQ_ANSWER_10": "Berikut adalah langkah-langkah yang perlu dilakukan untuk mengubah semula kata laluan. <br><br>•Dari menu daftar masuk, anda hendaklah klik pada Lupa Kata Laluan. <br>•Menetapkan kata laluan baru. <br>• Mengesahkan kata laluan baru sebelum menyimpan maklumat tersebut.<br>• Klik pada Butang Simpan untuk menyimpan kata laluan yang baru.<br>• Memastikan Notifikasi kata laluan baru yang dihantar melalui SMS <br>• Log masuk semula ke dalam aplikasi menggunakan kata laluan yang baru ditetapkan.",
+    "FAQ_QUESTION_11": "Bolehkah saya membuat pautan terus ke laman web TLDM?",
+    "FAQ_ANSWER_11": "Boleh. Anda boleh melayari laman web TLDM melalui pautan yang telah disediakan di menu Hubungi Kami."
 }
