@@ -56,8 +56,8 @@ export class SosPage {
   loadMap(){
 
   Geolocation.watchPosition().subscribe((position) => {
-  this.emergency.latitude = position.coords.longitude;
-  this.emergency.longitude = position.coords.latitude;
+  this.emergency.latitude = position.coords.latitude;
+  this.emergency.longitude = position.coords.longitude;
   
 
   let latLng = new google.maps.LatLng(this.emergency.latitude, this.emergency.longitude);

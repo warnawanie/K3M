@@ -16,6 +16,7 @@
     "POSISI_PENGADU": "位置",
     "MASA_PENGADU": "报告时间",
     "MAKLUMAT_KEJADIAN_PENGADU": "事发情况",
+    "HANTAR": "送",
     "INFO_CUACA": "天气",
     "INFO_PASANG_SURUT": "潮起潮落",
     "PENGUMUMAN": "公告",
@@ -48,5 +49,11 @@
     "FAQ_QUESTION_10": "如果忘了密码该怎么办？",
     "FAQ_ANSWER_10": "以下步骤将指导用户重设密码：<br><br>• 用户可在登录页面点击【忘记密码】键 <br>• 设定新密码<br>• 再次输入新密码<br>• 点击【确认】键来设定新密码<br>• 更换新密码的通知将透过短讯的方式传至给用户<br>• 用户可使用新密码来登录K3M应用程序",
     "FAQ_QUESTION_11": "用户是否可以在K3M应用程序里直接进入马来西亚皇家海军的主要页面？",
-    "FAQ_ANSWER_11": "可以，用户可以通过点击【联络我们】直接进入马来西亚皇家海军的主要页面。"
+    "FAQ_ANSWER_11": "可以，用户可以通过点击【联络我们】直接进入马来西亚皇家海军的主要页面。",
+    "ICON_KEMALANGAN": "cn_kemalangan",
+    "ICON_KEROSAKAN": "cn_kerosakan",
+    "ICON_PENCEMARAN": "cn_pencemaran",
+    "ICON_KEBAKARAN": "cn_kebakaran",
+    "ICON_PELANUNAN": "cn_pelanunan",
+    "ICON_PENCEROBOHAN": "cn_pencerobohan"
 }

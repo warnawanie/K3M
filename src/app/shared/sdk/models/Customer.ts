@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Report
+  Report,
+  Emergency
 } from '../index';
 
 declare var Object: any;
@@ -26,6 +27,7 @@ export interface CustomerInterface {
   verificationToken?: string;
   id?: number;
   reports?: Report[];
+  emergencies?: Emergency[];
   accessTokens?: any[];
 }
 
@@ -51,6 +53,7 @@ export class Customer implements CustomerInterface {
   verificationToken: string;
   id: number;
   reports: Report[];
+  emergencies: Emergency[];
   accessTokens: any[];
   constructor(data?: CustomerInterface) {
     Object.assign(this, data);
@@ -169,6 +172,11 @@ export class Customer implements CustomerInterface {
           name: 'reports',
           type: 'Report[]',
           model: 'Report'
+        },
+        emergencies: {
+          name: 'emergencies',
+          type: 'Emergency[]',
+          model: 'Emergency'
         },
         accessTokens: {
           name: 'accessTokens',

@@ -16,12 +16,18 @@ page-aduan {
     }
      .list .item-block .item-inner{
         border: none !important;
+        padding: 0px;
     }
     ion-select .select-icon .select-icon-inner{
         color: #FFF !important;
 
     }
-    .textarea-maklumat[stacked]{
+
+    ion-item.item.item-block.item-radio {
+    background: #F1F2F2;
+    border: none;
+}
+    .textarea-maklumat[stacked]{ 
         font-size: 1.7rem;
         color: #666;
     }
@@ -31,4 +37,36 @@ page-aduan {
     .action-upload-image{
         text-align: right;
     }
+    .aduan-heading{
+     background: #bc96c5;
+     border-bottom: 3px solid #a479b5;
+    padding: 15px 25px !important;
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    }
+
+    ion-radio.radio {
+    position: absolute !important;
+    display: block;
+    margin: 0px !important;
+    width: 100%;
+    height: 100%;
+    }
+
+    .aduan-icon ion-col{
+        float: left;
+
+    }
+    ion-item.item.item-block.item-radio {
+    margin: 0px;
+    padding: 0px;
+    }
+
+    .aduan-icon ion-label{
+        margin-right: 0px !important;
+    }
+
+
 }

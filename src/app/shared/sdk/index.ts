@@ -52,6 +52,8 @@ import { ReportTypeApi } from './services/custom/ReportType';
 import { ReportApi } from './services/custom/Report';
 import { StateApi } from './services/custom/State';
 import { EmergencyApi } from './services/custom/Emergency';
+import { StatusEmergencyApi } from './services/custom/StatusEmergency';
+import { StatusReportApi } from './services/custom/StatusReport';
 import { AnnouncementApi } from './services/custom/Announcement';
 import { TideApi } from './services/custom/Tide';
 import { TideLocationApi } from './services/custom/TideLocation';
@@ -91,6 +93,8 @@ export class SDKBrowserModule {
         ReportApi,
         StateApi,
         EmergencyApi,
+        StatusEmergencyApi,
+        StatusReportApi,
         AnnouncementApi,
         TideApi,
         TideLocationApi,

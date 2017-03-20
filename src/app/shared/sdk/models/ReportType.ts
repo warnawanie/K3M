@@ -5,7 +5,7 @@ import {
 
 declare var Object: any;
 export interface ReportTypeInterface {
-  title: string;
+  name: string;
   description?: string;
   created_at?: Date;
   updated_at?: Date;
@@ -14,7 +14,7 @@ export interface ReportTypeInterface {
 }
 
 export class ReportType implements ReportTypeInterface {
-  title: string;
+  name: string;
   description: string;
   created_at: Date;
   updated_at: Date;
@@ -51,8 +51,8 @@ export class ReportType implements ReportTypeInterface {
       name: 'ReportType',
       plural: 'report-types',
       properties: {
-        title: {
-          name: 'title',
+        name: {
+          name: 'name',
           type: 'string'
         },
         description: {

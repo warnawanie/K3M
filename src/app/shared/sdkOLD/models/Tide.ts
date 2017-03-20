@@ -11,7 +11,6 @@ export interface TideInterface {
   created_at?: Date;
   updated_at?: Date;
   id?: number;
-  location_id?: number;
   location?: TideLocation;
 }
 
@@ -22,7 +21,6 @@ export class Tide implements TideInterface {
   created_at: Date;
   updated_at: Date;
   id: number;
-  location_id: number;
   location: TideLocation;
   constructor(data?: TideInterface) {
     Object.assign(this, data);
@@ -77,10 +75,6 @@ export class Tide implements TideInterface {
         },
         id: {
           name: 'id',
-          type: 'number'
-        },
-        location_id: {
-          name: 'location_id',
           type: 'number'
         },
       },

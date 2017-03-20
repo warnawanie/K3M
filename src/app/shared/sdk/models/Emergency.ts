@@ -1,24 +1,34 @@
 /* tslint:disable */
+import {
+  StatusEmergency,
+  Customer
+} from '../index';
 
 declare var Object: any;
 export interface EmergencyInterface {
   customer_id: number;
-  latitude?: number;
-  longitude?: number;
+  latitude: number;
+  longitude: number;
+  status_emergency_id?: number;
   admin_notes?: string;
   created_at?: Date;
   updated_at?: Date;
   id?: number;
+  status?: StatusEmergency;
+  customer?: Customer;
 }
 
 export class Emergency implements EmergencyInterface {
   customer_id: number;
   latitude: number;
   longitude: number;
+  status_emergency_id: number;
   admin_notes: string;
   created_at: Date;
   updated_at: Date;
   id: number;
+  status: StatusEmergency;
+  customer: Customer;
   constructor(data?: EmergencyInterface) {
     Object.assign(this, data);
   }
@@ -62,6 +72,11 @@ export class Emergency implements EmergencyInterface {
           name: 'longitude',
           type: 'number'
         },
+        status_emergency_id: {
+          name: 'status_emergency_id',
+          type: 'number',
+          default: 1
+        },
         admin_notes: {
           name: 'admin_notes',
           type: 'string'
@@ -80,6 +95,16 @@ export class Emergency implements EmergencyInterface {
         },
       },
       relations: {
+        status: {
+          name: 'status',
+          type: 'StatusEmergency',
+          model: 'StatusEmergency'
+        },
+        customer: {
+          name: 'customer',
+          type: 'Customer',
+          model: 'Customer'
+        },
       }
     }
   }

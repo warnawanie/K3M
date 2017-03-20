@@ -28,26 +28,66 @@
 <input name="phone_number" type="text" [(ngModel)]="aduan.phone_number" hidden/>
 
 
-<ion-item class="aduan-type">
-  <ion-label>{{ "JENIS_ADUAN" | translate }}</ion-label>
-  <ion-select name="report_type_id" [(ngModel)]="aduan.report_type_id">
-    <ion-option value="1" selected="true">{{ "KEMALANGAN" | translate }}</ion-option>
-    <ion-option value="2">{{ "KEROSAKAN" | translate }}</ion-option>
-    <ion-option value="3">{{ "PENCEMARAN" | translate }}</ion-option>
-    <ion-option value="4">{{ "KEBAKARAN" | translate }}</ion-option>
-    <ion-option value="5">{{ "PELANUNAN" | translate }}</ion-option>
-    <ion-option value="6">{{ "PENCEROBOHAN" | translate }}</ion-option>
-  </ion-select>
-</ion-item>
-
-
 
 <ion-row>
+    <ion-col class="aduan-heading" text-center="">
+      {{ "JENIS_ADUAN" | translate }}
+    </ion-col>
+  </ion-row>
 
-<ion-col width-50></ion-col>
-<ion-col width-50></ion-col>
+
+<ion-row class="aduan-icon">
+
+  <ion-list radio-group name="report_type_id" [(ngModel)]="aduan.report_type_id">
+
+<ion-col width-33>
+  <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_KEMALANGAN' | translate }}.png"></ion-label>
+    <ion-radio checked="true" value="1"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+  <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_KEROSAKAN' | translate }}.png"></ion-label>
+    <ion-radio value="2"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+  <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_PENCEMARAN' | translate }}.png"></ion-label>
+    <ion-radio value="3"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+  <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_KEBAKARAN' | translate }}.png"></ion-label>
+    <ion-radio value="4"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+    <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_PELANUNAN' | translate }}.png"></ion-label>
+    <ion-radio value="5"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+    <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_PENCEROBOHAN' | translate }}.png"></ion-label>
+    <ion-radio value="6"></ion-radio>
+  </ion-item>
+</ion-col>
+
+</ion-list>
+
 
 </ion-row>
+
+
 
 
 
@@ -59,8 +99,9 @@
 <ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea></ion-item>
 
 
+<button ion-button round (click)="report()" class="submitButton">{{ "HANTAR" | translate }}</button>  
 
- <img src="assets/images/submitButton.png" class="daftar-button" (click)="report()">
+
 
   </form>
 

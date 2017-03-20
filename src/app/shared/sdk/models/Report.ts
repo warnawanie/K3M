@@ -1,5 +1,7 @@
 /* tslint:disable */
 import {
+  ReportType,
+  StatusReport,
   Customer
 } from '../index';
 
@@ -16,10 +18,13 @@ export interface ReportInterface {
   description?: string;
   latitude?: number;
   longitude?: number;
+  status_report_id?: number;
   admin_notes?: string;
   created_at?: Date;
   updated_at?: Date;
   id?: number;
+  report_type?: ReportType;
+  status?: StatusReport;
   customer?: Customer;
 }
 
@@ -35,10 +40,13 @@ export class Report implements ReportInterface {
   description: string;
   latitude: number;
   longitude: number;
+  status_report_id: number;
   admin_notes: string;
   created_at: Date;
   updated_at: Date;
   id: number;
+  report_type: ReportType;
+  status: StatusReport;
   customer: Customer;
   constructor(data?: ReportInterface) {
     Object.assign(this, data);
@@ -115,6 +123,11 @@ export class Report implements ReportInterface {
           name: 'longitude',
           type: 'number'
         },
+        status_report_id: {
+          name: 'status_report_id',
+          type: 'number',
+          default: 1
+        },
         admin_notes: {
           name: 'admin_notes',
           type: 'string'
@@ -133,6 +146,16 @@ export class Report implements ReportInterface {
         },
       },
       relations: {
+        report_type: {
+          name: 'report_type',
+          type: 'ReportType',
+          model: 'ReportType'
+        },
+        status: {
+          name: 'status',
+          type: 'StatusReport',
+          model: 'StatusReport'
+        },
         customer: {
           name: 'customer',
           type: 'Customer',

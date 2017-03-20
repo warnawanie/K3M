@@ -339,7 +339,7 @@ export class TideLocationApi extends BaseLoopBackApi {
   /**
    * Get tides forecast for today and tomorrow
    *
-   * @param {number} location_id 
+   * @param {integer} location_id 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -350,10 +350,10 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public getForecast(location_id: any): Observable<any> {
+  public getForecast(location_id: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/tides-locations/:id/forecast";
+    "/tides-locations/:location_id/forecast";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

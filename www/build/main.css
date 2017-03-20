@@ -21294,6 +21294,14 @@ ion-title.title .toolbar-title {
   text-transform: uppercase;
 }
 
+button.submitButton {
+  background: #c9ccd1;
+  color: #000;
+  border: 2px solid #a1a8b0;
+  font-weight: bold;
+  width: 100%;
+}
+
 .footer-apps {
   background: #000;
 }
@@ -21342,10 +21350,16 @@ page-aduan .aduan-wrap ion-item.aduan-type {
 
 page-aduan .list .item-block .item-inner {
   border: none !important;
+  padding: 0px;
 }
 
 page-aduan ion-select .select-icon .select-icon-inner {
   color: #FFF !important;
+}
+
+page-aduan ion-item.item.item-block.item-radio {
+  background: #F1F2F2;
+  border: none;
 }
 
 page-aduan .textarea-maklumat[stacked] {
@@ -21359,6 +21373,37 @@ page-aduan img.uploadImage {
 
 page-aduan .action-upload-image {
   text-align: right;
+}
+
+page-aduan .aduan-heading {
+  background: #bc96c5;
+  border-bottom: 3px solid #a479b5;
+  padding: 15px 25px !important;
+  color: #FFF;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+page-aduan ion-radio.radio {
+  position: absolute !important;
+  display: block;
+  margin: 0px !important;
+  width: 100%;
+  height: 100%;
+}
+
+page-aduan .aduan-icon ion-col {
+  float: left;
+}
+
+page-aduan ion-item.item.item-block.item-radio {
+  margin: 0px;
+  padding: 0px;
+}
+
+page-aduan .aduan-icon ion-label {
+  margin-right: 0px !important;
 }
 
 page-aduan-send .aduan-result {
@@ -21434,6 +21479,10 @@ page-home .icon-right {
 
 .ios .input-cover, .md .input-cover {
   position: static;
+}
+
+.ios .login-button, .md .login-button {
+  width: 80%;
 }
 
 .ios page-login .scroll-content, .md page-login .scroll-content {
@@ -21569,6 +21618,10 @@ page-pasang .content-details-info ion-row {
 
 page-pasang .pasang-wrap h3 ion-icon {
   float: right;
+}
+
+page-pengumuman-details .pengumumanWrap {
+  color: #FFF;
 }
 
 page-register .scroll-content {

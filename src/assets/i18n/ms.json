@@ -22,8 +22,10 @@
     "SOS": "SOS",
     "TENTANG": "Tentang K3M",
     "ADUAN": "Aduan",
+    "HANTAR": "Hantar",
     "MEDIA_SOSIAL": "Media Sosial",
     "SELECT_STATE": "Pilih Negeri",
+    "MAKLUMAT_KEJADIAN_PENGADU": "Maklumat Kejadian (Varchar 150)",
     "JADUAL_RAMALAN_PASANG_SURUT": "JADUAN RAMALAN PASANG SURUT",
     "FORUM": "FORUM",
     "TEST": "<strong>teyasoshajjsaj</strong>",
@@ -48,5 +50,11 @@
     "FAQ_QUESTION_10": "Apakah yang perlu saya lakukan sekiranya lupa kata laluan?",
     "FAQ_ANSWER_10": "Berikut adalah langkah-langkah yang perlu dilakukan untuk mengubah semula kata laluan. <br><br>•Dari menu daftar masuk, anda hendaklah klik pada Lupa Kata Laluan. <br>•Menetapkan kata laluan baru. <br>• Mengesahkan kata laluan baru sebelum menyimpan maklumat tersebut.<br>• Klik pada Butang Simpan untuk menyimpan kata laluan yang baru.<br>• Memastikan Notifikasi kata laluan baru yang dihantar melalui SMS <br>• Log masuk semula ke dalam aplikasi menggunakan kata laluan yang baru ditetapkan.",
     "FAQ_QUESTION_11": "Bolehkah saya membuat pautan terus ke laman web TLDM?",
-    "FAQ_ANSWER_11": "Boleh. Anda boleh melayari laman web TLDM melalui pautan yang telah disediakan di menu Hubungi Kami."
+    "FAQ_ANSWER_11": "Boleh. Anda boleh melayari laman web TLDM melalui pautan yang telah disediakan di menu Hubungi Kami.",
+    "ICON_KEMALANGAN": "ms_kemalangan",
+    "ICON_KEROSAKAN": "ms_kerosakan",
+    "ICON_PENCEMARAN": "ms_pencemaran",
+    "ICON_KEBAKARAN": "ms_kebakaran",
+    "ICON_PELANUNAN": "ms_pelanunan",
+    "ICON_PENCEROBOHAN": "ms_pencerobohan"
 }
