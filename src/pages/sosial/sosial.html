@@ -4,6 +4,9 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{ "MEDIA_SOSIAL" | translate }}</ion-title>
+        <ion-buttons end class="logo-top">
+       <img src="assets/images/logo.png">
+    </ion-buttons>  
   </ion-navbar>
 </ion-header>
 
@@ -27,19 +30,19 @@
     </h3>
     <div *ngIf="isGroupShown(1)">
       <ion-row>
-      <img src="assets/images/socialFb.png"> www.facebook.com/royalmalaysiannavy
+      <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/RoyalMalaysianNavy/', '_system', 'location=yes'); return false;"> @RoyalMalaysianNavy</a>
       </ion-row>
        <ion-row>
-      <img src="assets/images/socialTwitter.png"> www.twitter.com/tldm_rasmi
+      <img src="assets/images/socialTwitter.png"><a onclick="window.open('https://twitter.com/tldm_rasmi/', '_system', 'location=yes'); return false;">@tldm_rasmi</a>
       </ion-row>
       <ion-row>
-      <img src="assets/images/scoialIg.png"> www.instagram.com/tldm_rasmi
+      <img src="assets/images/scoialIg.png"> <a onclick="window.open('https://www.instagram.com/tldm_rasmi/?hl=en', '_system', 'location=yes'); return false;">@tldm_rasmi</a>
       </ion-row>
       <ion-row>
-      <img src="assets/images/socialYoutube.png"> www.youtube.com/user/rmnwebmaster
+      <img src="assets/images/socialYoutube.png"> <a onclick="window.open('https://www.youtube.com/user/rmnwebmaster', '_system', 'location=yes'); return false;">@tldm_rasmi</a>
       </ion-row>
       <ion-row>
-      <img src="assets/images/socialWeb.png"> www.navy.mil.my
+      <img src="assets/images/socialWeb.png"> <a onclick="window.open('https://www.navy.mil.my', '_system', 'location=yes'); return false;">www.navy.mil.my</a>
       </ion-row>
     </div>
   </ion-item>
@@ -54,16 +57,16 @@
     <div *ngIf="isGroupShown(2)">
       
 <ion-row>
-      <img src="assets/images/socialFb.png"> https://www.facebook.com/maritimmalaysia/
+      <img src="assets/images/socialFb.png"><a onclick="window.open('https://www.facebook.com/PolisDirajaMalaysia/', '_system', 'location=yes'); return false;"> @PolisDirajaMalaysia</a>
       </ion-row>
        <ion-row>
-      <img src="assets/images/socialTwitter.png"> https://twitter.com/KPMaritimmsia
+      <img src="assets/images/socialTwitter.png"><a onclick="window.open('https://twitter.com/KPMaritimmsiasia/', '_system', 'location=yes'); return false;"> @KPMaritimmsia</a>
       </ion-row>
       <ion-row>
-      <img src="assets/images/socialYoutube.png">https://www.youtube.com/user/MaritimMalaysia1
+      <img src="assets/images/socialYoutube.png"><a onclick="window.open('https://www.youtube.com/user/MaritimMalaysia1', '_system', 'location=yes'); return false;"> @MaritimMalaysia1</a>
       </ion-row>
       <ion-row>
-      <img src="assets/images/socialWeb.png"> https://www.mmea.gov.my
+      <img src="assets/images/socialWeb.png"><a onclick="window.open('https://www.mmea.gov.my', '_system', 'location=yes'); return false">www.mmea.gov.my</a>
       </ion-row>
 
     </div>
@@ -80,17 +83,17 @@
     <div *ngIf="isGroupShown(3)">
 
         <ion-row>
-      <img src="assets/images/socialFb.png"> https://www.facebook.com/PolisDirajaMalaysia
+      <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/PolisDirajaMalaysia/', '_system', 'location=yes'); return false">Polis Diraja Malaysia</a>
       </ion-row>
        <ion-row>
-      <img src="assets/images/socialTwitter.png"> https://twitter.com/pdrmsia
+      <img src="assets/images/socialTwitter.png"> <a onclick="window.open('https://twitter.com/pdrmsia/', '_system', 'location=yes'); return false">@pdrmsia</a>
       </ion-row>
       <ion-row>
-      <img src="assets/images/scoialIg.png">https://www.instagram.com/pdrmsia_official
+      <img src="assets/images/scoialIg.png"><a onclick="window.open('https://www.youtube.com/user/pdrmsia_official', '_system', 'location=yes'); return false">@pdrmsia_official</a>
       </ion-row>
 
       <ion-row>
-      <img src="assets/images/socialWeb.png"> https://www.rmp.gov.my
+      <img src="assets/images/socialWeb.png"> <a onclick="window.open('https://www.navy.mil.my', '_system', 'location=yes'); return false">www.rmp.gov.my</a>
       </ion-row>
 
 
@@ -107,9 +110,9 @@
 
   <ion-grid>
   <ion-row>
-    <ion-col width-50 text-left><img src="assets/images/maritim.png" ></ion-col>
 
-    <ion-col width-50 text-right><img src="assets/images/tldm.png" ></ion-col>
+
+    <ion-col width-100 text-right class="footer-logo"><img src="assets/images/tldm.png" > <img src="assets/images/lkim.png" > <img src="assets/images/maritim.png" ></ion-col>
 
 
   </ion-row>

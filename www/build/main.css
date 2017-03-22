@@ -21302,12 +21302,16 @@ button.submitButton {
   width: 100%;
 }
 
+.logo-top img {
+  width: 40px;
+}
+
 .footer-apps {
   background: #000;
 }
 
 .footer-apps img {
-  width: 18%;
+  width: 30px;
 }
 
 .menu-inner ion-content {
@@ -21516,6 +21520,12 @@ page-cuaca ion-col.suhu-today {
   text-align: right;
   font-size: 4rem;
   font-weight: bold;
+}
+
+page-emergency-send-page .aduan-result {
+  color: #FFF;
+  text-align: center;
+  font-size: 2rem;
 }
 
 page-home ion-slides {

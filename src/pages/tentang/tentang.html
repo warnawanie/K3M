@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>TENTANG K3M </ion-title>
+    <ion-title>{{ "TENTANG_K3M" | translate }}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -16,14 +16,8 @@
 <ion-row>
 <img src="assets/images/logo.png" class="about-logo">
 </ion-row>
-<h3>Objektif K3M</h3>
-
-Meningkatkan kesedaran bahawa Agensi Penguatkuasa Maritim sentiasa peka dan memberi komitmen yang tinggi dalam memastikan perairan negara selamat<br><br>
-
-Menjalinkan hubungan kerjasama yang baik dengan komuniti maritim setempat<br><br>
-
-Mewujudkan saluran komunikasi di antara APM agar maklumat dapat disampaikan dengan pantas dan tepat
-
+<h3>{{ "TENTANG_HEADING" | translate }}</h3>
+ <div [innerHTML]='"TENTANG_CONTENT" | translate '></div>
 
   </div>
 

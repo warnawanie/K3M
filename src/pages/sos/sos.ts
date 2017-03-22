@@ -7,6 +7,7 @@ import { EmergencyApi }  from '../../app/shared/sdk/services';
 import { EmergencySendPagePage } from '../emergency-send-page/emergency-send-page';
 import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi }  from '../../app/shared/sdk/services';
+import { HomePage } from '../home/home';
 
 
 declare var google;
@@ -34,9 +35,9 @@ export class SosPage {
 
   this.loader.present();
    
-          setTimeout(() => {
-            this.loader.dismiss();
-        }, 1000);
+         setTimeout(() => {
+           this.loader.dismiss();
+      }, 1500);
 
 
   this.customerApi.getCurrent().subscribe(
@@ -49,11 +50,17 @@ export class SosPage {
 
    }
 
+
+
+
+
   ionViewLoaded(){
     this.loadMap();
+    
   }
 
   loadMap(){
+
 
   Geolocation.watchPosition().subscribe((position) => {
   this.emergency.latitude = position.coords.latitude;
@@ -89,6 +96,10 @@ export class SosPage {
 
  
   this.addInfoWindow(marker, content);
+
+   //this.loader.dismiss();
+
+   
   console.log(position.coords.latitude, position.coords.longitude);
   
  
@@ -149,6 +160,11 @@ sendSos() {
 
     this.emergencyApi.create(this.emergency).subscribe((emergency: Emergency) => this.navCtrl.setRoot(EmergencySendPagePage));
    }
+
+
+     onGoToHome(){
+    this.navCtrl.setRoot(HomePage);
+  }
 
 
 

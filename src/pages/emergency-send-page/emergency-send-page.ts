@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 
 @Component({
@@ -12,6 +13,9 @@ export class EmergencySendPagePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EmergencySendPagePage');
+  }
+    onGoToHome(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
