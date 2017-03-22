@@ -21411,6 +21411,11 @@ page-aduan .aduan-icon ion-label {
   margin-right: 0px !important;
 }
 
+page-aduan .radio-md .radio-icon {
+  border: transparent !important;
+  border-radius: 4px !important;
+}
+
 page-aduan-send .aduan-result {
   text-align: center;
   color: #FFF;
@@ -21635,6 +21640,10 @@ page-pasang .pasang-state .select-icon-inner {
   color: #FFF !important;
 }
 
+page-pasang .item-select .label-md {
+  color: #FFF !important;
+}
+
 page-pasang .pasang-wrap {
   width: 100%;
   margin-bottom: 10px !important;
@@ -21756,8 +21765,12 @@ page-register ion-row.register-welcome {
 
 page-register ion-row.register-input {
   position: fixed;
-  bottom: 20px;
+  bottom: 0px;
   width: 92%;
+}
+
+page-register ion-label.label {
+  color: #58595B !important;
 }
 
 .ios page-sos .scroll-content, .md page-sos .scroll-content {
