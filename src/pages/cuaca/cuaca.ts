@@ -19,6 +19,7 @@ export class CuacaPage {
    petang:  any;
    malam:   any;
    daily:  any;
+   moment = moment;
    locationName: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService,public loadingCtrl: LoadingController, private weatherApi: WeatherApi, public locationTracker: LocationTracker) {
@@ -41,7 +42,7 @@ export class CuacaPage {
           for (var i = 0; i < data.hourly.data.length; ++i) {
             var temp:any = data.hourly.data[i];
             var temp_time:any = moment.unix(temp.time);
-            console.log(temp_time);
+            // console.log(temp_time);
           }
 
           console.log("=================================");
@@ -56,13 +57,16 @@ export class CuacaPage {
           console.log(this.malam);
 
           // data untuk mingguan
-          this.daily = data.daily;
+          this.daily = data.daily.data;
           // This is to test data
-          for (var i = 0; i < this.daily.data.length; ++i) {
-            var temp:any = this.daily.data[i];
+          for (var i = 0; i < this.daily.length; ++i) {
+            var temp:any = this.daily[i];
             var temp_time:any = moment.unix(temp.time);
-            console.log(temp_time);
+            // console.log(temp_time);
           }
+
+          // remove last element
+          this.daily.pop();
 
 
           this.locationName = data.location.name;
@@ -88,7 +92,7 @@ export class CuacaPage {
  // }
 
   ionViewDidLoad() {
-    let now = moment().format('LLLL');
+    let now = moment().format('DD');
    console.log(now);
 
    this.loadLocationWeather();
