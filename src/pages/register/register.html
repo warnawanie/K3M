@@ -36,36 +36,54 @@
             <ion-input name="fullname" type="text" [(ngModel)]="account.fullname" placeholder="Nama"></ion-input>
           </ion-item>
 
+
+          <ion-item>
+      
+            <ion-input name="ic_number" type="text" [(ngModel)]="account.ic_number" placeholder="No MyKad"></ion-input>
+          </ion-item>
+
+
+
+          <ion-item>
+    
+          <ion-input name="phone_number" type="text" [(ngModel)]="account.phone_number" placeholder="No Telefon Bimbit"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-input name="password" type="password" [(ngModel)]="account.password" placeholder="Kata Laluan"></ion-input>
+          </ion-item>
+
+
+
           <ion-item>
       
             <ion-input name="username" type="text" [(ngModel)]="account.username" placeholder="Username"></ion-input>
           </ion-item>
 
 
-          <ion-item>
-      
-            <ion-input name="ic_number" type="text" [(ngModel)]="account.ic_number" placeholder="No KP"></ion-input>
-          </ion-item>
 
           <ion-item>
-    
-          <ion-input name="phone_number" type="text" [(ngModel)]="account.phone_number" placeholder="No Tel"></ion-input>
-          </ion-item>
+  <ion-label>Kategori Pengguna</ion-label>
 
-          <ion-item>
-          <ion-input name="email" type="email" [(ngModel)]="account.email" placeholder="Email" ></ion-input>
-          </ion-item>
+  <ion-select name="category_id" [(ngModel)]="account.category_id">
+    <ion-option value="1" selected="true">Pelancongan</ion-option>
+    <ion-option value="2">Perikanan</ion-option>
+     <ion-option value="3">Petroleum</ion-option>
+      <ion-option value="4">Rekreasi</ion-option>
+       <ion-option value="5">Lain-lain</ion-option>
+  </ion-select>
+</ion-item>
 
-          <ion-item>
-            <ion-input name="password" type="password" [(ngModel)]="account.password" placeholder="Kata Laluan"></ion-input>
-          </ion-item>
+
+
 
         </ion-list>
 
         <ion-list>
 
+          <button ion-button round (click)="register()" class="submitButton login-button">Daftar</button>  
 
-            <img src="assets/images/daftarButton.png" class="daftar-button" (click)="register()">
         
         </ion-list>
 
@@ -78,8 +96,3 @@
 </ion-row>
 
 </ion-content>
-
-<ion-footer padding text-center class="footer-apps">
-
-
-</ion-footer>

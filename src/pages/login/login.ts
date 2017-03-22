@@ -66,12 +66,7 @@ export class LoginPage {
            //this.loader.dismiss();
 
                 });
-                
 
-
-    //this.accountApi.login(this.account, 'user', this.rememberMe).subscribe((token: AccessToken) =>
-      //
-     // console.log(this);
   }
 
 
