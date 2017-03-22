@@ -4,9 +4,12 @@ import { ReportType } from '../../models/ReportType';
 import { Report } from '../../models/Report';
 import { State } from '../../models/State';
 import { Emergency } from '../../models/Emergency';
+import { StatusEmergency } from '../../models/StatusEmergency';
+import { StatusReport } from '../../models/StatusReport';
 import { Announcement } from '../../models/Announcement';
 import { Tide } from '../../models/Tide';
 import { TideLocation } from '../../models/TideLocation';
+import { Weather } from '../../models/Weather';
 import { Customer } from '../../models/Customer';
 
 export interface Models { [name: string]: any }
@@ -19,9 +22,12 @@ export class SDKModels {
     Report: Report,
     State: State,
     Emergency: Emergency,
+    StatusEmergency: StatusEmergency,
+    StatusReport: StatusReport,
     Announcement: Announcement,
     Tide: Tide,
     TideLocation: TideLocation,
+    Weather: Weather,
     Customer: Customer,
     
   };

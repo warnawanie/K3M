@@ -24,6 +24,7 @@ import { PengumumanService } from '../providers/pengumuman-service';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate/ng2-translate';
+import { LocationTracker } from '../providers/location-tracker';
 
 
 
@@ -84,7 +85,7 @@ export function createTranslateLoader(http: Http) {
     FaqPage,
     EmergencySendPagePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, PengumumanService, Storage]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, Storage]
 })
 export class AppModule {}
 

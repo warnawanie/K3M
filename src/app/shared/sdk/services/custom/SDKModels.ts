@@ -9,6 +9,9 @@ import { StatusReport } from '../../models/StatusReport';
 import { Announcement } from '../../models/Announcement';
 import { Tide } from '../../models/Tide';
 import { TideLocation } from '../../models/TideLocation';
+import { Weather } from '../../models/Weather';
+import { CustomerCategory } from '../../models/CustomerCategory';
+import { CustomerSubCategory } from '../../models/CustomerSubCategory';
 import { Customer } from '../../models/Customer';
 
 export interface Models { [name: string]: any }
@@ -26,6 +29,9 @@ export class SDKModels {
     Announcement: Announcement,
     Tide: Tide,
     TideLocation: TideLocation,
+    Weather: Weather,
+    CustomerCategory: CustomerCategory,
+    CustomerSubCategory: CustomerSubCategory,
     Customer: Customer,
     
   };

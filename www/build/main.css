@@ -21385,16 +21385,21 @@ page-aduan .aduan-heading {
   margin-bottom: 20px;
 }
 
-page-aduan ion-radio.radio {
-  position: absolute !important;
-  display: block;
-  margin: 0px !important;
-  width: 100%;
-  height: 100%;
-}
-
 page-aduan .aduan-icon ion-col {
   float: left;
+}
+
+page-aduan ion-radio.radio {
+  margin: 0px !important;
+}
+
+page-aduan .radio-icon {
+  position: absolute !important;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  left: 0px;
+  top: 0px;
 }
 
 page-aduan ion-item.item.item-block.item-radio {
@@ -21629,6 +21634,10 @@ page-register .scroll-content {
   background-size: cover;
   background-position: center -50px;
   z-index: 2;
+}
+
+page-register .input-cover {
+  position: static;
 }
 
 page-register .register-input {

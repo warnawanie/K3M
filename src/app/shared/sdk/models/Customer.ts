@@ -1,7 +1,9 @@
 /* tslint:disable */
 import {
   Report,
-  Emergency
+  Emergency,
+  CustomerCategory,
+  CustomerSubCategory
 } from '../index';
 
 declare var Object: any;
@@ -26,8 +28,12 @@ export interface CustomerInterface {
   emailVerified?: boolean;
   verificationToken?: string;
   id?: number;
+  category_id?: number;
+  subcategory_id?: number;
   reports?: Report[];
   emergencies?: Emergency[];
+  category?: CustomerCategory;
+  subcategory?: CustomerSubCategory;
   accessTokens?: any[];
 }
 
@@ -52,8 +58,12 @@ export class Customer implements CustomerInterface {
   emailVerified: boolean;
   verificationToken: string;
   id: number;
+  category_id: number;
+  subcategory_id: number;
   reports: Report[];
   emergencies: Emergency[];
+  category: CustomerCategory;
+  subcategory: CustomerSubCategory;
   accessTokens: any[];
   constructor(data?: CustomerInterface) {
     Object.assign(this, data);
@@ -166,6 +176,14 @@ export class Customer implements CustomerInterface {
           name: 'id',
           type: 'number'
         },
+        category_id: {
+          name: 'category_id',
+          type: 'number'
+        },
+        subcategory_id: {
+          name: 'subcategory_id',
+          type: 'number'
+        },
       },
       relations: {
         reports: {
@@ -177,6 +195,16 @@ export class Customer implements CustomerInterface {
           name: 'emergencies',
           type: 'Emergency[]',
           model: 'Emergency'
+        },
+        category: {
+          name: 'category',
+          type: 'CustomerCategory',
+          model: 'CustomerCategory'
+        },
+        subcategory: {
+          name: 'subcategory',
+          type: 'CustomerSubCategory',
+          model: 'CustomerSubCategory'
         },
         accessTokens: {
           name: 'accessTokens',
