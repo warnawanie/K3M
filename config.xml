@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.rakam657960" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.royalmalaysianavy.k3m" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>K3M</name>
-  <description>Aplikasi mobile K3M diwujudkan untuk mewujudkan saluran komunikasi di antara agensi penguatkuasa dan komuniti maritim agar maklumat dapat disampaikan dengan pantas dan tepat dalam memastikan perairan negara selamat.
+  <description>Aplikasi mobile K3M diwujudkan sebagai saluran komunikasi agensi penguatkuasa dan komuniti maritim secara virtual engagement untuk crowdsourcing maklumat dengan pantas dan tepat dalam memastikan perairan negara selamat.
 
-Aplikasi ini dibangunkan hasil usahasama pihak TLDM dan Global Launch Sdn Bhd.
+Aplikasi ini dibangunkan secara kolaborasi pihak TLDM dan Global Launch Sdn Bhd.
 
 Dibangunkan dengan 2 pilihan bahasa iaitu Bahasa Melayu dan Bahasa Mandarin, aplikasi ini merangkumi menu-menu seperti berikut: 
 
@@ -18,7 +18,7 @@ Dibangunkan dengan 2 pilihan bahasa iaitu Bahasa Melayu dan Bahasa Mandarin, apl
 - Media Sosial
 
   </description>
-  <author email="irwanie@globallaunch.com.my" href="http://www.globallaunch.com.my/">Global Launch Sdn Bhd</author>
+  <author email="irwanie@globallaunch.com.my" href="http://www.navy.mil.my/">Royal Malaysian Navy</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="http://ionic.local/*"/>

@@ -12,7 +12,7 @@ import * as moment from 'moment';
   templateUrl: 'cuaca.html'
 })
 export class CuacaPage {
-
+  loader: any;
    posts:   any;
 
    pagi:    any;
@@ -23,6 +23,18 @@ export class CuacaPage {
    locationName: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService,public loadingCtrl: LoadingController, private weatherApi: WeatherApi, public locationTracker: LocationTracker) {
+
+     this.loader = this.loadingCtrl.create({
+      content: "Loading Data"
+    });
+
+  this.loader.present();
+   
+         //setTimeout(() => {
+          // this.loader.dismiss();
+     // }, 1500);
+
+
   }
 
    myDate: String = new Date().toISOString();
@@ -68,7 +80,7 @@ export class CuacaPage {
           // remove last element
           this.daily.pop();
 
-
+             this.loader.dismiss();
           this.locationName = data.location.name;
           console.log("locationName = " + this.locationName);
 
@@ -92,6 +104,7 @@ export class CuacaPage {
  // }
 
   ionViewDidLoad() {
+  
     let now = moment().format('DD');
    console.log(now);
 

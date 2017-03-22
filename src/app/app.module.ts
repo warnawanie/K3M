@@ -25,6 +25,7 @@ import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate/ng2-translate';
 import { LocationTracker } from '../providers/location-tracker';
+import * as moment from 'moment';
 
 
 
