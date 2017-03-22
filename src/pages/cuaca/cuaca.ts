@@ -19,15 +19,16 @@ export class CuacaPage {
 
     this.locationTracker.startTracking();
 
-
-    this.weatherApi.find().subscribe(
+    this.weatherApi.myLocation(locationTracker.lat, locationTracker.lng).subscribe(
       data => {
-        //this.posts = data;
+        this.posts = data;
         console.log(data);
     },
     err => {
         console.log("Oops!");
     });
+
+
 
 
 
