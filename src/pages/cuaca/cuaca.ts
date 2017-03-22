@@ -15,24 +15,24 @@ export class CuacaPage {
    posts:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService,public loadingCtrl: LoadingController, private weatherApi: WeatherApi, public locationTracker: LocationTracker) {
+  }
 
-
-    this.locationTracker.startTracking();
-
-    this.weatherApi.myLocation(locationTracker.lat, locationTracker.lng).subscribe(
-      data => {
-        this.posts = data;
-        console.log(data);
-    },
-    err => {
-        console.log("Oops!");
-    });
-
-
-
-
-
+  loadLocationWeather(){
     
+    Geolocation.getCurrentPosition().then((position) => {
+
+      this.weatherApi.myLocation(position.coords.latitude, position.coords.longitude).subscribe(
+        data => {
+          //this.posts = data;
+          console.log(data);
+      },
+      err => {
+          console.log("Oops!");
+      });
+ 
+    }, (err) => {
+      console.log(err);
+    });
   }
 
 
@@ -45,7 +45,7 @@ export class CuacaPage {
  // }
 
   ionViewDidLoad() {
-   // console.log('ionViewDidLoad CuacaPage');
+   this.loadLocationWeather();
   }
 
 }
