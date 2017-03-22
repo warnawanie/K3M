@@ -17,13 +17,15 @@ export class CuacaPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService,public loadingCtrl: LoadingController, private weatherApi: WeatherApi, public locationTracker: LocationTracker) {
   }
 
+   myDate: String = new Date().toISOString();
+
   loadLocationWeather(){
     
     Geolocation.getCurrentPosition().then((position) => {
 
       this.weatherApi.myLocation(position.coords.latitude, position.coords.longitude).subscribe(
         data => {
-          //this.posts = data;
+          this.posts = data;
           console.log(data);
       },
       err => {

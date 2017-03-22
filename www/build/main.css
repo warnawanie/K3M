@@ -21428,6 +21428,91 @@ page-contact .contact-wrap {
   padding: 20px;
 }
 
+page-cuaca .cuaca-heading {
+  background: #F47D51;
+  border-radius: 4px;
+  color: #FFF;
+  text-transform: uppercase;
+  border-bottom: 3px solid #E86640;
+  text-align: center;
+  padding: 10px;
+}
+
+page-cuaca .cuaca-minggu-data {
+  color: #FFF;
+  text-align: center;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: #6ea0b9;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+page-cuaca .cuaca-minggu-data img {
+  margin: 10px 0px;
+}
+
+page-cuaca .cuaca-today {
+  background: #6ea0b9;
+  border-radius: 4px;
+  color: #FFF;
+  padding: 15px 10px;
+}
+
+page-cuaca ion-row.current-location-name {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+page-cuaca ion-col.date-top {
+  padding: 0px;
+  margin-top: 10px;
+}
+
+page-cuaca .datetime-disabled {
+  color: #FFF;
+  opacity: 1 !important;
+}
+
+page-cuaca ion-datetime.datetime {
+  padding: 0px !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFF !important;
+}
+
+page-cuaca .cuaca-today-detail {
+  margin: 20px 0px;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  padding: 0px 10px;
+}
+
+page-cuaca .cuaca-today-detail ion-row.cuaca-malam ion-col {
+  border-bottom: none !important;
+}
+
+page-cuaca .cuaca-today-detail ion-col {
+  line-height: 4rem;
+  border-bottom: 1px solid #FFF;
+}
+
+page-cuaca .cuaca-minggu-wrap ion-col {
+  line-height: normal !important;
+}
+
+page-cuaca ion-col.suhu-today {
+  text-align: right;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
 page-home ion-slides {
   height: auto;
 }
