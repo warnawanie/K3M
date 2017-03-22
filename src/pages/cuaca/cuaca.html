@@ -1,59 +1,61 @@
 <ion-header>
-<ion-navbar>
-<button ion-button menuToggle>
-<ion-icon name="menu"></ion-icon>
-</button>
-<ion-title>{{ "INFO_CUACA" | translate }}</ion-title>
-</ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{ "INFO_CUACA" | translate }}</ion-title>
+    </ion-navbar>
 </ion-header>
 <ion-content padding>
-<div class="cuaca-wrap" *ngIf="posts">
-  
-  <div class="cuaca-minggu-wrap">
-    <div class="cuaca-heading">RAMALAN MINGGUAN</div>
-    <div class="cuaca-minggu-data">
-      <ion-row>
-      <ion-col>MON <img src="assets/images/maritim.png"> 20°</ion-col>
-      <ion-col>TUE <img src="assets/images/maritim.png"> 20°</ion-col>
-      <ion-col>WED <img src="assets/images/maritim.png"> 20°</ion-col>
-      <ion-col>THU <img src="assets/images/maritim.png"> 20°</ion-col>
-      <ion-col>FRI <img src="assets/images/maritim.png"> 20°</ion-col>
-      <ion-col>SAT <img src="assets/images/maritim.png"> 20°</ion-col>
-      <ion-col>SUN <img src="assets/images/maritim.png"> 20°</ion-col>
-      </ion-row>
+    <div class="cuaca-wrap" *ngIf="posts">
+        <div class="cuaca-minggu-wrap">
+            <div class="cuaca-heading">RAMALAN MINGGUAN</div>
+            <div class="cuaca-minggu-data">
+                <ion-row>
+                    <ion-col *ngFor="let day of daily" >{{ moment.unix(day.time).format('ddd') }} <img src="assets/images/{{day.icon}}.png"> {{day.temperatureMin}}°</ion-col>
+                    <!-- <ion-col>TUE <img src="assets/images/maritim.png"> 20°</ion-col>
+                    <ion-col>WED <img src="assets/images/maritim.png"> 20°</ion-col>
+                    <ion-col>THU <img src="assets/images/maritim.png"> 20°</ion-col>
+                    <ion-col>FRI <img src="assets/images/maritim.png"> 20°</ion-col>
+                    <ion-col>SAT <img src="assets/images/maritim.png"> 20°</ion-col>
+                    <ion-col>SUN <img src="assets/images/maritim.png"> 20°</ion-col> -->
+                </ion-row>
+            </div>
+        </div>
+        <div class="cuaca-today">
+            <ion-row class="current-location-name">{{posts.location.name}}</ion-row>
+            <ion-row class="current-date">
+                <ion-col width-100 text-left class="date-top">
+                    <ion-datetime displayFormat="DDDD" [(ngModel)]="myDate" class="cuaca-day" disabled></ion-datetime>
+                    <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="myDate" disabled></ion-datetime>
+                </ion-col>
+            </ion-row>
+            <div class="cuaca-today-detail">
+                <ion-row class="cuaca-pagi">
+                    <ion-col>Pagi</ion-col>
+                    <ion-col><img src="assets/images/{{pagi.icon}}.png"></ion-col>
+                    <ion-col class="suhu-today">{{pagi.temperature}}°</ion-col>
+                </ion-row>
+                <ion-row class="cuaca-petang">
+                    <ion-col>Petang</ion-col>
+                    <ion-col><img src="assets/images/{{petang.icon}}.png"></ion-col>
+                    <ion-col class="suhu-today">{{petang.temperature}}°</ion-col>
+                </ion-row>
+                <ion-row class="cuaca-malam">
+                    <ion-col>Malam</ion-col>
+                    <ion-col><img src="assets/images/{{malam.icon}}.png"></ion-col>
+                    <ion-col class="suhu-today">{{malam.temperature}}°</ion-col>
+                </ion-row>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="cuaca-today">
-    <ion-row class="current-location-name">{{posts.location.name}}</ion-row>
-    <ion-row class="current-date"> <ion-col width-100 text-left class="date-top">
-    <ion-datetime displayFormat="DDDD" [(ngModel)]="myDate" class="cuaca-day" disabled></ion-datetime>
-    <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="myDate" disabled></ion-datetime></ion-col></ion-row>
-    <div class="cuaca-today-detail">
-      <ion-row class="cuaca-pagi">
-      <ion-col>Pagi</ion-col>
-      <ion-col>icon</ion-col>
-      <ion-col class="suhu-today">22°</ion-col>
-      </ion-row>
-      <ion-row class="cuaca-petang">
-      <ion-col>Petang</ion-col>
-      <ion-col>icon</ion-col>
-      <ion-col class="suhu-today">22°</ion-col>
-      </ion-row>
-      <ion-row class="cuaca-malam">
-      <ion-col>Malam</ion-col>
-      <ion-col>icon</ion-col>
-      <ion-col class="suhu-today">22°</ion-col>
-      </ion-row>
-    </div>
-  </div>
-</div>
-<img src="assets/images/cuaca_dummy.png">
+    <!-- <img src="assets/images/cuaca_dummy.png"> -->
 </ion-content>
 <ion-footer class="footer-apps">
-<ion-grid>
-<ion-row>
-<ion-col width-50 text-left><img src="assets/images/maritim.png" ></ion-col>
-<ion-col width-50 text-right><img src="assets/images/tldm.png" ></ion-col>
-</ion-row>
-</ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50 text-left><img src="assets/images/maritim.png"></ion-col>
+            <ion-col width-50 text-right><img src="assets/images/tldm.png"></ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-footer>
