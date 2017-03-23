@@ -25,8 +25,9 @@
             <ion-row class="current-location-name">{{posts.location.name}}</ion-row>
             <ion-row class="current-date">
                 <ion-col width-100 text-left class="date-top">
-                    <ion-datetime displayFormat="DDDD" [(ngModel)]="myDate" class="cuaca-day" disabled></ion-datetime>
-                    <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="myDate" disabled></ion-datetime>
+    
+                    {{ moment().format('dddd') }}
+                    {{ moment().format('DD MMM YYYY') }}
                 </ion-col>
             </ion-row>
             <div class="cuaca-today-detail">

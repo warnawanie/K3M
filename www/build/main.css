@@ -21656,6 +21656,11 @@ page-pasang .pasang-state .item-inner {
   border: none !important;
 }
 
+page-pasang .date-top {
+  color: #FFF;
+  margin-bottom: 15px;
+}
+
 page-pasang .pasang-state .select-icon-inner {
   color: #FFF !important;
 }

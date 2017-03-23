@@ -170,6 +170,7 @@ sendSos() {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SosPage');
+    this.ionViewLoaded();
 
   }
 

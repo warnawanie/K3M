@@ -19,7 +19,12 @@
 
 
   <ion-row>
-    <ion-col width-100 text-right class="date-top"><ion-datetime displayFormat="DDDD DD MMM YYYY" [(ngModel)]="myDate" disabled></ion-datetime></ion-col>
+    <ion-col width-100 text-right class="date-top">
+      
+  
+                    {{ moment().format('dddd, DD MMM YYYY') }}
+      
+     </ion-col>
   </ion-row>
 
 

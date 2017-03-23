@@ -5,6 +5,7 @@ import { State}  from '../../app/shared/sdk/models';
 import { StateApi }  from '../../app/shared/sdk/services';
 import { TideLocation}  from '../../app/shared/sdk/models';
 import { TideLocationApi }  from '../../app/shared/sdk/services';
+import * as moment from 'moment';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { TideLocationApi }  from '../../app/shared/sdk/services';
   templateUrl: 'pasang.html'
 })
 export class PasangPage {
+
+    moment = moment;
   shownGroup = null;
   loader: any;
   states:any;
