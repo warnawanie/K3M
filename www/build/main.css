@@ -21744,6 +21744,22 @@ page-pengumuman-details .pengumumanWrap {
   color: #FFF;
 }
 
+page-prihatin .content-wrap {
+  background: #FFF;
+  padding: 10px;
+  /* border-radius: 4px; */
+}
+
+page-prihatin .dermaButton {
+  margin-top: 15px;
+}
+
+page-prihatin-success .content-wrap {
+  background: #FFF;
+  padding: 10px;
+  /* border-radius: 4px; */
+}
+
 page-register .scroll-content {
   background: #337a9d url("../assets/images/register.png") no-repeat;
   background-size: cover;

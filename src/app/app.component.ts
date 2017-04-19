@@ -15,11 +15,13 @@ import { AduanPage } from '../pages/aduan/aduan';
 import { SosPage } from '../pages/sos/sos';
 import { TentangPage } from '../pages/tentang/tentang';
 import { SosialPage } from '../pages/sosial/sosial';
+import { PrihatinPage } from '../pages/prihatin/prihatin';
 import { AduanSendPage } from '../pages/aduan-send/aduan-send';
 import { ContactPage } from '../pages/contact/contact';
 import { LoopBackConfig} from './shared/sdk';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
 import { FaqPage } from '../pages/faq/faq';
+import { PrihatinSuccessPage } from '../pages/prihatin-success/prihatin-success';
 import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
 
 
@@ -50,6 +52,7 @@ export class MyApp {
       { title: 'Utama', component: HomePage },
      // { title: 'Profil Saya', component: Page1 },
       { title: 'Tentang K3M', component: TentangPage},
+      { title: 'FAQ', component: FaqPage},
       { title: 'Hubungi Kami', component: ContactPage }
       
     ];

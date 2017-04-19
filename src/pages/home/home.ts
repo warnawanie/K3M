@@ -10,6 +10,7 @@ import { FaqPage } from '../faq/faq';
 import { TentangPage } from '../tentang/tentang';
 import { SosialPage } from '../sosial/sosial';
 import { TranslateService } from 'ng2-translate';
+import { PrihatinPage } from '../prihatin/prihatin';
 
 
 @Component({
@@ -62,7 +63,7 @@ export class HomePage {
   }
 
   onGoToFaq(){
-    this.navCtrl.push(FaqPage);
+    this.navCtrl.push(PrihatinPage);
   }
   onGoToForum(){
     this.navCtrl.push(PasangPage);

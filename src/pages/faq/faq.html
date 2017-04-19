@@ -1,6 +1,9 @@
 <ion-header>
 
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>FAQ</ion-title>
       <ion-buttons end class="logo-top">
        <img src="assets/images/logo.png">
@@ -224,6 +227,47 @@
 
 
       <div [innerHTML]='"FAQ_ANSWER_11" | translate '></div>
+      </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+  <ion-list class="faq-wrap">
+  <ion-item text-wrap (click)="toggleGroup(12)" [ngClass]="{active: isGroupShown(12)}">
+    <h3>
+     {{"FAQ_QUESTION_12" | translate}}
+      <ion-icon color="success" item-right [name]="isGroupShown(12) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(12)">
+      <ion-row>
+
+
+      <div [innerHTML]='"FAQ_ANSWER_12" | translate '></div>
+      </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+  <ion-list class="faq-wrap">
+  <ion-item text-wrap (click)="toggleGroup(13)" [ngClass]="{active: isGroupShown(13)}">
+    <h3>
+     {{"FAQ_QUESTION_13" | translate}}
+      <ion-icon color="success" item-right [name]="isGroupShown(13) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(13)">
+      <ion-row>
+
+
+      <div [innerHTML]='"FAQ_ANSWER_13" | translate '></div>
       </ion-row>
     </div>
   </ion-item>

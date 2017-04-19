@@ -19,6 +19,8 @@ import { SosialPage } from '../pages/sosial/sosial';
 import { AduanSendPage } from '../pages/aduan-send/aduan-send';
 import { ContactPage } from '../pages/contact/contact';
 import { FaqPage } from '../pages/faq/faq';
+import { PrihatinSuccessPage } from '../pages/prihatin-success/prihatin-success';
+import { PrihatinPage } from '../pages/prihatin/prihatin';
 import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
 import { PengumumanService } from '../providers/pengumuman-service';
 import { SDKBrowserModule } from './shared/sdk/index';
@@ -53,6 +55,8 @@ export function createTranslateLoader(http: Http) {
     ContactPage,
     PengumumanDetailsPage,
     FaqPage,
+    PrihatinPage,
+    PrihatinSuccessPage,
     EmergencySendPagePage
   ],
   imports: [
@@ -77,6 +81,7 @@ export function createTranslateLoader(http: Http) {
     PengumumanPage,
     TalianPage,
     AduanPage,
+    PrihatinSuccessPage,
     SosPage,
     TentangPage,
     SosialPage,
@@ -84,6 +89,7 @@ export function createTranslateLoader(http: Http) {
     ContactPage,
     PengumumanDetailsPage,
     FaqPage,
+    PrihatinPage,
     EmergencySendPagePage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, Storage]
