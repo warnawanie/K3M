@@ -49,22 +49,8 @@
 
 <ion-col width-33>
   <ion-item>
-    <ion-label><img src="assets/images/icons/{{ 'ICON_KEMALANGAN' | translate }}.png"></ion-label>
-    <ion-radio checked="true" value="1"></ion-radio>
-  </ion-item>
-</ion-col>
-
-<ion-col width-33>
-  <ion-item>
     <ion-label><img src="assets/images/icons/{{ 'ICON_KEROSAKAN' | translate }}.png"></ion-label>
     <ion-radio value="2"></ion-radio>
-  </ion-item>
-</ion-col>
-
-<ion-col width-33>
-  <ion-item>
-    <ion-label><img src="assets/images/icons/{{ 'ICON_PENCEMARAN' | translate }}.png"></ion-label>
-    <ion-radio value="3"></ion-radio>
   </ion-item>
 </ion-col>
 
@@ -76,9 +62,30 @@
 </ion-col>
 
 <ion-col width-33>
+  <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_KEMALANGAN' | translate }}.png"></ion-label>
+    <ion-radio checked="true" value="1"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+    <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_JATUHLAUT' | translate }}.png"></ion-label>
+    <ion-radio value="7"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
     <ion-item>
     <ion-label><img src="assets/images/icons/{{ 'ICON_PELANUNAN' | translate }}.png"></ion-label>
     <ion-radio value="5"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+  <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_PENCEMARAN' | translate }}.png"></ion-label>
+    <ion-radio value="3"></ion-radio>
   </ion-item>
 </ion-col>
 
@@ -89,14 +96,26 @@
   </ion-item>
 </ion-col>
 
+<!-- Baru -->
+
+<ion-col width-33>
+    <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_PENYELUDUPAN' | translate }}.png"></ion-label>
+    <ion-radio value="8"></ion-radio>
+  </ion-item>
+</ion-col>
+
+<ion-col width-33>
+    <ion-item>
+    <ion-label><img src="assets/images/icons/{{ 'ICON_UGUTAN' | translate }}.png"></ion-label>
+    <ion-radio value="9"></ion-radio>
+  </ion-item>
+</ion-col>
+
 </ion-list>
 
 
 </ion-row>
-
-
-
-
 
 
 <ion-item><ion-input name="radio_details" type="text" [(ngModel)]="aduan.radio_details" placeholder='{{ "RADIO_PENGADU" | translate }}'></ion-input></ion-item>
