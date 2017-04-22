@@ -123,9 +123,15 @@
 <ion-item><ion-input name="time" type="text" [(ngModel)]="aduan.time" placeholder='{{ "MASA_PENGADU" | translate }}'></ion-input></ion-item>
 <ion-item>
  <ion-label stacked class="textarea-maklumat">{{ "MAKLUMAT_KEJADIAN_PENGADU" | translate }}</ion-label>
-<ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea></ion-item>
+  <ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea>
+</ion-item>
+<ion-item>
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
+  <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+</ion-item>
 
 
+<button ion-button round (click)="openMenu()" class="submitButton">Lampiran</button>
 <button ion-button round (click)="report()" class="submitButton">{{ "HANTAR" | translate }}</button>  
 
 
