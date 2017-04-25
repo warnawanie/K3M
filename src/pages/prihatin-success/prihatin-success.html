@@ -12,7 +12,24 @@
 
 <ion-content padding>
 <div class="content-wrap">
+
+ <div class="todayDate"> {{ moment().format('DD MMM YYYY') }}</div>
+
  <img src="assets/images/prihatinSuccess.png">
+
+ <div class="userDetail" *ngIf="posts">
+<div class="detailInfo">Nama:  {{posts.fullname}}</div>
+<div class="detailInfo">No. Telefon:   {{posts.phone_number}}</div>
+
+ </div>
+
+
+ Kami mengucapkan terima kasih atas keprihatinan tuan puan. Anda akan mendapat notifikasi melalui SMS sama ada sumbangan anda berjaya atau tidak.
+
+ <br><br><br><br>
+ 
+Ikhlas,<br>
+Tentera Laut Diraja Malaysia
 
 </div>
 

@@ -7,4 +7,30 @@ page-prihatin {
 .dermaButton{
     margin-top: 15px;
 }
+
+
+ion-list.derma-content {
+    border-top: 1px solid #BCBEC0;
+    border-bottom: 1px solid #BCBEC0;
+    padding: 25px 0px;
+    margin: 10px 0px;
+    font-size: 1.3rem;
+}
+
+ion-item.amountSumbangan {
+    border: 1px solid #006838;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+.small-caption {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.tnc {
+    font-size: 1.3rem;
+}
+.item-block .item-inner {
+    border-bottom: none !important;
+}
 }

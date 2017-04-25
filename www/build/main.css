@@ -21754,10 +21754,56 @@ page-prihatin .dermaButton {
   margin-top: 15px;
 }
 
+page-prihatin ion-list.derma-content {
+  border-top: 1px solid #BCBEC0;
+  border-bottom: 1px solid #BCBEC0;
+  padding: 25px 0px;
+  margin: 10px 0px;
+  font-size: 1.3rem;
+}
+
+page-prihatin ion-item.amountSumbangan {
+  border: 1px solid #006838;
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+page-prihatin .small-caption {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+page-prihatin .tnc {
+  font-size: 1.3rem;
+}
+
+page-prihatin .item-block .item-inner {
+  border-bottom: none !important;
+}
+
 page-prihatin-success .content-wrap {
   background: #FFF;
   padding: 10px;
   /* border-radius: 4px; */
+}
+
+page-prihatin-success .todayDate {
+  color: #BCBEC0;
+  text-align: right;
+}
+
+page-prihatin-success .detailInfo {
+  background: #F0EFF4;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+page-prihatin-success .userDetail {
+  margin-top: 25px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #BCBEC0;
+  padding-bottom: 40px;
 }
 
 page-register .scroll-content {

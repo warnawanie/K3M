@@ -23,6 +23,7 @@
     "@ionic-native/core": "^3.5.0",
     "@ionic-native/file": "^3.5.0",
     "@ionic-native/file-path": "^3.5.0",
+    "@ionic-native/sms": "^3.5.0",
     "@ionic/storage": "^1.1.7",
     "@types/socket.io-client": "^1.4.29",
     "ionic-angular": "2.0.1",

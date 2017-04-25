@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { SMS } from 'ionic-native';
+import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { PrihatinSuccessPage } from '../prihatin-success/prihatin-success';
 
 /*
@@ -14,14 +15,39 @@ import { PrihatinSuccessPage } from '../prihatin-success/prihatin-success';
 })
 export class PrihatinPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  phoneNumber: string = "33286";
+  textMessage: string;
+  amount:number;
+  loader: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private toastCtrl: ToastController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PrihatinPage');
   }
 
+  initSendSMS(){
+    var message = "TPK3M " + this.amount;
+    this.textMessage = message;
+    console.log(message);
+    this.sendSMS();
+  }
 
-    login(){
+
+  sendSMS() {
+    SMS.send(this.phoneNumber, this.textMessage).then((result) => {
+      this.gotoSuccessPage();
+    }, (error) => {
+      let errorToast = this.toastCtrl.create({
+        message: "Text message is not sent.",
+        duration: 3000
+      })
+      errorToast.present();
+    });
+  }
+
+
+  gotoSuccessPage(){
     this.navCtrl.setRoot(PrihatinSuccessPage);
   }
 
