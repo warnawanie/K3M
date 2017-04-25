@@ -75,6 +75,9 @@ export class HomePage {
  }
  translateToMalay(){
   this.translateService.use('ms');
+}
+translateToEnglish(){
+  this.translateService.use('en');
   }
 
 
