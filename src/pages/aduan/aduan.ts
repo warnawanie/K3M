@@ -119,6 +119,7 @@ export class AduanPage {
       quality: 100,
       sourceType: sourceType,
       saveToPhotoAlbum: false,
+      destinationType: Camera.DestinationType.FILE_URI,
       correctOrientation: true
     };
    
