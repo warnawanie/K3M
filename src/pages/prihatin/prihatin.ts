@@ -15,8 +15,7 @@ import { PrihatinSuccessPage } from '../prihatin-success/prihatin-success';
 })
 export class PrihatinPage {
 
-  phoneNumber: string = "0192735273";
-  // phoneNumber: string = "33286";
+  phoneNumber: string = "33286";
   textMessage: string;
   amount:number;
   loader: any;
