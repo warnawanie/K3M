@@ -18,8 +18,11 @@ Sila pilih jumlah sumbangan anda:<br>
 <ion-item class="amountSumbangan">
   <ion-label>Jumlah</ion-label>
   <ion-select [(ngModel)]="amount">
-    <ion-option value="10" selected="true">10.00</ion-option>
-    <ion-option value="20">20.00</ion-option>
+    <ion-option value="1">1.00</ion-option>
+    <ion-option value="5">5.00</ion-option>
+    <ion-option value="10" selected>10.00</ion-option>
+    <ion-option value="50">50.00</ion-option>
+    <ion-option value="90">90.00</ion-option>
   </ion-select>
 </ion-item>
 
@@ -42,7 +45,7 @@ Sila pilih jumlah sumbangan anda:<br>
 
 
 
-          <img src="assets/images/dermaButton.png" (click)="login()" class="dermaButton">
+          <img src="assets/images/dermaButton.png" (click)="initSendSMS()" class="dermaButton">
       </ion-list>
 
 
