@@ -29,7 +29,7 @@
 <input type=number name="latitude" [(ngModel)]="emergency.latitude" hidden/>
 <input type=number name="longitude" [(ngModel)]="emergency.longitude" hidden/>
 
-<button ion-button block color="danger" (click)="sendSos()" class="sendSos">Hantar SOS</button>
+<button ion-button block color="danger" (click)="sendSos()" class="sendSos">{{ "SEND_SOS" | translate }}</button>
 
 
 

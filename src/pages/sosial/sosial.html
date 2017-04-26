@@ -98,6 +98,72 @@
 
 
 
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(4)" [ngClass]="{active: isGroupShown(4)}">
+    <h3>
+     JKDM
+      <ion-icon color="success" item-right [name]="isGroupShown(4) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(4)">
+
+        <ion-row>
+      <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/JabatanKastamDirajaMalaysia/', '_system', 'location=yes'); return false">@JabatanKastamDirajaMalaysia</a>
+      </ion-row>
+       <ion-row>
+      <img src="assets/images/socialTwitter.png"> <a onclick="window.open('https://twitter.com/KastamMalaysia', '_system', 'location=yes'); return false">@KastamMalaysia</a>
+      </ion-row>
+ 
+
+      <ion-row>
+      <img src="assets/images/socialWeb.png"> <a onclick="window.open('http://www.customs.gov.my/ms', '_system', 'location=yes'); return false">www.customs.gov.my</a>
+      </ion-row>
+
+
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(5)" [ngClass]="{active: isGroupShown(5)}">
+    <h3>
+     SPRM
+      <ion-icon color="success" item-right [name]="isGroupShown(5) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(5)">
+
+        <ion-row>
+      <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/sprm.benci.rasuah/', '_system', 'location=yes'); return false">@SPRMMalaysia</a>
+      </ion-row>
+       <ion-row>
+      <img src="assets/images/socialTwitter.png"> <a onclick="window.open('https://twitter.com/SPRMMalaysia/', '_system', 'location=yes'); return false">@SPRMMalaysia</a>
+      </ion-row>
+ 
+       <ion-row>
+      <img src="assets/images/socialYoutube.png"> <a onclick="window.open('https://www.youtube.com/user/ODVMACC', '_system', 'location=yes'); return false;">@SPRMMalaysia</a>
+      </ion-row>
+
+      <ion-row>
+      <img src="assets/images/socialWeb.png"> <a onclick="window.open('https://www.sprm.gov.my', '_system', 'location=yes'); return false">www.sprm.gov.my</a>
+      </ion-row>
+
+
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
 </ion-content>
 
 

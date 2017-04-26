@@ -1,7 +1,7 @@
 {
     "BTN_MALAY": "B. MELAYU",
     "BTN_CHINESE": "B. MANDARIN",
-    "BTN_ENGLISH": "B. ENGLISH",
+    "BTN_ENGLISH": "B. INGGERIS",
     "TITLE": "Tu Información",
     "JENIS_ADUAN": "投诉类型",
     "KEMALANGAN": "意外",
@@ -67,5 +67,6 @@
     "TENTANG_K3M": "关于K3M",
     "TENTANG_HEADING": "关于K3M",
     "TENTANG_CONTENT": "为了提倡National Blue Ocean Strategy (NBOS)的战略，TLDM & APMM 共同携手推出了应用程序K3M, 主要的目的是为了能够让社会提高他们对于海上的安全意识.这个应用程序将会简化所有报告过程以及让海上的活动变得更透明.通过K3M，TLDM相信APMM的努力能够被所有的受益者认可. 这将会间接提高人民对APMM的信任与信心，认为他们绝对拥有足够的能力来确保马来西亚海域的安全. 以下是K3M的目标： <br><br>• 为了提高 APMM 的机警意识以及确保国家海域的安全<br>• 为了增进有关海事局的友好关系<br>• 为了确保APMM可以拥有完善的通讯系统以便准确的资讯可以更快速地被传达",
-    "prihatin": "K3M 关心"
+    "prihatin": "K3M 关心",
+    "SEND_SOS": "发送 SOS"
 }

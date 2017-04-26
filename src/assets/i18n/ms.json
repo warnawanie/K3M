@@ -1,7 +1,7 @@
 {
     "BTN_MALAY": "B. MELAYU",
     "BTN_CHINESE": "B. MANDARIN",
-    "BTN_ENGLISH": "B. ENGLISH",
+    "BTN_ENGLISH": "B. INGGERIS",
     "TITLE": "Your information",
     "JENIS_ADUAN": "Jenis Aduan",
     "KEMALANGAN": "Kemalangan",
@@ -68,5 +68,6 @@
     "TENTANG_K3M": "TENTANG K3M",
     "TENTANG_HEADING": "Objektif K3M",
     "TENTANG_CONTENT": "Aplikasi K3M membawa maksud Kesedaran Keselamatan Komuniti Maritim.  Aplikasi ini merupakan satu usaha kolaborasi TLDM & APMM yang turut mendokong strategi National Blue Ocean Strategy(NBOS). Aplikasi ini akan memudahkan proses laporan dan penyaluran maklumat bagi memelihara kesejahteraan komuniti maritime khususnya yang melibatkan aktiviti-aktiviti mereka dilaut. TLDM percaya inisiatif ini sangat penting agar peranan dan kehadiran agensi penguatkuasa dapat dilihat dan dirasai oleh mereka. Secara tidak langsung, ianya juga membantu untuk membina kepercayaan dan keyakinan rakyat terhadap keupayaan agensi penguatkuasa dalam mengawal keselamatan perairan Negara.  Justeru, objektif K3M adalah seperti berikut: <br><br>1.  Meningkatkan kesedaran bahawa agensi penguatkuasa sentiasa peka dan memberi komitmen yang tinggi dalam memastikan perairan negara selamat. <br> <br>2.  Menjalinkan hubungan kerjasama yang baik dengan komuniti maritim setempat<br><br>3.  Mewujudkan saluran komunikasi di antara agensi penguatkuasa agar maklumat dapat disampaikan dengan pantas dan tepat",
-    "prihatin": "K3M Prihatin"
+    "prihatin": "K3M Prihatin",
+    "SEND_SOS": "Hantar SOS"
 }
