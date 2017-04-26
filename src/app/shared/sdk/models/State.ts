@@ -6,19 +6,19 @@ import {
 
 declare var Object: any;
 export interface StateInterface {
-  name: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "name": string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   reports?: Report[];
   locations?: TideLocation[];
 }
 
 export class State implements StateInterface {
-  name: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "name": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   reports: Report[];
   locations: TideLocation[];
   constructor(data?: StateInterface) {
@@ -39,7 +39,7 @@ export class State implements StateInterface {
   **/
   public static factory(data: StateInterface): State{
     return new State(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -52,19 +52,19 @@ export class State implements StateInterface {
       name: 'State',
       plural: 'states',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

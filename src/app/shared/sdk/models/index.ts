@@ -11,6 +11,7 @@ export * from './TideLocation';
 export * from './Weather';
 export * from './CustomerCategory';
 export * from './CustomerSubCategory';
+export * from './Storage';
 export * from './Customer';
 export * from './BaseModels';
 export * from './FireLoopRef';

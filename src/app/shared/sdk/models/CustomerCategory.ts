@@ -6,21 +6,21 @@ import {
 
 declare var Object: any;
 export interface CustomerCategoryInterface {
-  name: string;
-  description?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "name": string;
+  "description"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   subcategories?: CustomerSubCategory[];
   customers?: Customer[];
 }
 
 export class CustomerCategory implements CustomerCategoryInterface {
-  name: string;
-  description: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "name": string;
+  "description": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   subcategories: CustomerSubCategory[];
   customers: Customer[];
   constructor(data?: CustomerCategoryInterface) {
@@ -41,7 +41,7 @@ export class CustomerCategory implements CustomerCategoryInterface {
   **/
   public static factory(data: CustomerCategoryInterface): CustomerCategory{
     return new CustomerCategory(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -54,23 +54,23 @@ export class CustomerCategory implements CustomerCategoryInterface {
       name: 'CustomerCategory',
       plural: 'customer-categories',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

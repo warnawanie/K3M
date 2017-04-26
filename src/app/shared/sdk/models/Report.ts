@@ -7,44 +7,46 @@ import {
 
 declare var Object: any;
 export interface ReportInterface {
-  customer_id: number;
-  report_type_id: number;
-  name: string;
-  ic_number: string;
-  phone_number: string;
-  radio_details?: string;
-  location?: string;
-  time?: string;
-  description?: string;
-  latitude?: number;
-  longitude?: number;
-  status_report_id?: number;
-  admin_notes?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "customer_id": number;
+  "report_type_id": number;
+  "name": string;
+  "ic_number": string;
+  "phone_number": string;
+  "radio_details"?: string;
+  "location"?: string;
+  "time"?: string;
+  "description"?: string;
+  "latitude"?: number;
+  "longitude"?: number;
+  "status_report_id"?: number;
+  "admin_notes"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "file"?: string;
+  "id"?: number;
   report_type?: ReportType;
   status?: StatusReport;
   customer?: Customer;
 }
 
 export class Report implements ReportInterface {
-  customer_id: number;
-  report_type_id: number;
-  name: string;
-  ic_number: string;
-  phone_number: string;
-  radio_details: string;
-  location: string;
-  time: string;
-  description: string;
-  latitude: number;
-  longitude: number;
-  status_report_id: number;
-  admin_notes: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "customer_id": number;
+  "report_type_id": number;
+  "name": string;
+  "ic_number": string;
+  "phone_number": string;
+  "radio_details": string;
+  "location": string;
+  "time": string;
+  "description": string;
+  "latitude": number;
+  "longitude": number;
+  "status_report_id": number;
+  "admin_notes": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "file": string;
+  "id": number;
   report_type: ReportType;
   status: StatusReport;
   customer: Customer;
@@ -66,7 +68,7 @@ export class Report implements ReportInterface {
   **/
   public static factory(data: ReportInterface): Report{
     return new Report(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -79,68 +81,72 @@ export class Report implements ReportInterface {
       name: 'Report',
       plural: 'reports',
       properties: {
-        customer_id: {
+        "customer_id": {
           name: 'customer_id',
           type: 'number'
         },
-        report_type_id: {
+        "report_type_id": {
           name: 'report_type_id',
           type: 'number'
         },
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        ic_number: {
+        "ic_number": {
           name: 'ic_number',
           type: 'string'
         },
-        phone_number: {
+        "phone_number": {
           name: 'phone_number',
           type: 'string'
         },
-        radio_details: {
+        "radio_details": {
           name: 'radio_details',
           type: 'string'
         },
-        location: {
+        "location": {
           name: 'location',
           type: 'string'
         },
-        time: {
+        "time": {
           name: 'time',
           type: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
           type: 'string'
         },
-        latitude: {
+        "latitude": {
           name: 'latitude',
           type: 'number'
         },
-        longitude: {
+        "longitude": {
           name: 'longitude',
           type: 'number'
         },
-        status_report_id: {
+        "status_report_id": {
           name: 'status_report_id',
           type: 'number',
           default: 1
         },
-        admin_notes: {
+        "admin_notes": {
           name: 'admin_notes',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "file": {
+          name: 'file',
+          type: 'string'
+        },
+        "id": {
           name: 'id',
           type: 'number'
         },

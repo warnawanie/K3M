@@ -8,28 +8,28 @@ import {
 
 declare var Object: any;
 export interface CustomerInterface {
-  fullname: string;
-  ic_number: string;
-  phone_number: string;
-  address_1?: string;
-  address_2?: string;
-  postcode?: string;
-  town?: string;
-  state?: string;
-  referer_name?: string;
-  referer_phone?: string;
-  referer_address?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  realm?: string;
-  username?: string;
-  password: string;
-  email: string;
-  emailVerified?: boolean;
-  verificationToken?: string;
-  id?: number;
-  category_id?: number;
-  subcategory_id?: number;
+  "fullname": string;
+  "ic_number": string;
+  "phone_number": string;
+  "address_1"?: string;
+  "address_2"?: string;
+  "postcode"?: string;
+  "town"?: string;
+  "state"?: string;
+  "referer_name"?: string;
+  "referer_phone"?: string;
+  "referer_address"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "realm"?: string;
+  "username"?: string;
+  "password": string;
+  "email": string;
+  "emailVerified"?: boolean;
+  "verificationToken"?: string;
+  "id"?: number;
+  "category_id"?: number;
+  "subcategory_id"?: number;
   reports?: Report[];
   emergencies?: Emergency[];
   category?: CustomerCategory;
@@ -38,28 +38,28 @@ export interface CustomerInterface {
 }
 
 export class Customer implements CustomerInterface {
-  fullname: string;
-  ic_number: string;
-  phone_number: string;
-  address_1: string;
-  address_2: string;
-  postcode: string;
-  town: string;
-  state: string;
-  referer_name: string;
-  referer_phone: string;
-  referer_address: string;
-  created_at: Date;
-  updated_at: Date;
-  realm: string;
-  username: string;
-  password: string;
-  email: string;
-  emailVerified: boolean;
-  verificationToken: string;
-  id: number;
-  category_id: number;
-  subcategory_id: number;
+  "fullname": string;
+  "ic_number": string;
+  "phone_number": string;
+  "address_1": string;
+  "address_2": string;
+  "postcode": string;
+  "town": string;
+  "state": string;
+  "referer_name": string;
+  "referer_phone": string;
+  "referer_address": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "realm": string;
+  "username": string;
+  "password": string;
+  "email": string;
+  "emailVerified": boolean;
+  "verificationToken": string;
+  "id": number;
+  "category_id": number;
+  "subcategory_id": number;
   reports: Report[];
   emergencies: Emergency[];
   category: CustomerCategory;
@@ -83,7 +83,7 @@ export class Customer implements CustomerInterface {
   **/
   public static factory(data: CustomerInterface): Customer{
     return new Customer(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -96,91 +96,91 @@ export class Customer implements CustomerInterface {
       name: 'Customer',
       plural: 'users',
       properties: {
-        fullname: {
+        "fullname": {
           name: 'fullname',
           type: 'string'
         },
-        ic_number: {
+        "ic_number": {
           name: 'ic_number',
           type: 'string'
         },
-        phone_number: {
+        "phone_number": {
           name: 'phone_number',
           type: 'string'
         },
-        address_1: {
+        "address_1": {
           name: 'address_1',
           type: 'string'
         },
-        address_2: {
+        "address_2": {
           name: 'address_2',
           type: 'string'
         },
-        postcode: {
+        "postcode": {
           name: 'postcode',
           type: 'string'
         },
-        town: {
+        "town": {
           name: 'town',
           type: 'string'
         },
-        state: {
+        "state": {
           name: 'state',
           type: 'string'
         },
-        referer_name: {
+        "referer_name": {
           name: 'referer_name',
           type: 'string'
         },
-        referer_phone: {
+        "referer_phone": {
           name: 'referer_phone',
           type: 'string'
         },
-        referer_address: {
+        "referer_address": {
           name: 'referer_address',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        realm: {
+        "realm": {
           name: 'realm',
           type: 'string'
         },
-        username: {
+        "username": {
           name: 'username',
           type: 'string'
         },
-        password: {
+        "password": {
           name: 'password',
           type: 'string'
         },
-        email: {
+        "email": {
           name: 'email',
           type: 'string'
         },
-        emailVerified: {
+        "emailVerified": {
           name: 'emailVerified',
           type: 'boolean'
         },
-        verificationToken: {
+        "verificationToken": {
           name: 'verificationToken',
           type: 'string'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },
-        category_id: {
+        "category_id": {
           name: 'category_id',
           type: 'number'
         },
-        subcategory_id: {
+        "subcategory_id": {
           name: 'subcategory_id',
           type: 'number'
         },

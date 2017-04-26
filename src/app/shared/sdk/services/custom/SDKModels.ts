@@ -12,6 +12,7 @@ import { TideLocation } from '../../models/TideLocation';
 import { Weather } from '../../models/Weather';
 import { CustomerCategory } from '../../models/CustomerCategory';
 import { CustomerSubCategory } from '../../models/CustomerSubCategory';
+import { Storage } from '../../models/Storage';
 import { Customer } from '../../models/Customer';
 
 export interface Models { [name: string]: any }
@@ -32,6 +33,7 @@ export class SDKModels {
     Weather: Weather,
     CustomerCategory: CustomerCategory,
     CustomerSubCategory: CustomerSubCategory,
+    Storage: Storage,
     Customer: Customer,
     
   };

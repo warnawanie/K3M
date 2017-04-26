@@ -6,23 +6,23 @@ import {
 
 declare var Object: any;
 export interface CustomerSubCategoryInterface {
-  name: string;
-  description?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
-  category_id?: number;
+  "name": string;
+  "description"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
+  "category_id"?: number;
   category?: CustomerCategory;
   customers?: Customer[];
 }
 
 export class CustomerSubCategory implements CustomerSubCategoryInterface {
-  name: string;
-  description: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
-  category_id: number;
+  "name": string;
+  "description": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
+  "category_id": number;
   category: CustomerCategory;
   customers: Customer[];
   constructor(data?: CustomerSubCategoryInterface) {
@@ -43,7 +43,7 @@ export class CustomerSubCategory implements CustomerSubCategoryInterface {
   **/
   public static factory(data: CustomerSubCategoryInterface): CustomerSubCategory{
     return new CustomerSubCategory(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -56,27 +56,27 @@ export class CustomerSubCategory implements CustomerSubCategoryInterface {
       name: 'CustomerSubCategory',
       plural: 'customer-subcategories',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },
-        category_id: {
+        "category_id": {
           name: 'category_id',
           type: 'number'
         },

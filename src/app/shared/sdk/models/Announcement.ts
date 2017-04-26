@@ -2,23 +2,23 @@
 
 declare var Object: any;
 export interface AnnouncementInterface {
-  title: string;
-  content: string;
-  image_path?: string;
-  admin_id: number;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "title": string;
+  "content": string;
+  "image_path"?: string;
+  "admin_id": number;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
 }
 
 export class Announcement implements AnnouncementInterface {
-  title: string;
-  content: string;
-  image_path: string;
-  admin_id: number;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "title": string;
+  "content": string;
+  "image_path": string;
+  "admin_id": number;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   constructor(data?: AnnouncementInterface) {
     Object.assign(this, data);
   }
@@ -37,7 +37,7 @@ export class Announcement implements AnnouncementInterface {
   **/
   public static factory(data: AnnouncementInterface): Announcement{
     return new Announcement(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -50,31 +50,31 @@ export class Announcement implements AnnouncementInterface {
       name: 'Announcement',
       plural: 'announcements',
       properties: {
-        title: {
+        "title": {
           name: 'title',
           type: 'string'
         },
-        content: {
+        "content": {
           name: 'content',
           type: 'string'
         },
-        image_path: {
+        "image_path": {
           name: 'image_path',
           type: 'string'
         },
-        admin_id: {
+        "admin_id": {
           name: 'admin_id',
           type: 'number'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

@@ -6,25 +6,25 @@ import {
 
 declare var Object: any;
 export interface TideLocationInterface {
-  name: string;
-  state_id?: number;
-  latitude?: number;
-  longitude?: number;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "name": string;
+  "state_id"?: number;
+  "latitude"?: number;
+  "longitude"?: number;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   tides?: Tide[];
   state?: State;
 }
 
 export class TideLocation implements TideLocationInterface {
-  name: string;
-  state_id: number;
-  latitude: number;
-  longitude: number;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "name": string;
+  "state_id": number;
+  "latitude": number;
+  "longitude": number;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   tides: Tide[];
   state: State;
   constructor(data?: TideLocationInterface) {
@@ -45,7 +45,7 @@ export class TideLocation implements TideLocationInterface {
   **/
   public static factory(data: TideLocationInterface): TideLocation{
     return new TideLocation(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -58,31 +58,31 @@ export class TideLocation implements TideLocationInterface {
       name: 'TideLocation',
       plural: 'tides-locations',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        state_id: {
+        "state_id": {
           name: 'state_id',
           type: 'number'
         },
-        latitude: {
+        "latitude": {
           name: 'latitude',
           type: 'number'
         },
-        longitude: {
+        "longitude": {
           name: 'longitude',
           type: 'number'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

@@ -60,6 +60,7 @@ import { TideLocationApi } from './services/custom/TideLocation';
 import { WeatherApi } from './services/custom/Weather';
 import { CustomerCategoryApi } from './services/custom/CustomerCategory';
 import { CustomerSubCategoryApi } from './services/custom/CustomerSubCategory';
+import { StorageApi } from './services/custom/Storage';
 import { CustomerApi } from './services/custom/Customer';
 /**
 * @module SDKBrowserModule
@@ -104,6 +105,7 @@ export class SDKBrowserModule {
         WeatherApi,
         CustomerCategoryApi,
         CustomerSubCategoryApi,
+        StorageApi,
         CustomerApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },

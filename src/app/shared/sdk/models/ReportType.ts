@@ -5,20 +5,20 @@ import {
 
 declare var Object: any;
 export interface ReportTypeInterface {
-  name: string;
-  description?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "name": string;
+  "description"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   reports?: Report[];
 }
 
 export class ReportType implements ReportTypeInterface {
-  name: string;
-  description: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "name": string;
+  "description": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   reports: Report[];
   constructor(data?: ReportTypeInterface) {
     Object.assign(this, data);
@@ -38,7 +38,7 @@ export class ReportType implements ReportTypeInterface {
   **/
   public static factory(data: ReportTypeInterface): ReportType{
     return new ReportType(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -51,23 +51,23 @@ export class ReportType implements ReportTypeInterface {
       name: 'ReportType',
       plural: 'report-types',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

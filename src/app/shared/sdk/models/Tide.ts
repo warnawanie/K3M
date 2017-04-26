@@ -5,22 +5,22 @@ import {
 
 declare var Object: any;
 export interface TideInterface {
-  date?: string;
-  time?: string;
-  height?: number;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "date"?: string;
+  "time"?: string;
+  "height"?: number;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   location?: TideLocation;
 }
 
 export class Tide implements TideInterface {
-  date: string;
-  time: string;
-  height: number;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "date": string;
+  "time": string;
+  "height": number;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   location: TideLocation;
   constructor(data?: TideInterface) {
     Object.assign(this, data);
@@ -40,7 +40,7 @@ export class Tide implements TideInterface {
   **/
   public static factory(data: TideInterface): Tide{
     return new Tide(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -53,27 +53,27 @@ export class Tide implements TideInterface {
       name: 'Tide',
       plural: 'tides',
       properties: {
-        date: {
+        "date": {
           name: 'date',
           type: 'string'
         },
-        time: {
+        "time": {
           name: 'time',
           type: 'string'
         },
-        height: {
+        "height": {
           name: 'height',
           type: 'number'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

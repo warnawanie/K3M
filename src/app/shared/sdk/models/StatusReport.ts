@@ -5,20 +5,20 @@ import {
 
 declare var Object: any;
 export interface StatusReportInterface {
-  name: string;
-  description?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "name": string;
+  "description"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   reports?: Report[];
 }
 
 export class StatusReport implements StatusReportInterface {
-  name: string;
-  description: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "name": string;
+  "description": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   reports: Report[];
   constructor(data?: StatusReportInterface) {
     Object.assign(this, data);
@@ -38,7 +38,7 @@ export class StatusReport implements StatusReportInterface {
   **/
   public static factory(data: StatusReportInterface): StatusReport{
     return new StatusReport(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -51,23 +51,23 @@ export class StatusReport implements StatusReportInterface {
       name: 'StatusReport',
       plural: 'status-report',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

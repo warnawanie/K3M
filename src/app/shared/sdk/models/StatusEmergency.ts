@@ -5,20 +5,20 @@ import {
 
 declare var Object: any;
 export interface StatusEmergencyInterface {
-  name: string;
-  description?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "name": string;
+  "description"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   emergencies?: Emergency[];
 }
 
 export class StatusEmergency implements StatusEmergencyInterface {
-  name: string;
-  description: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "name": string;
+  "description": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   emergencies: Emergency[];
   constructor(data?: StatusEmergencyInterface) {
     Object.assign(this, data);
@@ -38,7 +38,7 @@ export class StatusEmergency implements StatusEmergencyInterface {
   **/
   public static factory(data: StatusEmergencyInterface): StatusEmergency{
     return new StatusEmergency(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -51,23 +51,23 @@ export class StatusEmergency implements StatusEmergencyInterface {
       name: 'StatusEmergency',
       plural: 'status-emergency',
       properties: {
-        name: {
+        "name": {
           name: 'name',
           type: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

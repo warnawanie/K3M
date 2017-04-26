@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface WeatherInterface {
-  id?: number;
+  "id"?: number;
 }
 
 export class Weather implements WeatherInterface {
-  id: number;
+  "id": number;
   constructor(data?: WeatherInterface) {
     Object.assign(this, data);
   }
@@ -25,7 +25,7 @@ export class Weather implements WeatherInterface {
   **/
   public static factory(data: WeatherInterface): Weather{
     return new Weather(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -38,7 +38,7 @@ export class Weather implements WeatherInterface {
       name: 'Weather',
       plural: 'cuaca',
       properties: {
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },

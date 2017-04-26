@@ -6,27 +6,27 @@ import {
 
 declare var Object: any;
 export interface EmergencyInterface {
-  customer_id: number;
-  latitude: number;
-  longitude: number;
-  status_emergency_id?: number;
-  admin_notes?: string;
-  created_at?: Date;
-  updated_at?: Date;
-  id?: number;
+  "customer_id": number;
+  "latitude": number;
+  "longitude": number;
+  "status_emergency_id"?: number;
+  "admin_notes"?: string;
+  "created_at"?: Date;
+  "updated_at"?: Date;
+  "id"?: number;
   status?: StatusEmergency;
   customer?: Customer;
 }
 
 export class Emergency implements EmergencyInterface {
-  customer_id: number;
-  latitude: number;
-  longitude: number;
-  status_emergency_id: number;
-  admin_notes: string;
-  created_at: Date;
-  updated_at: Date;
-  id: number;
+  "customer_id": number;
+  "latitude": number;
+  "longitude": number;
+  "status_emergency_id": number;
+  "admin_notes": string;
+  "created_at": Date;
+  "updated_at": Date;
+  "id": number;
   status: StatusEmergency;
   customer: Customer;
   constructor(data?: EmergencyInterface) {
@@ -47,7 +47,7 @@ export class Emergency implements EmergencyInterface {
   **/
   public static factory(data: EmergencyInterface): Emergency{
     return new Emergency(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -60,36 +60,36 @@ export class Emergency implements EmergencyInterface {
       name: 'Emergency',
       plural: 'emergencies',
       properties: {
-        customer_id: {
+        "customer_id": {
           name: 'customer_id',
           type: 'number'
         },
-        latitude: {
+        "latitude": {
           name: 'latitude',
           type: 'number'
         },
-        longitude: {
+        "longitude": {
           name: 'longitude',
           type: 'number'
         },
-        status_emergency_id: {
+        "status_emergency_id": {
           name: 'status_emergency_id',
           type: 'number',
           default: 1
         },
-        admin_notes: {
+        "admin_notes": {
           name: 'admin_notes',
           type: 'string'
         },
-        created_at: {
+        "created_at": {
           name: 'created_at',
           type: 'Date'
         },
-        updated_at: {
+        "updated_at": {
           name: 'updated_at',
           type: 'Date'
         },
-        id: {
+        "id": {
           name: 'id',
           type: 'number'
         },
