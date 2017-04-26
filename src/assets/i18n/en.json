@@ -69,5 +69,10 @@
     "TENTANG_HEADING": "Objektif K3M",
     "TENTANG_CONTENT": "K3M Application is Maritime Community Safety Awareness. This application is collaboration between RMN and MMEA to support National Blue Ocean Strategy. This application facilitates the reporting process and distribution of information to sustain the maritime community security, especially their activities at sea. RMN believes that this initiative showed the roles and presence of law enforcement agencies in Malaysia. It also gains the trust and confidence from people to believe the capabilities of enforcement agencies in protecting national sovereignty. The objectives of K3M as follows:<br><br>1.  To raise awareness to public that law enforcement agencies are always sensitive and giving highest commitment in ensuring the maritime safety. <br> <br>2.  To establish good relationship with the local maritime communities.<br><br>3.  To create a communication channel among law enforcement agencies to deliver quick and accurate information.",
     "prihatin": "K3M Prihatin",
-    "SEND_SOS": "Send SOS"
+    "SEND_SOS": "Send SOS",
+    "PRIHATIN_TNC": "I accept and agree to pay the amount chosen to the organization stated as above.",
+    "PRIHATIN_NOTES": "*Valid for Celcom users only",
+    "PRIHATIN_SUCCESS_NOTES": "We thank you for your generosity. You will be notified via SMS of the success of your transaction.",
+    "PRIHATIN_SUCCESS_NOTES_2": "Sincerely,",
+    "PRIHATIN_SUCCESS_NOTES_3": "The Royal Malaysian Navy"
 }

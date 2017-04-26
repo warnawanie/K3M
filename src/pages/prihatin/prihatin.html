@@ -2,6 +2,9 @@
 
   <ion-navbar>
     <ion-title>{{ "prihatin" | translate }}</ion-title>
+      <ion-buttons end class="logo-top">
+       <img src="assets/images/logo.png">
+    </ion-buttons>  
   </ion-navbar>
 
 </ion-header>
@@ -30,11 +33,13 @@ Sila pilih jumlah sumbangan anda:<br>
 <ion-item text-wrap class="tnc">
 
   <ion-checkbox color="dark" checked="true"></ion-checkbox>
-  <ion-label>Saya bersetuju dan menerima bahawa saya akan membayar jumlah yang saya telah pilih untuk disumbangkan kepada organisasi yang dinyatakan diatas.</ion-label>
+  <ion-label>
+    {{ "PRIHATIN_TNC" | translate }}
+    </ion-label>
   
 </ion-item>
 
-<div class="small-caption"> *SAH UNTUK PENGGUNA CELCOM SAHAJA</div>
+<div class="small-caption"> {{ "PRIHATIN_NOTES" | translate }}</div>
 
 
   </ion-list>
