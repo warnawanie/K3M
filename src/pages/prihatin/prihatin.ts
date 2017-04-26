@@ -15,7 +15,8 @@ import { PrihatinSuccessPage } from '../prihatin-success/prihatin-success';
 })
 export class PrihatinPage {
 
-  phoneNumber: string = "33286";
+  // phoneNumber: string = "33286";
+  phoneNumber: string = "+60193556363";
   textMessage: string;
   amount:number;
   loader: any;
@@ -39,7 +40,7 @@ export class PrihatinPage {
       this.gotoSuccessPage();
     }, (error) => {
       let errorToast = this.toastCtrl.create({
-        message: "Text message is not sent.",
+        message: "SMS tidak dapat dihantar.",
         duration: 3000
       })
       errorToast.present();
