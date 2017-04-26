@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 // import { Platform, ActionSheetController } from 'ionic-angular';
 import { NavController, ActionSheetController, ToastController, Platform, LoadingController, Loading, NavParams } from 'ionic-angular';
 import { AduanSendPage } from '../aduan-send/aduan-send';
-import { Report } from '../../app/shared/sdk/models';
+import { Report, Storage } from '../../app/shared/sdk/models';
 import { ReportApi } from '../../app/shared/sdk/services';
 import { Customer}  from '../../app/shared/sdk/models';
-import { CustomerApi }  from '../../app/shared/sdk/services';
+import { CustomerApi, StorageApi }  from '../../app/shared/sdk/services';
 import { TranslateService } from 'ng2-translate';
 import { Camera, File, Transfer, FilePath } from 'ionic-native';
+import { LoopBackConfig } from '../../app/shared/sdk/lb.config';
 
 declare var cordova: any;
 
@@ -31,7 +32,8 @@ export class AduanPage {
     public actionsheetCtrl: ActionSheetController,
     public loadingCtrl: LoadingController, 
     private reportApi: ReportApi, 
-    private customerApi: CustomerApi, 
+    private customerApi: CustomerApi,
+    private storageApi: StorageApi, 
     public translateService: TranslateService) {
 
     this.customerApi.getCurrent().subscribe(
@@ -180,7 +182,8 @@ export class AduanPage {
 
   public uploadImage() {
     // Destination URL
-    var url = "http://yoururl/upload.php";
+    // var url = "http://yoururl/upload.php";
+    let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() + "/storages/attachments/upload";
    
     // File for Upload
     var targetPath = this.pathForImage(this.lastImage);
@@ -206,7 +209,8 @@ export class AduanPage {
     // Use the FileTransfer to upload the image
     fileTransfer.upload(targetPath, url, options).then(data => {
       this.loading.dismissAll()
-      this.presentToast('Image succesful uploaded.');
+      // this.presentToast('Image succesful uploaded.');
+      this.onGoToAduanSend();
     }, err => {
       this.loading.dismissAll()
       this.presentToast('Error while uploading file.');

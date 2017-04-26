@@ -25,7 +25,7 @@
 <form>
 
 
-<input name="customer_id" type="text" [(ngModel)]="aduan.customer_id"hidden/>
+<input name="customer_id" type="text" [(ngModel)]="aduan.customer_id" hidden/>
 <input name="name" type="text" [(ngModel)]="aduan.name" hidden/>
 <input name="ic_number" type="text" [(ngModel)]="aduan.ic_number" hidden/>
 <input name="phone_number" type="text" [(ngModel)]="aduan.phone_number" hidden/>
@@ -125,9 +125,9 @@
  <ion-label stacked class="textarea-maklumat">{{ "MAKLUMAT_KEJADIAN_PENGADU" | translate }}</ion-label>
   <ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea>
 </ion-item>
-<ion-item>
-  <img src="{{pathForImage(lastImage)}}" style="width: 100%" [hidden]="lastImage === null">
-  <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+<ion-item [hidden]="lastImage === null">
+  <img src="{{pathForImage(lastImage)}}" style="width: 100%">
+  <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3> -->
 </ion-item>
 
 
