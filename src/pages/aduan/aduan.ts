@@ -62,7 +62,17 @@ export class AduanPage {
 
    report() {
    // report.name = customer.fullname
-    this.reportApi.create(this.aduan).subscribe((aduan: Report) => this.navCtrl.setRoot(AduanSendPage));
+    this.reportApi.create(this.aduan).subscribe((aduan: Report) => {
+        // if attachment is available - upload image
+        if(this.lastImage){
+          this.uploadImage();
+        }else{
+          this.navCtrl.setRoot(AduanSendPage);
+        }
+      },
+      err => {
+          console.log("Oops!");
+      });
    }
 
 
@@ -190,12 +200,18 @@ export class AduanPage {
    
     // File name only
     var filename = this.lastImage;
-   
+    var _token = this.customerApi.getCurrentToken();
+
+    console.log( _token );
     var options = {
       fileKey: "file",
       fileName: filename,
       chunkedMode: false,
       mimeType: "multipart/form-data",
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': _token
+      },
       params : {'fileName': filename}
     };
    
