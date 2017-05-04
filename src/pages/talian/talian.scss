@@ -3,8 +3,8 @@ page-talian {
         border-radius: 4px;
     }
     .agensi-header{
-        background: #E55272;
-        border-bottom: 3px solid #E87996;
+        background: #E55272 !important;
+        border-bottom: 3px solid #E87996 !important;
         border-radius: 4px;
         color: #FFF;
         font-size: 13px;
@@ -19,6 +19,11 @@ page-talian {
 
         
     }
+
+    .single-agency {
+    margin: 12px;
+}
+
     .card-info{
         margin-bottom: 20px;
     margin-left: 22px;

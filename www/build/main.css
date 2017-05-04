@@ -22000,8 +22000,8 @@ page-talian .agensi-wrap {
 }
 
 page-talian .agensi-header {
-  background: #E55272;
-  border-bottom: 3px solid #E87996;
+  background: #E55272 !important;
+  border-bottom: 3px solid #E87996 !important;
   border-radius: 4px;
   color: #FFF;
   font-size: 13px;
@@ -22014,6 +22014,10 @@ page-talian ion-card-content {
 
 page-talian .agensi-wrap ion-icon {
   margin-right: 10px;
+}
+
+page-talian .single-agency {
+  margin: 12px;
 }
 
 page-talian .card-info {
