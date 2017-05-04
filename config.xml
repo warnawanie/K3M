@@ -104,6 +104,6 @@ Dibangunkan dengan 2 pilihan bahasa iaitu Bahasa Melayu dan Bahasa Mandarin, apl
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
     <plugin name="cordova-plugin-geolocation" spec="~2.4.3" />
     <plugin name="cordova-plugin-file" spec="~4.3.2" />
-    <plugin name="cordova-plugin-file-transfer" spec="~1.6.2" />
     <plugin name="cordova-sms-plugin" spec="~0.1.11" />
+    <plugin name="cordova-plugin-file-transfer" spec="~1.6.3" />
 </widget>

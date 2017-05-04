@@ -21307,8 +21307,7 @@ button.submitButton {
 }
 
 .footer-apps img {
-  width: 30px;
-  margin-left: -7px;
+  width: 70px;
 }
 
 .menu-inner ion-content {
@@ -21545,7 +21544,7 @@ page-home ion-col[width-33] {
 page-home .home-grid {
   color: #FFF;
   text-transform: uppercase;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px;
   font-size: 1.3rem;
 }
@@ -21753,6 +21752,12 @@ page-prihatin .content-wrap {
 
 page-prihatin .dermaButton {
   margin-top: 15px;
+  background: #00af4f;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  width: 100%;
 }
 
 page-prihatin ion-list.derma-content {
@@ -21999,7 +22004,8 @@ page-talian .agensi-header {
   border-bottom: 3px solid #E87996;
   border-radius: 4px;
   color: #FFF;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 page-talian ion-card-content {
@@ -22011,7 +22017,82 @@ page-talian .agensi-wrap ion-icon {
 }
 
 page-talian .card-info {
+  margin-bottom: 20px;
+  margin-left: 22px;
+  margin-top: 5px;
+}
+
+page-talian .social-wrap {
+  border-radius: 4px;
   margin-bottom: 10px;
+}
+
+page-talian .social-wrap ion-label {
+  margin: 0px !important;
+}
+
+page-talian .social-wrap ion-item,
+page-talian .social-wrap .item-inner {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+page-talian .social-wrap ion-item.item {
+  background: transparent !important;
+  border: none !important;
+}
+
+page-talian .social-wrap ion-item h3 {
+  background: #9BCD69;
+  border-bottom: 4px solid #83C24E;
+  margin: 0px !important;
+  border-radius: 4px;
+  padding: 12px 20px;
+  color: #FFF;
+  font-weight: bold;
+}
+
+page-talian .social-wrap ion-item h3 ion-icon {
+  margin-left: 20px;
+}
+
+page-talian .social-wrap ion-item ion-label div {
+  background: #FFF;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+page-talian .social-wrap .input-wrapper {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  -ms-grid-row-align: flex-start;
+  align-items: flex-start;
+}
+
+page-talian .social-heading {
+  background: #000;
+  border-bottom: 3px solid #6D6E71;
+  padding: 15px 25px !important;
+  color: #FFF;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+page-talian .social-wrap ion-item ion-label div ion-row {
+  font-size: 1.4rem;
+}
+
+page-talian .social-wrap ion-item ion-label div img {
+  width: 10%;
+  height: 10%;
+  margin-right: 10px;
+}
+
+page-talian ion-icon.item-icon.ion-ios-arrow-down,
+page-talian ion-icon.item-icon.ion-ios-arrow-up {
+  float: right;
+  margin: 0px;
 }
 
 page-tentang img.about-logo {

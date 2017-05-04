@@ -7,7 +7,8 @@ page-talian {
         border-bottom: 3px solid #E87996;
         border-radius: 4px;
         color: #FFF;
-        font-size: 14px;
+        font-size: 13px;
+        font-weight: bold;
     }
     ion-card-content {
     font-size: 1.7rem !important;
@@ -15,9 +16,76 @@ page-talian {
     } 
     .agensi-wrap ion-icon{
         margin-right: 10px;
+
         
     }
     .card-info{
+        margin-bottom: 20px;
+    margin-left: 22px;
+    margin-top: 5px;
+    }
+
+    .social-wrap{
+        border-radius: 4px;
         margin-bottom: 10px;
+    }
+    .social-wrap ion-label{
+        margin: 0px !important;
+    }
+    .social-wrap ion-item,
+    .social-wrap .item-inner{
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+    
+    .social-wrap ion-item.item{
+        background: transparent !important;
+        border: none !important;
+    }
+    .social-wrap ion-item h3{
+        background: #9BCD69;
+        border-bottom: 4px solid #83C24E;
+        margin: 0px !important;
+        border-radius: 4px;
+        padding: 12px 20px;
+        color: #FFF;
+        font-weight: bold;
+    }
+    .social-wrap ion-item h3 ion-icon{
+        margin-left: 20px;
+
+    }
+    .social-wrap ion-item ion-label div{
+        background: #FFF;
+padding-top: 25px;
+padding-bottom: 25px;
+    }
+    .social-wrap .input-wrapper{
+        align-items: flex-start;
+    }
+    .social-heading{
+        background: #000;
+        border-bottom: 3px solid #6D6E71;
+        padding: 15px 25px !important;
+        color: #FFF;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    .social-wrap ion-item ion-label div ion-row{
+
+            font-size: 1.4rem;
+
+    }
+    .social-wrap ion-item ion-label div img {
+    width: 10%;
+    height: 10%;
+    margin-right: 10px;
+    }
+
+    ion-icon.item-icon.ion-ios-arrow-down,
+    ion-icon.item-icon.ion-ios-arrow-up{
+        float: right;
+        margin: 0px;
     }
 }

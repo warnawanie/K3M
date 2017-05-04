@@ -17,30 +17,40 @@
 
 <ion-content>
 
+
+
 <ion-card class="agensi-wrap">
   <ion-card-header class="agensi-header">
-   MARKAS PEMERINTAHAN ARMADA BARAT
+   TENTERA LAUT DIRAJA MALAYSIA
   </ion-card-header>
   <ion-card-content padding>
    
-    <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pegawai Operasi Bertugas		: 
+
+
+  <ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+    <h3>
+     MARKAS PEMERINTAHAN ARMADA BARAT
+      <ion-icon color="success" item-right [name]="isGroupShown(1) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(1)">
+
+        <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pegawai Operasi Bertugas    : 
     </ion-row>
     <ion-row class="card-info">
-  <a href="tel:11111111">05-681 8519 / 8515</a>
+  <a href="tel:056818519">05-681 8519 / 8515</a>
     </ion-row>
 
-
      <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi Armada			: 
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi Armada      : 
     </ion-row>
 
     <ion-row class="card-info">
-      05-681 8518
-    </ion-row>
-
+      <a href="tel:056818519">681 8519 / 8515</a>  
+     </ion-row>
      <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi Armada		: 
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi Armada    : 
     </ion-row>
 
       <ion-row class="card-info">
@@ -48,164 +58,658 @@
       </ion-row>
 
     <ion-row>
-      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi Armada	: 
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi Armada  : 
     </ion-row>
     <ion-row class="card-info">
       opscen_hqfleet@navy.mil.my
     </ion-row>
 
 
-  </ion-card-content>
-</ion-card>
+    </div>
+  </ion-item>
+</ion-list>
 
 
-<!-- Armada Timur -->
 
-<ion-card class="agensi-wrap">
-  <ion-card-header class="agensi-header">
-   MARKAS PEMERINTAHAN ARMADA TIMUR
-  </ion-card-header>
-  <ion-card-content padding>
-   
-    <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Bilik Operasi 24 jam    : 
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(2)" [ngClass]="{active: isGroupShown(2)}">
+    <h3>
+     MARKAS PEMERINTAHAN ARMADA TIMUR
+      <ion-icon color="success" item-right [name]="isGroupShown(2) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(2)">
+
+       <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Bilik Operasi 24 Jam    : 
     </ion-row>
     <ion-row class="card-info">
-  <a href="tel:11111111">088-482008/2144</a>
+  <a href="tel: 088482144">088-482144</a>
     </ion-row>
 
-
-     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi 24 jam      : 
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi 24 Jam    : 
     </ion-row>
-
     <ion-row class="card-info">
-      08-848 2170
+     088-7432018
     </ion-row>
 
-    <ion-row>
-      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Emel Bilik Operasi 24 jam  : 
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Bilik Operasi 24 Jam    : 
     </ion-row>
     <ion-row class="card-info">
       ops_mawila2@navy.mil.my
     </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
 
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(3)" [ngClass]="{active: isGroupShown(3)}">
+    <h3>
+     MAWILLA 1, KUANTAN
+      <ion-icon color="success" item-right [name]="isGroupShown(3) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(3)">
+
+       <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Bilik Operasi (24 jam)	: 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 095833330">09-5833330</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi  (24 jam)		: 
+    </ion-row>
+    <ion-row class="card-info">
+    09-7732054
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Bilik Operasi (24 jam):
+    </ion-row>
+    <ion-row class="card-info">
+      ops.mwl1@navy.mil.my   </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+    
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(4)" [ngClass]="{active: isGroupShown(4)}">
+    <h3>
+     MAWILLA 3, LANGKAWI
+      <ion-icon color="success" item-right [name]="isGroupShown(4) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(4)">
+
+       <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi (24 jam): 
+    </ion-row>
+    <ion-row class="card-info">
+  04-9667245
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Bilik Operasi (24 jam):
+    </ion-row>
+    <ion-row class="card-info">
+      mwl3_ops@navy.mil.my
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+ 
 
   </ion-card-content>
 </ion-card>
 
 
 
+
+
 <ion-card class="agensi-wrap">
   <ion-card-header class="agensi-header">
-   AGENSI PENGUATKUASAAN MARITIM MALAYSIA (APMM)
+   AGENSI PENGUATKUASAAN MARITIM MALAYSIA
   </ion-card-header>
   <ion-card-content padding>
-   
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(5)" [ngClass]="{active: isGroupShown(5)}">
+    <h3>
+     WILAYAH UTARA 
+      <ion-icon color="success" item-right [name]="isGroupShown(5) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(5)">
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM1 Langkawi :
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 049662750">04-9662750</a>
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM1 Langkawi: 
+    </ion-row>
+    <ion-row class="card-info">
+  04-9662768
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi DM1 Langkawi:
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomwiluta.mmea@1govuc.gov.my
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM2 Pulau Pinang:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 042626146">04-2626146</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM2 Pulau Pinang: 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 042636444">04-2636444</a>
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi DM2 Pulau Pinang:
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomwilsar.mmea@1govuc.gov.my
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM3 Lumut:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 056838737">05-6838737</a>
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM3 Lumut: 
+    </ion-row>
+    <ion-row class="card-info">
+  05-6832120
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi DM3 Lumut:
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomdm3@mmea.gov.my
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(6)" [ngClass]="{active: isGroupShown(6)}">
+    <h3>
+     WILAYAH SELATAN 
+      <ion-icon color="success" item-right [name]="isGroupShown(6) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(6)">
+
+       <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM4 Klang:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 0331769100">03-31769100</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM4 Klang: 
+    </ion-row>
+    <ion-row class="card-info">
+   03-31765100
+    </ion-row>
+
+
+
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Bilik Operasi DM4 Klang:
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomdm4@mmea.gov.my    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM5 Linggi:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 063876730">06-3876730</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM5 Linggi: 
+    </ion-row>
+    <ion-row class="card-info">
+  06-3876827
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM6 Johor Bahru:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 072199402">07-2199402</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM6 Johor Bahru: 
+    </ion-row>
+    <ion-row class="card-info">
+    07-2279285
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi DM6 Johor Bahru:
+    </ion-row>
+    <ion-row class="card-info">
+      pomarwilsel.mmea@1govuc.gov.my
+    </ion-row>
+
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM7 Sedili:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 078916595">07-8916595</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM7 Sedili: 
+    </ion-row>
+    <ion-row class="card-info">
+   07-8916599
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(7)" [ngClass]="{active: isGroupShown(7)}">
+    <h3>
+     WILAYAH TIMUR
+      <ion-icon color="success" item-right [name]="isGroupShown(7) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(7)">
+
+        <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM8 Kuantan:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 095735587">09-5735587</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM8 Kuantan: 
+    </ion-row>
+    <ion-row class="card-info">
+   09-5738476
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Pusat Operasi DM8 Kuantan:
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomwiltim.mmea@1govuc.gov.my    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM9 Kuala Terengganu:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 096223657">09-6223657</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM9 Kuala Terengganu: 
+    </ion-row>
+    <ion-row class="card-info">
+    09-6224327
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM10 Tok Bali:
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 097780058">09-7780058</a>
+    </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Pusat Operasi DM10 Tok Bali: 
+    </ion-row>
+    <ion-row class="card-info">
+   09-7783390
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <h3>
+     WILAYAH SARAWAK
+      <ion-icon color="success" item-right [name]="isGroupShown(8) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(8)">
+
+        <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Bilik Operasi WILSAR (24jam)	: 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 082438261">082-438261</a> 
+    </ion-row>
+
+  <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi WILSAR           	: 
+    </ion-row>
+      <ion-row class="card-info">
+        082-432554
+      </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Bilik Operasi WILSAR           :
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomwilsar.mmea@1govuc.gov.my
+ </ion-row>
+
     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM1 Langkawi: 
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 11 Kuching	         : 
     </ion-row>
     <ion-row class="card-info">
-      04-9662750
+      <a href="tel: 082438261">082-438261</a>
     </ion-row>
 
+  <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks DM Kuching           	: 
+     </ion-row>
+      <ion-row class="card-info">
+     082-432554
+      </ion-row>
 
-     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM1 Pulau Pinang:
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 12 Bintulu	         : 
     </ion-row>
-
     <ion-row class="card-info">
-      04-2626146
+      <a href="tel: 086314024">086-314024</a>
     </ion-row>
 
-     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pusat Operasi DM1 Lumut: 
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Faks DM 12 Bintulu	: 
+    </ion-row>
+    <ion-row class="card-info">
+      086-313946
     </ion-row>
 
-      <ion-row class="card-info">
-        05-9835291
-      </ion-row>
-
-
-      <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Bilik Operasi Wilsab (24 jam): 
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 13 Miri	  : 
+    </ion-row>
+    <ion-row class="card-info">
+      <a href="tel: 086314024">086-314024</a>
     </ion-row>
 
-      <ion-row class="card-info">
-        088-524603
-      </ion-row>
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks DM 13 Miri		: 
+    </ion-row>
+    <ion-row class="card-info">
+     085-418204
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
 
 
-      <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi Wilsab: 
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(9)" [ngClass]="{active: isGroupShown(9)}">
+    <h3>
+     WILAYAH SABAH
+      <ion-icon color="success" item-right [name]="isGroupShown(9) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(9)">
+
+       <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Bilik Operasi WILSAB (24jam)	: 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 088270165">088-270165</a> 
     </ion-row>
 
+  <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks Bilik Operasi WILSAB           	: 
+    </ion-row>
       <ion-row class="card-info">
         088-270105
       </ion-row>
 
-   
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Email Bilik Operasi WILSAB           :
+    </ion-row>
+    <ion-row class="card-info">
+      opsroomwilsab.mmea@1govuc.gov.my
+    </ion-row>
 
-  </ion-card-content>
-</ion-card>
-
-
-
-
-
-<ion-card class="agensi-wrap">
-  <ion-card-header class="agensi-header">
-   POLIS DIRAJA MALAYSIA (PDRM)
-  </ion-card-header>
-  <ion-card-content padding>
-   
     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Gerakan Marin (Langkawi): 
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 14 Labuan	         : 
     </ion-row>
     <ion-row class="card-info">
-      04-9668678
+      <a href="tel: 087427999">087-427999</a>
     </ion-row>
 
-
-     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Gerakan Marin (Pulau Pinang): 
+  <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks DM14 Labuan           	: 
     </ion-row>
+      <ion-row class="card-info">
+        087-452999
+      </ion-row>
 
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 15 Kota Kinabalu	         : 
+    </ion-row>
     <ion-row class="card-info">
-      04-6582222
+      <a href="tel: 088270165">088-270165</a>
     </ion-row>
 
-     <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Gerakan Marin (Lumut):  
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks DM 15 Kota Kinabalu	         : 
+    </ion-row>
+    <ion-row class="card-info">
+      088-387844
     </ion-row>
 
+
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 16 Kudat	         : 
+    </ion-row>
+    <ion-row class="card-info">
+      <a href="tel: 088611857">088-611857</a>
+    </ion-row>
+
+
+<ion-row>
+      <ion-icon ios="ios-mail" md="md-mail"></ion-icon> Faks DM 16 Kudat	: 
+    </ion-row>
+    <ion-row class="card-info">
+      088-611860
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 17 Sandakan	  : 
+    </ion-row>
+    <ion-row class="card-info">
+      <a href="tel: 089229504">089-229504</a>
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks DM 17 Sandakan		: 
+    </ion-row>
+    <ion-row class="card-info">
+      089-229505
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon>DM 18 Tawau	         : 
+    </ion-row>
+    <ion-row class="card-info">
+      <a href="tel: 089752115">089-752115</a>
+    </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks DM 18 Tawau	         : 
+    </ion-row>
+    <ion-row class="card-info">
+      089-752116
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(10)" [ngClass]="{active: isGroupShown(10)}">
+    <h3>
+     POLIS DIRAJA MALAYSIA (PDRM)
+      <ion-icon color="success" item-right [name]="isGroupShown(10) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(10)">
+
+        <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Gerakan Marin (Langkawi)	: 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 049668678 ">04-9668678 </a> 
+    </ion-row>
+
+  <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Gerakan Marin (Pulau Pinang)	: 
+    </ion-row>
       <ion-row class="card-info">
-        05-6812361
+        <a href="tel: 046582222">04-6582222</a>
       </ion-row>
 
+    <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Gerakan Marin (Lumut)	         : 
+    </ion-row>
+    <ion-row class="card-info">
+      <a href="tel: 056812361">05-6812361</a>    </ion-row>
+
+  <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Polis Marin (Sabah) 24 jam	: 
+    </ion-row>
+      <ion-row class="card-info">
+        <a href="tel: 088454819/821/826">088-454819/821/826</a>
+      </ion-row>
+
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Polis Marin (Sarawak) 24 jam	         : 
+    </ion-row>
+    <ion-row class="card-info">
+      <a href="tel: 082334111">082-334111</a>
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(11)" [ngClass]="{active: isGroupShown(11)}">
+    <h3>
+    SURUHANJAYA PENCEGAHAN RASUAH MALAYSIA 
+      <ion-icon color="success" item-right [name]="isGroupShown(11) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(11)">
 
       <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Polis Marin (Sabah) 24 jam:  
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Suruhanjaya Pencegahan Rasuah Malaysia  : 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 1800886000">1 800 88 6000</a> 
+    </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(12)" [ngClass]="{active: isGroupShown(12)}">
+    <h3>
+     LEMBAGA KEMAJUAN IKAN MALAYSIA
+      <ion-icon color="success" item-right [name]="isGroupShown(12) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(12)">
+
+        <ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Wisma LKIM: 
+    </ion-row>
+    <ion-row class="card-info">
+  <a href="tel: 038064 9000"> 03-8064 9000</a> 
     </ion-row>
 
-      <ion-row class="card-info">
-        088-454819/821/826
-      </ion-row>
 
-
-      <ion-row>
-      <ion-icon ios="ios-call" md="md-call"></ion-icon> Pasukan Polis Marin (Sarawak) 24 jam:  
+<ion-row>
+      <ion-icon ios="ios-call" md="md-call"></ion-icon> Faks (Pejabat Ketua Pengarah)         : 
     </ion-row>
+    <ion-row class="card-info">
+    03-80603726
+     </ion-row>
+    </div>
+  </ion-item>
+</ion-list>
 
-      <ion-row class="card-info">
-        082-334111
-      </ion-row>
-
-  
 
 
-  </ion-card-content>
+
+
+
+
+
+     </ion-card-content>
 </ion-card>
+
+
+
+
+
+
 
 
 
@@ -217,8 +721,7 @@
   <ion-row>
 
 
-    <ion-col width-100 text-right class="footer-logo"><img src="assets/images/tldm.png" > <img src="assets/images/lkim.png" > <img src="assets/images/maritim.png" ></ion-col>
-
+  <ion-col width-100 text-right class="footer-logo"><img src="assets/images/footerLogo.png" > </ion-col>
 
   </ion-row>
   </ion-grid>

@@ -162,6 +162,33 @@
 
 
 
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(6)" [ngClass]="{active: isGroupShown(6)}">
+    <h3>
+     LKIM
+      <ion-icon color="success" item-right [name]="isGroupShown(6) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(6)">
+
+        <ion-row>
+      <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/LKIM.MOA/', '_system', 'location=yes'); return false">@LKIM.MOA</a>
+      </ion-row>
+       <ion-row>
+      <img src="assets/images/socialTwitter.png"> <a onclick="window.open('https://twitter.com/LKIMHQ', '_system', 'location=yes'); return false">@LKIMHQ</a>
+      </ion-row>
+ 
+      <ion-row>
+      <img src="assets/images/socialWeb.png"> <a onclick="window.open('https://www.lkim.gov.my', '_system', 'location=yes'); return false">www.lkim.gov.my</a>
+      </ion-row>
+
+
+    </div>
+  </ion-item>
+</ion-list>
+
+
+
+
 
 
 </ion-content>
@@ -173,8 +200,7 @@
   <ion-row>
 
 
-    <ion-col width-100 text-right class="footer-logo"><img src="assets/images/tldm.png" > <img src="assets/images/lkim.png" > <img src="assets/images/maritim.png" ></ion-col>
-
+    <ion-col width-100 text-right class="footer-logo"><img src="assets/images/footerLogo.png" > </ion-col>
 
   </ion-row>
   </ion-grid>

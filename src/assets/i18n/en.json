@@ -75,5 +75,7 @@
     "PRIHATIN_NOTES": "*Valid for Celcom users only",
     "PRIHATIN_SUCCESS_NOTES": "We thank you for your generosity. You will be notified via SMS of the success of your transaction.",
     "PRIHATIN_SUCCESS_NOTES_2": "Sincerely,",
-    "PRIHATIN_SUCCESS_NOTES_3": "The Royal Malaysian Navy"
+    "PRIHATIN_SUCCESS_NOTES_3": "The Royal Malaysian Navy",
+    "PRIHATIN_TXT1": "Please select your donation amount",
+    "PRIHATIN_BTTN": "Donate Now"
 }
