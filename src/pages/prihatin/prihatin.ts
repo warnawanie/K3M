@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SMS } from 'ionic-native';
+import { SMS } from '@ionic-native/sms';
 import { NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { PrihatinSuccessPage } from '../prihatin-success/prihatin-success';
 
@@ -21,7 +21,7 @@ export class PrihatinPage {
   amount:number;
   loader: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private toastCtrl: ToastController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private loadingCtrl: LoadingController, private toastCtrl: ToastController, private sms: SMS) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PrihatinPage');
@@ -36,7 +36,7 @@ export class PrihatinPage {
 
 
   sendSMS() {
-    SMS.send(this.phoneNumber, this.textMessage).then((result) => {
+    this.sms.send(this.phoneNumber, this.textMessage).then((result) => {
       this.gotoSuccessPage();
     }, (error) => {
       let errorToast = this.toastCtrl.create({
