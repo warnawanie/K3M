@@ -22016,6 +22016,12 @@ page-talian .agensi-wrap ion-icon {
   margin-right: 10px;
 }
 
+page-talian .social-wrap a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #000;
+}
+
 page-talian .single-agency {
   margin: 12px;
 }

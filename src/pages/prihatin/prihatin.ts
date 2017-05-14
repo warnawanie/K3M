@@ -16,7 +16,7 @@ import { PrihatinSuccessPage } from '../prihatin-success/prihatin-success';
 export class PrihatinPage {
 
   // phoneNumber: string = "33286";
-  phoneNumber: string = "+60193556363";
+  phoneNumber: string = "33286";
   textMessage: string;
   amount:number;
   loader: any;
@@ -28,7 +28,7 @@ export class PrihatinPage {
   }
 
   initSendSMS(){
-    var message = "TPK3M " + this.amount;
+    var message = "TPK3M"+this.amount;
     this.textMessage = message;
     console.log(message);
     this.sendSMS();
