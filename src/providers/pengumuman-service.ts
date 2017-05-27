@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { LoopBackConfig} from '../app/shared/sdk';
 
 @Injectable()
 export class PengumumanService {
@@ -11,7 +12,7 @@ export class PengumumanService {
   
   getPengumumanData(){
 
-    console.log(this.http.get('https://rakam.onsetfocus.com/api/announcements').map(res => res.json()).subscribe(data => {
+    console.log(this.http.get(LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() + '/announcements').map(res => res.json()).subscribe(data => {
       console.log(data);
     }));
 
