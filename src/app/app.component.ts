@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { LoginPage } from '../pages/login/login';
@@ -35,7 +36,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, translate: TranslateService) {
+  constructor(public platform: Platform, translate: TranslateService, statusBar: StatusBar, splashScreen: SplashScreen) {
 
       translate.setDefaultLang('ms');
 
@@ -45,7 +46,12 @@ export class MyApp {
      // });
 
 
-    this.initializeApp();
+    this.platform.ready().then(() => {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      statusBar.styleDefault();
+      splashScreen.hide();
+    });
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -65,14 +71,14 @@ export class MyApp {
 
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
-    });
-  }
+  // initializeApp() {
+  //   this.platform.ready().then(() => {
+  //     // Okay, so the platform is ready and our plugins are available.
+  //     // Here you can do any higher level native things you might need.
+  //     statusbar.styleDefault();
+  //     Splashscreen.hide();
+  //   });
+  // }
 
   openPage(page) {
     // Reset the content nav to have just this page

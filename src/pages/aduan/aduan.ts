@@ -8,7 +8,8 @@ import { ReportApi } from '../../app/shared/sdk/services';
 import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi, StorageApi }  from '../../app/shared/sdk/services';
 import { TranslateService } from 'ng2-translate';
-import { Camera, FilePath } from 'ionic-native';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
 import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
 import { File } from '@ionic-native/file';
 import { LoopBackConfig } from '../../app/shared/sdk/lb.config';
@@ -27,6 +28,8 @@ export class AduanPage {
   lastImage: string = null;
   serverFilename: string = null;
   loading: Loading;
+  filePath: FilePath = null;
+  camera: Camera = null;
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
@@ -39,8 +42,13 @@ export class AduanPage {
     private storageApi: StorageApi, 
     public translateService: TranslateService,
     private transfer: Transfer, 
-    private file: File
+    private file: File,
+    private _filePath: FilePath,
+    private _camera: Camera,
     ) {
+
+    this.filePath = _filePath;
+    this.camera = _camera;
 
     this.customerApi.getCurrent().subscribe(
       
@@ -101,7 +109,7 @@ export class AduanPage {
           // icon: !this.platform.is('ios') ? 'share' : null,
           handler: () => {
             console.log('Camera clicked');
-            this.takePicture(Camera.PictureSourceType.CAMERA);
+            this.takePicture(this.camera.PictureSourceType.CAMERA);
           }
         },
         {
@@ -109,7 +117,7 @@ export class AduanPage {
           // icon: !this.platform.is('ios') ? 'arrow-dropright-circle' : null,
           handler: () => {
             console.log('Album clicked');
-            this.takePicture(Camera.PictureSourceType.PHOTOLIBRARY);
+            this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
           }
         },
         {
@@ -143,10 +151,10 @@ export class AduanPage {
     };
    
     // Get the data of an image
-    Camera.getPicture(options).then((imagePath) => {
+    this.camera.getPicture(options).then((imagePath) => {
       // Special handling for Android library
-      if (this.platform.is('android') && sourceType === Camera.PictureSourceType.PHOTOLIBRARY) {
-        FilePath.resolveNativePath(imagePath)
+      if (this.platform.is('android') && sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
+        this.filePath.resolveNativePath(imagePath)
         .then(filePath => {
             let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
             let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));

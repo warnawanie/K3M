@@ -1,10 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
-import { Geolocation } from 'ionic-native';
+import { Geolocation } from '@ionic-native/geolocation';
 import { TranslateService } from 'ng2-translate';
 import { Weather}  from '../../app/shared/sdk/models';
 import { WeatherApi }  from '../../app/shared/sdk/services';
-import { LocationTracker } from '../../providers/location-tracker';
 import * as moment from 'moment';
 
 @Component({
@@ -22,7 +21,9 @@ export class CuacaPage {
    moment = moment;
    locationName: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService,public loadingCtrl: LoadingController, private weatherApi: WeatherApi, public locationTracker: LocationTracker) {
+   geolocation: Geolocation;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public translateService: TranslateService,public loadingCtrl: LoadingController, private weatherApi: WeatherApi, private _geolocation: Geolocation) {
 
      this.loader = this.loadingCtrl.create({
       content: "Loading Data"
@@ -34,6 +35,7 @@ export class CuacaPage {
           // this.loader.dismiss();
      // }, 1500);
 
+     this.geolocation = _geolocation;
 
   }
 
@@ -41,7 +43,7 @@ export class CuacaPage {
 
   loadLocationWeather(){
     
-    Geolocation.getCurrentPosition().then((position) => {
+    this.geolocation.getCurrentPosition().then((position) => {
 
       this.weatherApi.myLocation(position.coords.latitude, position.coords.longitude).subscribe(
         data => {

@@ -1,10 +1,18 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Http } from '@angular/http';
-import { Storage } from '@ionic/storage';
+
+import { IonicStorageModule } from '@ionic/storage';
 import { Transfer} from '@ionic-native/transfer';
 import { File } from '@ionic-native/file';
 import { SMS } from '@ionic-native/sms';
+import { Camera } from '@ionic-native/camera';
+import { FilePath } from '@ionic-native/file-path';
+import { Geolocation } from '@ionic-native/geolocation';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
@@ -28,8 +36,8 @@ import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-se
 import { PengumumanService } from '../providers/pengumuman-service';
 import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
+
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate/ng2-translate';
-import { LocationTracker } from '../providers/location-tracker';
 import * as moment from 'moment';
 
 
@@ -63,7 +71,9 @@ export function createTranslateLoader(http: Http) {
     EmergencySendPagePage
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     SDKBrowserModule.forRoot(),
     TranslateModule.forRoot({
       provide: TranslateLoader,
@@ -95,7 +105,19 @@ export function createTranslateLoader(http: Http) {
     PrihatinPage,
     EmergencySendPagePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, Storage, File, SMS, Transfer]
+  providers: [
+      StatusBar,
+      SplashScreen,
+      {provide: ErrorHandler, useClass: IonicErrorHandler}, 
+      PengumumanService, 
+      Storage, 
+      File, 
+      SMS, 
+      Transfer, 
+      Geolocation, 
+      Camera, 
+      FilePath
+  ]
 })
 export class AppModule {}
 

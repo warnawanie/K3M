@@ -54,20 +54,15 @@
 
 
 <ion-row>
-
-<button ion-button block (click)="translateToMalay()">
-    {{ "BTN_MALAY" | translate }}
-    </button>
-
-  <button ion-button block (click)="translateToMandarin()">
-      {{ "BTN_CHINESE" | translate }}
-  </button>
-
-    <button ion-button block (click)="translateToEnglish()">
-      {{ "BTN_ENGLISH" | translate }}
-  </button>
-
-
+  
+    <button ion-button block (click)="translateToMalay()">{{ "BTN_MALAY" | translate }}</button>
+  
+  <ion-col>
+  <button ion-button block (click)="translateToMandarin()">{{ "BTN_CHINESE" | translate }}</button>
+  </ion-col>
+  <ion-col>
+  <button ion-button block (click)="translateToEnglish()">{{ "BTN_ENGLISH" | translate }}</button>
+  </ion-col>
 </ion-row>
  
 

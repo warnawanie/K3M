@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
-import { Geolocation } from 'ionic-native';
+import { Geolocation } from '@ionic-native/geolocation';
 import { TranslateService } from 'ng2-translate';
 import { Emergency}  from '../../app/shared/sdk/models';
 import { EmergencyApi }  from '../../app/shared/sdk/services';
@@ -23,11 +23,19 @@ export class SosPage {
   
   @ViewChild('map') mapElement: ElementRef;
   map: any;
+  geolocation: Geolocation;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    public loadingCtrl: LoadingController, 
+    public translateService: TranslateService, 
+    private customerApi: CustomerApi, 
+    private emergencyApi: EmergencyApi, 
+    private _geolocation: Geolocation) {
   
   this.ionViewLoaded();
 
+  this.geolocation = _geolocation;
 
   this.loader = this.loadingCtrl.create({
       content: "Loading Maps"
@@ -62,7 +70,7 @@ export class SosPage {
   loadMap(){
 
 
-  Geolocation.watchPosition().subscribe((position) => {
+  this.geolocation.watchPosition().subscribe((position) => {
   this.emergency.latitude = position.coords.latitude;
   this.emergency.longitude = position.coords.longitude;
   
@@ -72,7 +80,7 @@ export class SosPage {
 
 
  
-    Geolocation.getCurrentPosition().then((position) => {
+    this.geolocation.getCurrentPosition().then((position) => {
  
  
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -121,7 +129,7 @@ export class SosPage {
 
 
 getCoordinate(){
-      Geolocation.getCurrentPosition().then((position) => {
+      this.geolocation.getCurrentPosition().then((position) => {
       //let latLng = new google.maps.LatLng();
 
        console.log(position.coords.latitude, position.coords.longitude);
