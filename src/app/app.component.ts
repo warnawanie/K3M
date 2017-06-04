@@ -64,8 +64,7 @@ export class MyApp {
     LoopBackConfig.setDebugMode(false); // defaults true
     //this.log.info('Component is Loaded');
 
-    // LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
-    LoopBackConfig.setBaseURL('http://localhost:3000');
+    LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
     LoopBackConfig.setApiVersion('api');
 
   }
