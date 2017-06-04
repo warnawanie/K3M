@@ -24,6 +24,10 @@ import { FaqPage } from '../pages/faq/faq';
 import { PrihatinSuccessPage } from '../pages/prihatin-success/prihatin-success';
 import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
 
+import { MenuController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { CustomerApi } from './shared/sdk/services';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -35,7 +39,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, translate: TranslateService) {
+  constructor(public platform: Platform, translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController) {
 
       translate.setDefaultLang('ms');
 
@@ -60,7 +64,8 @@ export class MyApp {
     LoopBackConfig.setDebugMode(false); // defaults true
     //this.log.info('Component is Loaded');
 
-    LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
+    // LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
+    LoopBackConfig.setBaseURL('http://localhost:3000');
     LoopBackConfig.setApiVersion('api');
 
   }
@@ -78,5 +83,20 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  /*
+  - call user logout API
+  - clear localstorage
+  - redirect to login
+  */
+  initLogOut(){
+    
+    this.accountApi.logout().subscribe((response: any) => {
+      console.log( response);
+      this.localStorage.remove('userToken');
+      this.nav.setRoot(this.rootPage);
+      this.menuCtrl.close();
+    });
   }
 }
