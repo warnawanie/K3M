@@ -27,6 +27,8 @@ import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-se
 import { MenuController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { CustomerApi } from './shared/sdk/services';
+import { LoopBackAuth } from './shared/sdk/services/core/auth.service';
+import { LoadingController  } from 'ionic-angular';
 
 
 @Component({
@@ -36,10 +38,11 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+  loader: any;
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController) {
+  constructor(public platform: Platform, translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController, private loopbackAuth: LoopBackAuth, public loadingCtrl: LoadingController) {
 
       translate.setDefaultLang('ms');
 
@@ -65,6 +68,7 @@ export class MyApp {
     //this.log.info('Component is Loaded');
 
     LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
+    // LoopBackConfig.setBaseURL('http://localhost:3000');
     LoopBackConfig.setApiVersion('api');
 
   }
@@ -73,9 +77,44 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      // StatusBar.styleDefault();
+      // Splashscreen.hide();
+      this.checkIfTokenExist();
     });
+  }
+
+  checkIfTokenExist(){
+    this.loader = this.loadingCtrl.create({
+      content: "Loading"
+    });    
+    this.loader.present();
+
+    this.localStorage.get('userToken').then((val) => {
+       console.log('Token Exist', val);
+       if(val != null){
+         console.log('Token Details', val);
+         this.loopbackAuth.setToken(val);
+         // test to get user details
+         this.accountApi.getCurrent().subscribe((response: any) => {
+           console.log(response);
+           this.nav.setRoot(HomePage);
+           this.updateView();
+         }, 
+         error =>{
+           // clear token 
+           this.localStorage.remove('userToken');
+           this.updateView();
+         });
+       }else{
+         this.updateView();
+       }
+      });
+  }
+
+  updateView(){
+    StatusBar.styleDefault();
+    Splashscreen.hide();
+    this.loader.dismiss();
   }
 
   openPage(page) {

@@ -24,7 +24,7 @@ export class LoginPage {
        // set a key/value
     //   storage.set('name', username);
     // });
-     
+     /*
      this.localStorage.get('userToken').then((val) => {
        console.log('Token Details', val);
        if(val != null){
@@ -33,7 +33,7 @@ export class LoginPage {
          this.navCtrl.setRoot(HomePage);
        }
       });
-
+      */
   }
   
 
