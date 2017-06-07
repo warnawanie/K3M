@@ -25,30 +25,30 @@ export class SosPage {
   map: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi) {
-  
-  this.ionViewLoaded();
+    
+    this.ionViewLoaded();
 
 
-  this.loader = this.loadingCtrl.create({
+    this.loader = this.loadingCtrl.create({
       content: "Loading Maps"
     });
 
-  this.loader.present();
-   
-         setTimeout(() => {
-           this.loader.dismiss();
-      }, 1500);
+    this.loader.present();
+    
+    setTimeout(() => {
+      this.loader.dismiss();
+    }, 1500);
 
 
-  this.customerApi.getCurrent().subscribe(
+    this.customerApi.getCurrent().subscribe(
       
-        data => {
-          this.emergency.customer_id = data.id;        
-        }
-     ); 
+      data => {
+        this.emergency.customer_id = data.id;        
+      }
+      ); 
 
 
-   }
+  }
 
 
 
@@ -62,47 +62,47 @@ export class SosPage {
   loadMap(){
 
 
-  Geolocation.watchPosition().subscribe((position) => {
-  this.emergency.latitude = position.coords.latitude;
-  this.emergency.longitude = position.coords.longitude;
-  
+    Geolocation.watchPosition().subscribe((position) => {
+      this.emergency.latitude = position.coords.latitude;
+      this.emergency.longitude = position.coords.longitude;
+      
 
-  let latLng = new google.maps.LatLng(this.emergency.latitude, this.emergency.longitude);
-  });
+      let latLng = new google.maps.LatLng(this.emergency.latitude, this.emergency.longitude);
+    });
 
 
- 
+    
     Geolocation.getCurrentPosition().then((position) => {
- 
- 
+      
+      
       let latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  
- 
+      
+      
       let mapOptions = {
         center: latLng,
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
- 
+      
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-        let marker = new google.maps.Marker({
-    map: this.map,
-    animation: google.maps.Animation.DROP,
-    position: this.map.getCenter()
-  });
- 
-  let content = "Lokasi Anda";          
- 
+      let marker = new google.maps.Marker({
+        map: this.map,
+        animation: google.maps.Animation.DROP,
+        position: this.map.getCenter()
+      });
+      
+      let content = "Lokasi Anda";          
+      
 
- 
-  this.addInfoWindow(marker, content);
+      
+      this.addInfoWindow(marker, content);
 
-   //this.loader.dismiss();
+      //this.loader.dismiss();
 
-   
-  console.log(position.coords.latitude, position.coords.longitude);
-  
- 
+      
+      console.log(position.coords.latitude, position.coords.longitude);
+      
+      
     }, (err) => {
       console.log(err);
     });
@@ -110,59 +110,59 @@ export class SosPage {
 
     
     
- 
+    
   }
 
   addMarker(){
- 
-  
- 
-}
+    
+    
+    
+  }
 
 
-getCoordinate(){
-      Geolocation.getCurrentPosition().then((position) => {
+  getCoordinate(){
+    Geolocation.getCurrentPosition().then((position) => {
       //let latLng = new google.maps.LatLng();
 
-       console.log(position.coords.latitude, position.coords.longitude);
-      });
+      console.log(position.coords.latitude, position.coords.longitude);
+    });
 
-     
-}
-
-
-
-addInfoWindow(marker, content){
- 
-  let infoWindow = new google.maps.InfoWindow({
-    content: content
-  });
- 
-  google.maps.event.addListener(marker, 'click', () => {
-    infoWindow.open(this.map, marker);
-  });
- 
-}
+    
+  }
 
 
 
-sendSos() {
-   this.loader = this.loadingCtrl.create({
+  addInfoWindow(marker, content){
+    
+    let infoWindow = new google.maps.InfoWindow({
+      content: content
+    });
+    
+    google.maps.event.addListener(marker, 'click', () => {
+      infoWindow.open(this.map, marker);
+    });
+    
+  }
+
+
+
+  sendSos() {
+    this.loader = this.loadingCtrl.create({
       content: "Loading"
     });
- 
+    
     
     this.loader.present();
 
-       setTimeout(() => {
-            this.loader.dismiss();
-        }, 1000);
+    setTimeout(() => {
+      this.loader.dismiss();
+    }, 1000);
 
     this.emergencyApi.create(this.emergency).subscribe((emergency: Emergency) => this.navCtrl.setRoot(EmergencySendPagePage));
-   }
+  }
 
 
-     onGoToHome(){
+  onGoToHome(){
     this.navCtrl.setRoot(HomePage);
   }
 
