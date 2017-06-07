@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { Transfer} from '@ionic-native/transfer';
+import { Geolocation } from '@ionic-native/geolocation';
 import { File } from '@ionic-native/file';
 import { SMS } from '@ionic-native/sms';
 import { MyApp } from './app.component';
@@ -95,7 +96,7 @@ export function createTranslateLoader(http: Http) {
     PrihatinPage,
     EmergencySendPagePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, Storage, File, SMS, Transfer]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, Storage, File, SMS, Transfer, Geolocation]
 })
 export class AppModule {}
 
