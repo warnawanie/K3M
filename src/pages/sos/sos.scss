@@ -1,65 +1,70 @@
 .ios, .md {
- 
-    page-sos {
- 
-      .scroll-content {
-        height: 100%
-      }
- 
-      #map {
-        width: 100%;
-        height: 100%;
-      }
- 
- .sos-location {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
 
-.sendSos{
-  width: 100%;
-  margin: auto;
-}
-.buttonSos{
-  width: 95%;
-  margin: auto;
-}
-ion-row.sos-container {
-    padding: 15px 0px;
-}
+  page-sos {
 
-.green-button{
-  
-   color: #fff;
-    background-color: #32db64;
-    width: 49%;
-    font-size: 15px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-}
+    .scroll-content {
+      height: 100%
+    }
 
-.sos-container{
-  position: absolute;
-  bottom: 100px;
-  background: #FFF;
-}
-.sos-heading{
-  text-align: center;
-}
-.red-button{
-  color: #fff;
-    background-color: #f53d3d;
+    #map {
+      width: 100%;
+      height: 100%;
+    }
 
-    width: 49%;
-    font-size: 15px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+    .sos-location {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
 
-}
+    .sendSos{
+      width: 100%;
+      margin: auto;
+    }
+    .buttonSos{
+      width: 95%;
+      margin: auto;
+    }
+    ion-row.sos-container {
+      padding: 15px 0px;
+    }
+
+    .green-button{
+
+     color: #fff;
+     background-color: #32db64;
+     width: 49%;
+     font-size: 15px;
+     padding: 10px 20px;
+     border-radius: 5px;
+     font-weight: bold;
+   }
+
+   .sos-container{
+      position: absolute;
+      bottom: 100px;
+      background: #FFF;
+    }
+    .sos-heading{
+      text-align: center;
+    }
+    .red-button{
+      color: #fff;
+      background-color: #f53d3d;
+
+      width: 49%;
+      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
 
     }
- 
+
+    #please-connect{
+      text-align: center;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  } 
+
 }

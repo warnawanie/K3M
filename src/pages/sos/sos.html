@@ -3,52 +3,39 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{ "SOS" | translate }}
+    <ion-title>{{ "SOS" | translate }}</ion-title>
+    <ion-buttons end class="logo-top">
+     <img src="assets/images/logo.png">
+   </ion-buttons>  
 
-
-
-    </ion-title>
-        <ion-buttons end class="logo-top">
-       <img src="assets/images/logo.png">
-    </ion-buttons>  
- 
-  </ion-navbar>
+ </ion-navbar>
 </ion-header>
 
 
 
 
 <ion-content>
+
+  <div #pleaseConnect id="please-connect">
+    <p>Tiada sambungan ke Internet</p>
+  </div>
+
   <div #map id="map"></div>  
 
-<ion-row class="sos-container">
-<form class="buttonSos">
-
-
-<input name="customer_id" type="text" [(ngModel)]="emergency.customer_id" hidden/>
-<input type=number name="latitude" [(ngModel)]="emergency.latitude" hidden/>
-<input type=number name="longitude" [(ngModel)]="emergency.longitude" hidden/>
-
-<button ion-button block color="danger" (click)="sendSos()" class="sendSos">{{ "SEND_SOS" | translate }}</button>
-
-
-
-</form>
-
-</ion-row>
-
+  <ion-row class="sos-container">
+    <form class="buttonSos">
+      <input name="customer_id" type="text" [(ngModel)]="emergency.customer_id" hidden/>
+      <input type=number name="latitude" [(ngModel)]="emergency.latitude" hidden/>
+      <input type=number name="longitude" [(ngModel)]="emergency.longitude" hidden/>
+      <button ion-button block color="danger" (click)="sendSos()" class="sendSos">{{ "SEND_SOS" | translate }}</button>
+    </form>
+  </ion-row>
 </ion-content>
 
-
 <ion-footer class="footer-apps">
-
   <ion-grid>
-  <ion-row>
-
-
-   <ion-col width-100 text-right class="footer-logo"><img src="assets/images/footerLogo.png" > </ion-col>
-
-  </ion-row>
-  </ion-grid>
-
+    <ion-row>
+     <ion-col width-100 text-right class="footer-logo"><img src="assets/images/footerLogo.png" > </ion-col>
+   </ion-row>
+ </ion-grid>
 </ion-footer>

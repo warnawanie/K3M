@@ -9,6 +9,8 @@ import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi }  from '../../app/shared/sdk/services';
 import { HomePage } from '../home/home';
 
+import { GoogleMaps } from '../../providers/google-maps';
+
 
 declare var google;
 
@@ -16,15 +18,18 @@ declare var google;
   selector: 'page-sos',
   templateUrl: 'sos.html'
 })
+
 export class SosPage {
   loader: any;
 
   public emergency: Emergency = new Emergency();
   
   @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
+
   map: any;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, private geolocation: Geolocation) {
+  constructor( public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, private geolocation: Geolocation, public maps: GoogleMaps) {
 
 
     // Predefined emergency data
@@ -38,17 +43,33 @@ export class SosPage {
 
 
   ionViewLoaded(){
+
+    console.log("===========================================================");
+    this.showLoader();
+    // this.loadMap();
+    this.loadMapV2();
+  }
+
+  //  v2
+  loadMapV2(){
+    let mapLoaded = this.maps.init(this.mapElement.nativeElement, this.pleaseConnect.nativeElement).then(() => {
+      this.loader.dismiss();
+      this.addMarker();
+      console.log('######################################################');
+    }); 
+  }
+
+
+
+
+
+
+  //  v1
+  showLoader(){
     this.loader = this.loadingCtrl.create({
       content: "Loading Maps"
     });
-
     this.loader.present();
-
-    // setTimeout(() => {
-    //   this.loader.dismiss();
-    // }, 1500);
-    
-    this.loadMap();
   }
 
   loadMap(){
@@ -67,16 +88,6 @@ export class SosPage {
       }
 
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
-      let marker = new google.maps.Marker({
-        map: this.map,
-        animation: google.maps.Animation.DROP,
-        position: this.map.getCenter()
-      });
-
-      let content = "Lokasi Anda";          
-
-      this.addInfoWindow(marker, content);
-
       //this.loader.dismiss();
       console.log(position.coords.latitude, position.coords.longitude);
       this.loader.dismiss();
@@ -85,20 +96,28 @@ export class SosPage {
     });
   }
 
+  addMarker(){
+    let marker = new google.maps.Marker({
+      map: this.maps.map,
+      animation: google.maps.Animation.DROP,
+      position: this.maps.map.getCenter()
+    });
+
+    let content = "Lokasi Anda";          
+
+    this.addInfoWindow(marker, content);
+  }
+
 
   addInfoWindow(marker, content){
 
     let infoWindow = new google.maps.InfoWindow({
       content: content
     });
-
     google.maps.event.addListener(marker, 'click', () => {
-      infoWindow.open(this.map, marker);
+      infoWindow.open(this.maps.map, marker);
     });
-
   }
-
-
 
   sendSos() {
     this.loader = this.loadingCtrl.create({
