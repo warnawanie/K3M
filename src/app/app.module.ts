@@ -6,6 +6,7 @@ import { Transfer} from '@ionic-native/transfer';
 import { Geolocation } from '@ionic-native/geolocation';
 import { File } from '@ionic-native/file';
 import { SMS } from '@ionic-native/sms';
+import { Network } from '@ionic-native/network';
 import { MyApp } from './app.component';
 import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
@@ -31,6 +32,9 @@ import { SDKBrowserModule } from './shared/sdk/index';
 import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
 import { TranslateModule, TranslateStaticLoader, TranslateLoader } from 'ng2-translate/ng2-translate';
 import { LocationTracker } from '../providers/location-tracker';
+// Services
+import { Connectivity } from '../providers/connectivity-service';
+import { GoogleMaps } from '../providers/google-maps';
 import * as moment from 'moment';
 
 
@@ -96,7 +100,7 @@ export function createTranslateLoader(http: Http) {
     PrihatinPage,
     EmergencySendPagePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, Storage, File, SMS, Transfer, Geolocation]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, GoogleMaps, Connectivity, Storage, File, SMS, Transfer, Geolocation, Network]
 })
 export class AppModule {}
 
