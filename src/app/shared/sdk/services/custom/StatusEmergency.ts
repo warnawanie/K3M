@@ -48,7 +48,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public findByIdEmergencies(id: any, fk: any): Observable<any> {
+  public findByIdEmergencies(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies/:fk";
@@ -58,7 +58,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -75,7 +75,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdEmergencies(id: any, fk: any): Observable<any> {
+  public destroyByIdEmergencies(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies/:fk";
@@ -85,7 +85,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -109,7 +109,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public updateByIdEmergencies(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdEmergencies(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies/:fk";
@@ -121,7 +121,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -141,7 +141,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public getEmergencies(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getEmergencies(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies";
@@ -150,8 +150,8 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -173,7 +173,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public createEmergencies(id: any, data: any = {}): Observable<any> {
+  public createEmergencies(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies";
@@ -184,7 +184,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -199,7 +199,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteEmergencies(id: any): Observable<any> {
+  public deleteEmergencies(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies";
@@ -208,7 +208,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -227,7 +227,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countEmergencies(id: any, where: any = {}): Observable<any> {
+  public countEmergencies(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies/count";
@@ -236,8 +236,8 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -257,7 +257,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public patchOrCreate(data: any = {}): Observable<any> {
+  public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency";
@@ -266,7 +266,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -288,7 +288,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public patchAttributes(id: any, data: any = {}): Observable<any> {
+  public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id";
@@ -299,7 +299,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -321,7 +321,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
    * This usually means the response is a `StatusEmergency` object.)
    * </em>
    */
-  public createManyEmergencies(id: any, data: any[] = []): Observable<any> {
+  public createManyEmergencies(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/status-emergency/:id/emergencies";
@@ -332,7 +332,7 @@ export class StatusEmergencyApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 

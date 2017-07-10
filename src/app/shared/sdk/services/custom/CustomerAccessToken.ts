@@ -10,16 +10,16 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Tide } from '../../models/Tide';
+import { CustomerAccessToken } from '../../models/CustomerAccessToken';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { TideLocation } from '../../models/TideLocation';
+import { Customer } from '../../models/Customer';
 
 
 /**
- * Api services for the `Tide` model.
+ * Api services for the `CustomerAccessToken` model.
  */
 @Injectable()
-export class TideApi extends BaseLoopBackApi {
+export class CustomerAccessTokenApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -33,9 +33,9 @@ export class TideApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation location.
+   * Fetches belongsTo relation user.
    *
-   * @param {any} id Tide id
+   * @param {any} id CustomerAccessToken id
    *
    * @param {boolean} refresh 
    *
@@ -45,13 +45,13 @@ export class TideApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Tide` object.)
+   * This usually means the response is a `CustomerAccessToken` object.)
    * </em>
    */
-  public getLocation(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getUser(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/tides/:id/location";
+    "/CustomerAccessTokens/:id/user";
     let _routeParams: any = {
       id: id
     };
@@ -75,13 +75,13 @@ export class TideApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Tide` object.)
+   * This usually means the response is a `CustomerAccessToken` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/tides";
+    "/CustomerAccessTokens";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -94,7 +94,7 @@ export class TideApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Tide id
+   * @param {any} id CustomerAccessToken id
    *
    * @param {object} data Request data.
    *
@@ -106,13 +106,13 @@ export class TideApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Tide` object.)
+   * This usually means the response is a `CustomerAccessToken` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/tides/:id";
+    "/CustomerAccessTokens/:id";
     let _routeParams: any = {
       id: id
     };
@@ -126,9 +126,9 @@ export class TideApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Tide`.
+   * i.e. `CustomerAccessToken`.
    */
   public getModelName() {
-    return "Tide";
+    return "CustomerAccessToken";
   }
 }

@@ -14,6 +14,7 @@ import { CustomerCategory } from '../../models/CustomerCategory';
 import { CustomerSubCategory } from '../../models/CustomerSubCategory';
 import { Storage } from '../../models/Storage';
 import { Customer } from '../../models/Customer';
+import { CustomerAccessToken } from '../../models/CustomerAccessToken';
 
 export interface Models { [name: string]: any }
 
@@ -35,6 +36,7 @@ export class SDKModels {
     CustomerSubCategory: CustomerSubCategory,
     Storage: Storage,
     Customer: Customer,
+    CustomerAccessToken: CustomerAccessToken,
     
   };
 

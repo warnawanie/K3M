@@ -13,5 +13,6 @@ export * from './CustomerCategory';
 export * from './CustomerSubCategory';
 export * from './Storage';
 export * from './Customer';
+export * from './CustomerAccessToken';
 export * from './BaseModels';
 export * from './FireLoopRef';

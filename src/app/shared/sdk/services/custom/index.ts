@@ -13,5 +13,6 @@ export * from './CustomerCategory';
 export * from './CustomerSubCategory';
 export * from './Storage';
 export * from './Customer';
+export * from './CustomerAccessToken';
 export * from './SDKModels';
 export * from './logger.service';

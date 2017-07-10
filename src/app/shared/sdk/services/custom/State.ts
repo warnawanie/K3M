@@ -49,7 +49,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public findByIdReports(id: any, fk: any): Observable<any> {
+  public findByIdReports(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports/:fk";
@@ -59,7 +59,7 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -76,7 +76,7 @@ export class StateApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdReports(id: any, fk: any): Observable<any> {
+  public destroyByIdReports(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports/:fk";
@@ -86,7 +86,7 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -110,7 +110,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public updateByIdReports(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdReports(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports/:fk";
@@ -122,7 +122,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -142,7 +142,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public findByIdLocations(id: any, fk: any): Observable<any> {
+  public findByIdLocations(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations/:fk";
@@ -152,7 +152,7 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -169,7 +169,7 @@ export class StateApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdLocations(id: any, fk: any): Observable<any> {
+  public destroyByIdLocations(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations/:fk";
@@ -179,7 +179,7 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -203,7 +203,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public updateByIdLocations(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdLocations(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations/:fk";
@@ -215,7 +215,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -235,7 +235,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public getReports(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getReports(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports";
@@ -244,8 +244,8 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -267,7 +267,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public createReports(id: any, data: any = {}): Observable<any> {
+  public createReports(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports";
@@ -278,7 +278,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -293,7 +293,7 @@ export class StateApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteReports(id: any): Observable<any> {
+  public deleteReports(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports";
@@ -302,7 +302,7 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -321,7 +321,7 @@ export class StateApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countReports(id: any, where: any = {}): Observable<any> {
+  public countReports(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports/count";
@@ -330,8 +330,8 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -351,7 +351,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public getLocations(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getLocations(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations";
@@ -360,8 +360,8 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -383,7 +383,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public createLocations(id: any, data: any = {}): Observable<any> {
+  public createLocations(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations";
@@ -394,7 +394,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -409,7 +409,7 @@ export class StateApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteLocations(id: any): Observable<any> {
+  public deleteLocations(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations";
@@ -418,7 +418,7 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -437,7 +437,7 @@ export class StateApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countLocations(id: any, where: any = {}): Observable<any> {
+  public countLocations(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations/count";
@@ -446,8 +446,8 @@ export class StateApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -467,7 +467,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public patchOrCreate(data: any = {}): Observable<any> {
+  public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states";
@@ -476,7 +476,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -498,7 +498,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public patchAttributes(id: any, data: any = {}): Observable<any> {
+  public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id";
@@ -509,7 +509,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -531,7 +531,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public createManyReports(id: any, data: any[] = []): Observable<any> {
+  public createManyReports(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/reports";
@@ -542,7 +542,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -564,7 +564,7 @@ export class StateApi extends BaseLoopBackApi {
    * This usually means the response is a `State` object.)
    * </em>
    */
-  public createManyLocations(id: any, data: any[] = []): Observable<any> {
+  public createManyLocations(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/states/:id/locations";
@@ -575,7 +575,7 @@ export class StateApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 

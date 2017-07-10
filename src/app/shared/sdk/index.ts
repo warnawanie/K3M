@@ -62,6 +62,7 @@ import { CustomerCategoryApi } from './services/custom/CustomerCategory';
 import { CustomerSubCategoryApi } from './services/custom/CustomerSubCategory';
 import { StorageApi } from './services/custom/Storage';
 import { CustomerApi } from './services/custom/Customer';
+import { CustomerAccessTokenApi } from './services/custom/CustomerAccessToken';
 /**
 * @module SDKBrowserModule
 * @description
@@ -107,6 +108,7 @@ export class SDKBrowserModule {
         CustomerSubCategoryApi,
         StorageApi,
         CustomerApi,
+        CustomerAccessTokenApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

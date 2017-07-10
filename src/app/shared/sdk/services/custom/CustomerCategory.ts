@@ -49,7 +49,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public findByIdSubcategories(id: any, fk: any): Observable<any> {
+  public findByIdSubcategories(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories/:fk";
@@ -59,7 +59,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -76,7 +76,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdSubcategories(id: any, fk: any): Observable<any> {
+  public destroyByIdSubcategories(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories/:fk";
@@ -86,7 +86,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -110,7 +110,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public updateByIdSubcategories(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdSubcategories(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories/:fk";
@@ -122,7 +122,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -142,7 +142,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public findByIdCustomers(id: any, fk: any): Observable<any> {
+  public findByIdCustomers(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers/:fk";
@@ -152,7 +152,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -169,7 +169,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdCustomers(id: any, fk: any): Observable<any> {
+  public destroyByIdCustomers(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers/:fk";
@@ -179,7 +179,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -203,7 +203,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public updateByIdCustomers(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdCustomers(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers/:fk";
@@ -215,7 +215,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -235,7 +235,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public getSubcategories(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getSubcategories(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories";
@@ -244,8 +244,8 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -267,7 +267,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public createSubcategories(id: any, data: any = {}): Observable<any> {
+  public createSubcategories(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories";
@@ -278,7 +278,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -293,7 +293,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteSubcategories(id: any): Observable<any> {
+  public deleteSubcategories(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories";
@@ -302,7 +302,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -321,7 +321,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countSubcategories(id: any, where: any = {}): Observable<any> {
+  public countSubcategories(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories/count";
@@ -330,8 +330,8 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -351,7 +351,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public getCustomers(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getCustomers(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers";
@@ -360,8 +360,8 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -383,7 +383,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public createCustomers(id: any, data: any = {}): Observable<any> {
+  public createCustomers(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers";
@@ -394,7 +394,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -409,7 +409,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteCustomers(id: any): Observable<any> {
+  public deleteCustomers(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers";
@@ -418,7 +418,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -437,7 +437,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countCustomers(id: any, where: any = {}): Observable<any> {
+  public countCustomers(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers/count";
@@ -446,8 +446,8 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -467,7 +467,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public patchOrCreate(data: any = {}): Observable<any> {
+  public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories";
@@ -476,7 +476,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -498,7 +498,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public patchAttributes(id: any, data: any = {}): Observable<any> {
+  public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id";
@@ -509,7 +509,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -531,7 +531,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public createManySubcategories(id: any, data: any[] = []): Observable<any> {
+  public createManySubcategories(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/subcategories";
@@ -542,7 +542,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -564,7 +564,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-  public createManyCustomers(id: any, data: any[] = []): Observable<any> {
+  public createManyCustomers(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/customer-categories/:id/customers";
@@ -575,7 +575,7 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 

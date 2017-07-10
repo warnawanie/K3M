@@ -46,16 +46,16 @@ export class WeatherApi extends BaseLoopBackApi {
    *
    * Response from API
    */
-  public myLocation(latitude: any, longitude: any): Observable<any> {
+  public myLocation(latitude: any, longitude: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/cuaca/my-location";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (latitude) _urlParams.latitude = latitude;
-    if (longitude) _urlParams.longitude = longitude;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof latitude !== 'undefined' && latitude !== null) _urlParams.latitude = latitude;
+    if (typeof longitude !== 'undefined' && longitude !== null) _urlParams.longitude = longitude;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 

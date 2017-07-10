@@ -49,7 +49,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public findByIdTides(id: any, fk: any): Observable<any> {
+  public findByIdTides(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides/:fk";
@@ -59,7 +59,7 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -76,7 +76,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdTides(id: any, fk: any): Observable<any> {
+  public destroyByIdTides(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides/:fk";
@@ -86,7 +86,7 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -110,7 +110,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public updateByIdTides(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdTides(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides/:fk";
@@ -122,7 +122,7 @@ export class TideLocationApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -142,7 +142,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public getState(id: any, refresh: any = {}): Observable<any> {
+  public getState(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/state";
@@ -151,8 +151,8 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (refresh) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -172,7 +172,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public getTides(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getTides(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides";
@@ -181,8 +181,8 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (filter) _urlParams.filter = filter;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -204,7 +204,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public createTides(id: any, data: any = {}): Observable<any> {
+  public createTides(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides";
@@ -215,7 +215,7 @@ export class TideLocationApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -230,7 +230,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteTides(id: any): Observable<any> {
+  public deleteTides(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides";
@@ -239,7 +239,7 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -258,7 +258,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countTides(id: any, where: any = {}): Observable<any> {
+  public countTides(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides/count";
@@ -267,8 +267,8 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (where) _urlParams.where = where;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -288,7 +288,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public patchOrCreate(data: any = {}): Observable<any> {
+  public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations";
@@ -297,7 +297,7 @@ export class TideLocationApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -319,7 +319,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public patchAttributes(id: any, data: any = {}): Observable<any> {
+  public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id";
@@ -330,7 +330,7 @@ export class TideLocationApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -348,7 +348,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public getForecast(id: any): Observable<any> {
+  public getForecast(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/forecast";
@@ -357,7 +357,7 @@ export class TideLocationApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
@@ -379,7 +379,7 @@ export class TideLocationApi extends BaseLoopBackApi {
    * This usually means the response is a `TideLocation` object.)
    * </em>
    */
-  public createManyTides(id: any, data: any[] = []): Observable<any> {
+  public createManyTides(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/tides-locations/:id/tides";
@@ -390,7 +390,7 @@ export class TideLocationApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 

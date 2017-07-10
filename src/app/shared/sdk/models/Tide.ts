@@ -8,6 +8,7 @@ export interface TideInterface {
   "date"?: string;
   "time"?: string;
   "height"?: number;
+  "location_id"?: number;
   "created_at"?: Date;
   "updated_at"?: Date;
   "id"?: number;
@@ -18,6 +19,7 @@ export class Tide implements TideInterface {
   "date": string;
   "time": string;
   "height": number;
+  "location_id": number;
   "created_at": Date;
   "updated_at": Date;
   "id": number;
@@ -63,6 +65,10 @@ export class Tide implements TideInterface {
         },
         "height": {
           name: 'height',
+          type: 'number'
+        },
+        "location_id": {
+          name: 'location_id',
           type: 'number'
         },
         "created_at": {

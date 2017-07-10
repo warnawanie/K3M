@@ -3,7 +3,8 @@ import {
   Report,
   Emergency,
   CustomerCategory,
-  CustomerSubCategory
+  CustomerSubCategory,
+  CustomerAccessToken
 } from '../index';
 
 declare var Object: any;
@@ -23,18 +24,17 @@ export interface CustomerInterface {
   "updated_at"?: Date;
   "realm"?: string;
   "username"?: string;
-  "password": string;
   "email": string;
   "emailVerified"?: boolean;
-  "verificationToken"?: string;
   "id"?: number;
   "category_id"?: number;
   "subcategory_id"?: number;
+  "password"?: string;
   reports?: Report[];
   emergencies?: Emergency[];
   category?: CustomerCategory;
   subcategory?: CustomerSubCategory;
-  accessTokens?: any[];
+  accessTokens?: CustomerAccessToken[];
 }
 
 export class Customer implements CustomerInterface {
@@ -53,18 +53,17 @@ export class Customer implements CustomerInterface {
   "updated_at": Date;
   "realm": string;
   "username": string;
-  "password": string;
   "email": string;
   "emailVerified": boolean;
-  "verificationToken": string;
   "id": number;
   "category_id": number;
   "subcategory_id": number;
+  "password": string;
   reports: Report[];
   emergencies: Emergency[];
   category: CustomerCategory;
   subcategory: CustomerSubCategory;
-  accessTokens: any[];
+  accessTokens: CustomerAccessToken[];
   constructor(data?: CustomerInterface) {
     Object.assign(this, data);
   }
@@ -156,10 +155,6 @@ export class Customer implements CustomerInterface {
           name: 'username',
           type: 'string'
         },
-        "password": {
-          name: 'password',
-          type: 'string'
-        },
         "email": {
           name: 'email',
           type: 'string'
@@ -167,10 +162,6 @@ export class Customer implements CustomerInterface {
         "emailVerified": {
           name: 'emailVerified',
           type: 'boolean'
-        },
-        "verificationToken": {
-          name: 'verificationToken',
-          type: 'string'
         },
         "id": {
           name: 'id',
@@ -183,6 +174,10 @@ export class Customer implements CustomerInterface {
         "subcategory_id": {
           name: 'subcategory_id',
           type: 'number'
+        },
+        "password": {
+          name: 'password',
+          type: 'string'
         },
       },
       relations: {
@@ -208,8 +203,8 @@ export class Customer implements CustomerInterface {
         },
         accessTokens: {
           name: 'accessTokens',
-          type: 'any[]',
-          model: ''
+          type: 'CustomerAccessToken[]',
+          model: 'CustomerAccessToken'
         },
       }
     }
