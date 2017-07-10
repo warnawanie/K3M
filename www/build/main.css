@@ -21326,6 +21326,10 @@ button.submitButton {
   color: #FFF;
 }
 
+.version-text {
+  font-size: 10px;
+}
+
 page-aduan .list-ios {
   margin-bottom: 20px;
 }
@@ -21915,6 +21919,12 @@ page-register ion-label.label {
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+.ios page-sos #please-connect, .md page-sos #please-connect {
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
 }
 
 page-sosial .social-wrap {
