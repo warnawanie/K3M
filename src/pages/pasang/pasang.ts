@@ -91,6 +91,13 @@ export class PasangPage {
     );
    // console.log(id);
   }
+
+  pad(num, size) {
+      let s = "000000000" + num;
+      s = s.substr(s.length-size);
+
+      return s.substring(0, 2) + ":" + s.substring(2);
+  }
   
 
 

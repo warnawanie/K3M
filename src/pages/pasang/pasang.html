@@ -61,64 +61,52 @@
     <div *ngIf="isGroupShown(location.id)">
 
       <div class="data-wrap" *ngIf="responses">
-
-
-      <ion-row>
-        
-          <h1 class="date-details-info">{{responses.today.min.date}} </h1>
-      </ion-row>
-
         <ion-row>
-          <div class="content-details-info">
+            <div class="content-details-info">
+                <ion-row class="content-details-header">
+                    <ion-col col-4>Tarikh</ion-col>
+                    <ion-col col-4>Masa</ion-col>
+                    <ion-col col-4>Ketinggian (m)</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-33 style="text-align: center;">
+                        {{responses.today[0].date}}
+                    </ion-col>
+                    <ion-col width-63 style="padding: 0px; border: 0;">
+                        <ion-row *ngFor="let item of responses.today">
+                            <ion-col width-50 style="text-align: center;">{{ pad(item.time, 4) }}</ion-col>
+                            <ion-col width-50 style="text-align: center;">{{item.height}}</ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-row>
 
-            <ion-row class="content-details-header">
-              <ion-col width-50>Masa</ion-col>
-               <ion-col width-50>Ketinggian (m)</ion-col>
-            </ion-row>
-
-            <ion-row>
-              <ion-col width-50>{{responses.today.min.time}}</ion-col>
-               <ion-col width-50>{{responses.today.min.height}}</ion-col>
-            </ion-row>
-
-            <ion-row>
-              <ion-col width-50>{{responses.today.max.time}}</ion-col>
-               <ion-col width-50>{{responses.today.max.height}}</ion-col>
-            </ion-row>
-
-          </div>
-
-      </ion-row>
       </div>
 
 
- <div class="data-wrap" *ngIf="responses">
-      <ion-row>
-        
-          <h1 class="date-details-info">{{responses.tomorrow.min.date}}</h1>
-      </ion-row>
-
+    <div class="data-wrap" *ngIf="responses">
         <ion-row>
-          <div class="content-details-info">
+            <div class="content-details-info">
+                <ion-row class="content-details-header">
+                    <ion-col col-4>Tarikh</ion-col>
+                    <ion-col col-4>Masa</ion-col>
+                    <ion-col col-4>Ketinggian (m)</ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-33 style="text-align: center;">
+                        {{responses.tomorrow[0].date}}
+                    </ion-col>
+                    <ion-col width-63 style="padding: 0px; border: 0;">
+                        <ion-row *ngFor="let item of responses.tomorrow">
+                            <ion-col width-50 style="text-align: center;">{{ pad(item.time, 4) }}</ion-col>
+                            <ion-col width-50 style="text-align: center;">{{item.height}}</ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-row>
 
-            <ion-row class="content-details-header">
-              <ion-col width-50>Masa</ion-col>
-               <ion-col width-50>Ketinggian (m)</ion-col>
-            </ion-row>
-
-             <ion-row>
-              <ion-col width-50>{{responses.tomorrow.min.time}}</ion-col>
-               <ion-col width-50>{{responses.tomorrow.min.height}}</ion-col>
-            </ion-row>
-
-            <ion-row>
-              <ion-col width-50>{{responses.tomorrow.max.time}}</ion-col>
-               <ion-col width-50>{{responses.tomorrow.max.height}}</ion-col>
-            </ion-row>
-
-          </div>
-
-      </ion-row>
       </div>
     
 
