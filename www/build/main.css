@@ -21740,6 +21740,11 @@ page-pasang .pasang-wrap h3 ion-icon {
   float: right;
 }
 
+page-pasang .pasang-wrap h3 ion-icon ion-col.data-clear-padding {
+  padding: 0px;
+  border: 0;
+}
+
 page-pengumuman-details .pengumumanWrap {
   color: #FFF;
 }
