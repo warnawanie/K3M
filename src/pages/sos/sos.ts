@@ -29,13 +29,14 @@ export class SosPage {
 
   map: any;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, private geolocation: Geolocation, public maps: GoogleMaps) {
+  constructor( public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, public geolocation: Geolocation, public maps: GoogleMaps) {
 
 
     // Predefined emergency data
     this.customerApi.getCurrent().subscribe( data => {
       this.emergency.customer_id = data.id;
     });
+    this.updateSOSData();
   }
 
 
@@ -57,6 +58,18 @@ export class SosPage {
       this.addMarker();
       console.log('######################################################');
     }); 
+  }
+
+  updateSOSData(){
+    this.geolocation.getCurrentPosition().then((position) => {
+      this.emergency.latitude = position.coords.latitude;
+      this.emergency.longitude = position.coords.longitude;
+      console.log(position);
+      console.log(this.emergency);
+      console.log("updateSOSData");
+    }, (err) => {
+      console.log(err);
+    });
   }
 
 
