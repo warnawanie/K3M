@@ -21596,6 +21596,19 @@ page-home .icon-right {
   width: 80%;
 }
 
+.ios .loginForm, .md .loginForm {
+  position: relative;
+  width: 80%;
+  margin: auto !important;
+}
+
+.ios .eyeview, .md .eyeview {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-size: 20px;
+}
+
 .ios page-login .scroll-content, .md page-login .scroll-content {
   background: url("../assets/images/login.png") no-repeat;
   background-size: cover;
@@ -21629,7 +21642,7 @@ page-home .icon-right {
   border: none !important;
   margin-bottom: 10px;
   border-radius: 4px !important;
-  width: 80%;
+  width: 100%;
   color: #58595B;
   margin: 0px auto 5px auto;
 }

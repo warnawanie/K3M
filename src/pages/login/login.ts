@@ -14,6 +14,8 @@ import { LoopBackAuth } from '../../app/shared/sdk/services/core/auth.service';
 })
 export class LoginPage {
   loader: any;
+  public type= "password";
+  public showPass = false;
 
   public account: Customer = new Customer();
   public rememberMe: boolean = false;
@@ -36,6 +38,27 @@ export class LoginPage {
       */
   }
   
+  showPassword()
+
+  {
+
+      this.showPass = !this.showPass;
+
+      if (this.showPass){
+
+          this.type = "text";
+
+      }
+
+      else {
+
+          this.type = "password";
+
+      }
+
+  }
+
+
 
 
   onGoToRegister(){

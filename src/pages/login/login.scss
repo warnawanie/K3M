@@ -27,6 +27,21 @@
   width:80%;
 }
 
+.loginForm{
+  position: relative;
+  width: 80%;
+  margin: auto !important;
+
+}
+
+.eyeview {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+
 page-login { 
      .scroll-content{    
         background: url('../assets/images/login.png') no-repeat; 
@@ -56,7 +71,7 @@ page-login {
         border: none !important;
         margin-bottom: 10px;
         border-radius: 4px !important;
-        width: 80%;
+        width: 100%;
         color:#58595B;
         margin: 0px auto 5px auto;
     }
