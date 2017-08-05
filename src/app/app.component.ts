@@ -61,14 +61,15 @@ export class MyApp {
       { title: 'Tentang K3M', component: TentangPage},
       { title: 'FAQ', component: FaqPage},
       { title: 'Hubungi Kami', component: ContactPage }
-      
+
     ];
 
     LoopBackConfig.setDebugMode(false); // defaults true
     //this.log.info('Component is Loaded');
 
-    LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
+    // LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
     // LoopBackConfig.setBaseURL('http://localhost:3000');
+    LoopBackConfig.setBaseURL('https://mobile.k3m.komunitimaritim.my');
     LoopBackConfig.setApiVersion('api');
 
   }
@@ -86,7 +87,7 @@ export class MyApp {
   checkIfTokenExist(){
     this.loader = this.loadingCtrl.create({
       content: "Loading"
-    });    
+    });
     this.loader.present();
 
     this.localStorage.get('userToken').then((val) => {
@@ -99,9 +100,9 @@ export class MyApp {
            console.log(response);
            this.nav.setRoot(HomePage);
            this.updateView();
-         }, 
+         },
          error =>{
-           // clear token 
+           // clear token
            this.localStorage.remove('userToken');
            this.updateView();
          });
@@ -129,7 +130,7 @@ export class MyApp {
   - redirect to login
   */
   initLogOut(){
-    
+
     this.accountApi.logout().subscribe((response: any) => {
       console.log( response);
       this.localStorage.remove('userToken');
