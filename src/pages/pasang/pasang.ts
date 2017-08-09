@@ -14,6 +14,8 @@ import * as moment from 'moment';
 })
 export class PasangPage {
 
+  public items;
+
     moment = moment;
   shownGroup = null;
   loader: any;
@@ -42,9 +44,36 @@ export class PasangPage {
         console.log("Oops!");
     }
     );
+    
+
+      this.items = [
+  { 
+    id: 1, 
+    title: 'Select State', 
+    items : [ 
+              {id: 1, title: 'Johor'},
+              {id: 2, title: 'Kedah'}, 
+              {id: 3, title: 'Kelantan'}, 
+              {id: 4, title: 'Melaka'}, 
+              {id: 5, title: 'Negeri Sembilan'}, 
+              {id: 6, title: 'Pahang'}, 
+              {id: 7, title: 'Perak'},
+              {id: 8, title: 'Perlis'}, 
+              {id: 9, title: 'Pulau Pinang'}, 
+              {id: 10, title: 'Sabah'},  
+              {id: 11, title: 'Sarawak'}, 
+              {id: 12, title: 'Selangor'}, 
+              {id: 13, title: 'Terengganu'},
+              {id: 15, title: 'WP (Labuan)'}
+            ]
+  }
+];
 
     
   }
+
+
+  
 
   optionsFn(){
 

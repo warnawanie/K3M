@@ -18,6 +18,11 @@
 <ion-content padding>
 
 
+
+
+
+
+
   <ion-row>
     <ion-col width-100 text-right class="date-top">
       
@@ -28,17 +33,25 @@
   </ion-row>
 
 
+ 
+
+
   <ion-row>
 
-<ion-item class="pasang-state">
+
+
+
+
+<ion-item class="pasang-state" *ngFor="let item of items">
   <ion-label>{{ "SELECT_STATE" | translate }}</ion-label>
 
   <ion-select name="state_id" [(ngModel)]="state_id" (ionChange)="optionsFn();">
-    <ion-option *ngFor="let state of states" value="{{state.id}}">{{state.name}}</ion-option>
-  </ion-select>
+        <ion-option *ngFor="let subitem of item.items" value="{{ subitem.id }}">{{ subitem.title }}</ion-option>
+      </ion-select>
 </ion-item>
 
   </ion-row>
+
 
   
 <ion-row *ngFor="let location of locations">
@@ -69,13 +82,13 @@
                     <ion-col col-4>Ketinggian (m)</ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col width-33 style="text-align: center;">
+                    <ion-col width-33 style="text-align: center; max-width:33.333333% !important" >
                         {{responses.today[0].date}}
                     </ion-col>
                     <ion-col width-63 style="padding: 0px; border: 0;">
                         <ion-row *ngFor="let item of responses.today">
-                            <ion-col width-50 style="text-align: center;">{{ pad(item.time, 4) }}</ion-col>
-                            <ion-col width-50 style="text-align: center;">{{item.height}}</ion-col>
+                            <ion-col width-50 style="text-align: center; max-width: 48%;">{{ pad(item.time, 4) }}</ion-col>
+                            <ion-col width-50 style="text-align: center; max-width: 52%; flex: 0 0 52%;">{{item.height}}</ion-col>
                         </ion-row>
                     </ion-col>
                 </ion-row>
@@ -94,13 +107,13 @@
                     <ion-col col-4>Ketinggian (m)</ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-col width-33 style="text-align: center;">
+                    <ion-col width-33 style="text-align: center; max-width:32.333333% !important;">
                         {{responses.tomorrow[0].date}}
                     </ion-col>
                     <ion-col width-63 style="padding: 0px; border: 0;">
                         <ion-row *ngFor="let item of responses.tomorrow">
-                            <ion-col width-50 style="text-align: center;">{{ pad(item.time, 4) }}</ion-col>
-                            <ion-col width-50 style="text-align: center;">{{item.height}}</ion-col>
+                            <ion-col width-50 style="text-align: center; max-width: 48%;">{{ pad(item.time, 4) }}</ion-col>
+                            <ion-col width-50 style="text-align: center; max-width: 52%; flex: 0 0 52%;">{{item.height}}</ion-col>
                         </ion-row>
                     </ion-col>
                 </ion-row>
