@@ -67,9 +67,9 @@ export class MyApp {
     LoopBackConfig.setDebugMode(false); // defaults true
     //this.log.info('Component is Loaded');
 
-    // LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');
-    // LoopBackConfig.setBaseURL('http://localhost:3000');
-    LoopBackConfig.setBaseURL('https://mobile.k3m.komunitimaritim.my');
+    // LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');         // Staging
+    // LoopBackConfig.setBaseURL('http://localhost:3000');                // Development
+    LoopBackConfig.setBaseURL('https://mobile.k3m.komunitimaritim.my');   // Production
     LoopBackConfig.setApiVersion('api');
 
   }
