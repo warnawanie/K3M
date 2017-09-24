@@ -3,13 +3,12 @@ import { Component } from '@angular/core';
 // import { Platform, ActionSheetController } from 'ionic-angular';
 import { NavController, ActionSheetController, ToastController, Platform, LoadingController, Loading, NavParams } from 'ionic-angular';
 import { AduanSendPage } from '../aduan-send/aduan-send';
-import { Report, Storage } from '../../app/shared/sdk/models';
+import { Report } from '../../app/shared/sdk/models';
 import { ReportApi } from '../../app/shared/sdk/services';
-import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi, StorageApi }  from '../../app/shared/sdk/services';
 import { TranslateService } from 'ng2-translate';
 import { Camera, FilePath } from 'ionic-native';
-import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
+import { Transfer, TransferObject } from '@ionic-native/transfer';
 import { File } from '@ionic-native/file';
 import { LoopBackConfig } from '../../app/shared/sdk/lb.config';
 
@@ -28,31 +27,31 @@ export class AduanPage {
   serverFilename: string = null;
   loading: Loading;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public platform: Platform,
     public toastCtrl: ToastController,
     public actionsheetCtrl: ActionSheetController,
-    public loadingCtrl: LoadingController, 
-    private reportApi: ReportApi, 
+    public loadingCtrl: LoadingController,
+    private reportApi: ReportApi,
     private customerApi: CustomerApi,
-    private storageApi: StorageApi, 
+    private storageApi: StorageApi,
     public translateService: TranslateService,
-    private transfer: Transfer, 
+    private transfer: Transfer,
     private file: File
     ) {
 
     this.customerApi.getCurrent().subscribe(
-      
+
         data => {
           this.aduan.customer_id = data.id;
           this.aduan.name = data.fullname;
           this.aduan.ic_number = data.ic_number;
           this.aduan.phone_number = data.phone_number;
-        
+
          // console.log(this.aduan.name);
         }
-     ); 
+     );
 
      //this.aduan = this.aduanData.get('fullname');
 
@@ -88,14 +87,14 @@ export class AduanPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AduanPage');
   }
-  
+
 
   openMenu() {
     let actionSheet = this.actionsheetCtrl.create({
       title: 'Lampiran Gambar',
       cssClass: 'action-upload-image',
       buttons: [
-        
+
         {
           text: 'Camera',
           // icon: !this.platform.is('ios') ? 'share' : null,
@@ -141,7 +140,7 @@ export class AduanPage {
       // destinationType: Camera.DestinationType.FILE_URI,
       correctOrientation: true
     };
-   
+
     // Get the data of an image
     Camera.getPicture(options).then((imagePath) => {
       // Special handling for Android library
@@ -169,7 +168,7 @@ export class AduanPage {
     newFileName =  n + ".jpg";
     return newFileName;
   }
-   
+
   // Copy the image to a local folder
   private copyFileToLocalDir(namePath, currentName, newFileName) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
@@ -178,7 +177,7 @@ export class AduanPage {
       this.presentToast('Error while storing file.');
     });
   }
-   
+
   private presentToast(text) {
     let toast = this.toastCtrl.create({
       message: text,
@@ -187,7 +186,7 @@ export class AduanPage {
     });
     toast.present();
   }
-   
+
   // Always get the accurate path to your apps folder
   public pathForImage(img) {
     if (img === null) {
@@ -201,10 +200,10 @@ export class AduanPage {
     // Destination URL
     // var url = "http://yoururl/upload.php";
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() + "/storages/attachments/upload";
-   
+
     // File for Upload
     var targetPath = this.pathForImage(this.lastImage);
-   
+
     // File name only
     var filename = this.lastImage;
     var _token = this.customerApi.getCurrentToken();
@@ -221,14 +220,14 @@ export class AduanPage {
         'Authorization': _token.id
       }
     };
-   
+
     const fileTransfer: TransferObject = this.transfer.create();
-   
+
     this.loading = this.loadingCtrl.create({
       content: 'Uploading...',
     });
     this.loading.present();
-   
+
     // Use the FileTransfer to upload the image
     fileTransfer.upload(targetPath, url, options).then(data => {
       console.log(data);
@@ -264,12 +263,12 @@ export class AduanPage {
       err => {
           console.log(err);
           console.log("Oops!");
-          
+
           this.loading.dismissAll()
           this.onGoToAduanSend();
       });
   }
- 
+
 
 
   onGoToAduanSend(){

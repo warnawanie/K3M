@@ -6,7 +6,7 @@ import { PengumumanPage } from '../pengumuman/pengumuman';
 import { TalianPage } from '../talian/talian';
 import { AduanPage } from '../aduan/aduan';
 import { SosPage } from '../sos/sos';
-import { FaqPage } from '../faq/faq';
+// import { FaqPage } from '../faq/faq';
 import { TentangPage } from '../tentang/tentang';
 import { SosialPage } from '../sosial/sosial';
 import { TranslateService } from 'ng2-translate';
@@ -34,7 +34,7 @@ export class HomePage {
       // })
     // });
 
-     
+
   }
 
   onGoToCuaca(){
@@ -82,15 +82,15 @@ translateToEnglish(){
 
 
   presentLoading() {
- 
+
     this.loader = this.loadingCtrl.create({
       content: "Loading"
     });
- 
-    
+
+
     this.loader.present();
-    
- 
+
+
   }
 
 

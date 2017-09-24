@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
-import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi }  from '../../app/shared/sdk/services';
 
 @Component({
@@ -15,7 +14,7 @@ export class Page1 {
   constructor(public navCtrl: NavController, private customerApi: CustomerApi) {
 
     this.customerApi.getCurrent().subscribe(
-      
+
       data => {
         this.posts = data;
         console.log(this.posts);
@@ -29,6 +28,6 @@ export class Page1 {
   }
 
 
-  
+
 
 }

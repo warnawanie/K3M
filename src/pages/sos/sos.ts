@@ -5,7 +5,6 @@ import { TranslateService } from 'ng2-translate';
 import { Emergency}  from '../../app/shared/sdk/models';
 import { EmergencyApi }  from '../../app/shared/sdk/services';
 import { EmergencySendPagePage } from '../emergency-send-page/emergency-send-page';
-import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi }  from '../../app/shared/sdk/services';
 import { HomePage } from '../home/home';
 
@@ -23,7 +22,7 @@ export class SosPage {
   loader: any;
 
   public emergency: Emergency = new Emergency();
-  
+
   @ViewChild('map') mapElement: ElementRef;
   @ViewChild('pleaseConnect') pleaseConnect: ElementRef;
 
@@ -57,7 +56,7 @@ export class SosPage {
       this.loader.dismiss();
       this.addMarker();
       console.log('######################################################');
-    }); 
+    });
   }
 
   updateSOSData(){
@@ -116,7 +115,7 @@ export class SosPage {
       position: this.maps.map.getCenter()
     });
 
-    let content = "Lokasi Anda";          
+    let content = "Lokasi Anda";
 
     this.addInfoWindow(marker, content);
   }

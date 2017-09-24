@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
-import { Customer}  from '../../app/shared/sdk/models';
 import { CustomerApi }  from '../../app/shared/sdk/services';
 
 @Component({
@@ -23,7 +22,7 @@ export class PrihatinSuccessPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private customerApi: CustomerApi) {
 
     this.customerApi.getCurrent().subscribe(
-      
+
       data => {
         this.posts = data;
         console.log(this.posts);
@@ -35,11 +34,11 @@ export class PrihatinSuccessPage {
     ); // This will call from the backend the current user
     this.customerApi.getCachedCurrent(); // This will return the current logged user from memory
   }
-  
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PrihatinSuccessPage');
   }
-  
+
 
 }

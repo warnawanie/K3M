@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController  } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { State}  from '../../app/shared/sdk/models';
 import { StateApi }  from '../../app/shared/sdk/services';
-import { TideLocation}  from '../../app/shared/sdk/models';
 import { TideLocationApi }  from '../../app/shared/sdk/services';
 import * as moment from 'moment';
 
@@ -44,36 +42,36 @@ export class PasangPage {
         console.log("Oops!");
     }
     );
-    
+
 
       this.items = [
-  { 
-    id: 1, 
-    title: 'Select State', 
-    items : [ 
+  {
+    id: 1,
+    title: 'Select State',
+    items : [
               {id: 1, title: 'Johor'},
-              {id: 2, title: 'Kedah'}, 
-              {id: 3, title: 'Kelantan'}, 
-              {id: 4, title: 'Melaka'}, 
-              {id: 5, title: 'Negeri Sembilan'}, 
-              {id: 6, title: 'Pahang'}, 
+              {id: 2, title: 'Kedah'},
+              {id: 3, title: 'Kelantan'},
+              {id: 4, title: 'Melaka'},
+              {id: 5, title: 'Negeri Sembilan'},
+              {id: 6, title: 'Pahang'},
               {id: 7, title: 'Perak'},
-              {id: 8, title: 'Perlis'}, 
-              {id: 9, title: 'Pulau Pinang'}, 
-              {id: 10, title: 'Sabah'},  
-              {id: 11, title: 'Sarawak'}, 
-              {id: 12, title: 'Selangor'}, 
+              {id: 8, title: 'Perlis'},
+              {id: 9, title: 'Pulau Pinang'},
+              {id: 10, title: 'Sabah'},
+              {id: 11, title: 'Sarawak'},
+              {id: 12, title: 'Selangor'},
               {id: 13, title: 'Terengganu'},
               {id: 15, title: 'WP (Labuan)'}
             ]
   }
 ];
 
-    
+
   }
 
 
-  
+
 
   optionsFn(){
 
@@ -85,41 +83,41 @@ export class PasangPage {
       data => {
         this.locations = data;
         //console.log(data);
-    }, 
+    },
     err => {
         console.log("Oops!");
     }
     );
-    
+
     //console.log(this.state_id);
 
-    
+
   }
 
 
 
-  private responseData(location : any) {
-    this.loader = this.loadingCtrl.create({
-              content: "Loading"
-            });
-           this.loader.present();
+  // private responseData(location : any) {
+  //   this.loader = this.loadingCtrl.create({
+  //             content: "Loading"
+  //           });
+  //          this.loader.present();
 
-      console.log(location);
-    this.tideLocationApi.getForecast(location.id)
-    
-      .subscribe(
-        data => {
-          this.loader.dismiss();
-          this.responses = data;
-        //  this.keys = Object.keys(this.responses);
-          console.log(data);
-      }, 
-      err => {
-          console.log("Oops!");
-      }
-    );
-   // console.log(id);
-  }
+  //     console.log(location);
+  //   this.tideLocationApi.getForecast(location.id)
+
+  //     .subscribe(
+  //       data => {
+  //         this.loader.dismiss();
+  //         this.responses = data;
+  //       //  this.keys = Object.keys(this.responses);
+  //         console.log(data);
+  //     },
+  //     err => {
+  //         console.log("Oops!");
+  //     }
+  //   );
+  //  // console.log(id);
+  // }
 
   pad(num, size) {
       let s = "000000000" + num;
@@ -127,7 +125,7 @@ export class PasangPage {
 
       return s.substring(0, 2) + ":" + s.substring(2);
   }
-  
+
 
 
 
@@ -146,7 +144,7 @@ export class PasangPage {
         return this.shownGroup === group;
     };
 
-  
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad PasangPage');
   }

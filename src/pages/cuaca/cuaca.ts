@@ -1,8 +1,7 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component} from '@angular/core';
 import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Geolocation } from 'ionic-native';
 import { TranslateService } from 'ng2-translate';
-import { Weather}  from '../../app/shared/sdk/models';
 import { WeatherApi }  from '../../app/shared/sdk/services';
 import { LocationTracker } from '../../providers/location-tracker';
 import * as moment from 'moment';
@@ -29,7 +28,7 @@ export class CuacaPage {
     });
 
   this.loader.present();
-   
+
          //setTimeout(() => {
           // this.loader.dismiss();
      // }, 1500);
@@ -40,7 +39,7 @@ export class CuacaPage {
    myDate: String = new Date().toISOString();
 
   loadLocationWeather(){
-    
+
     Geolocation.getCurrentPosition().then((position) => {
 
       this.weatherApi.myLocation(position.coords.latitude, position.coords.longitude).subscribe(
@@ -88,7 +87,7 @@ export class CuacaPage {
       err => {
           console.log("Oops!");
       });
- 
+
     }, (err) => {
       console.log(err);
     });
@@ -98,13 +97,13 @@ export class CuacaPage {
    //start(){
     //this.locationTracker.startTracking();
  // }
- 
+
   //stop(){
     //this.locationTracker.stopTracking();
  // }
 
   ionViewDidLoad() {
-  
+
     let now = moment().format('DD');
    console.log(now);
 

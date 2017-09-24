@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, LoadingController, AlertController  } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-import { Customer, AccessToken } from '../../app/shared/sdk/models';
+import { Customer } from '../../app/shared/sdk/models';
 import { CustomerApi } from '../../app/shared/sdk/services';
 
 @Component({
@@ -20,16 +20,16 @@ register() {
    // this.accountApi.create(this.account).subscribe((account: Customer) => this.navCtrl.setRoot(LoginPage));
        this.loader = this.loadingCtrl.create({
                 content: "Loading"
-              });    
+              });
 
               this.loader.present();
 
 
 
-   this.accountApi.create(this.account).subscribe((account: Customer) => { 
+   this.accountApi.create(this.account).subscribe((account: Customer) => {
 
 
-          this.loader.dismiss(); 
+          this.loader.dismiss();
 
 
             let alert = this.alertCtrl.create({
@@ -37,12 +37,12 @@ register() {
             buttons: ['OK']
               });
             alert.present();
-            
-            this.navCtrl.setRoot(LoginPage);  
-                         
+
+            this.navCtrl.setRoot(LoginPage);
+
         },  error => {
 
-            this.loader.dismiss(); 
+            this.loader.dismiss();
             let alert = this.alertCtrl.create({
             title: 'Sila isikan semua maklumat di dalam ruangan yang disediakan',
             subTitle: 'Cuba lagi',
