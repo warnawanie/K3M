@@ -23,6 +23,7 @@
         "@ionic-native/core": "^3.6.1",
         "@ionic-native/file": "^3.6.1",
         "@ionic-native/file-path": "^3.14.0",
+        "@ionic-native/file-transfer": "^4.2.1",
         "@ionic-native/geolocation": "^3.14.0",
         "@ionic-native/network": "^3.12.1",
         "@ionic-native/sms": "^3.6.1",

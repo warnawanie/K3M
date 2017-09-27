@@ -5,6 +5,7 @@ import { PasangPage } from '../pasang/pasang';
 import { PengumumanPage } from '../pengumuman/pengumuman';
 import { TalianPage } from '../talian/talian';
 import { AduanPage } from '../aduan/aduan';
+import { AduanV2Page } from '../aduan/aduan-v2';
 import { SosPage } from '../sos/sos';
 // import { FaqPage } from '../faq/faq';
 import { TentangPage } from '../tentang/tentang';
@@ -47,7 +48,7 @@ export class HomePage {
     this.navCtrl.push(TalianPage);
   }
    onGoToAduan(){
-    this.navCtrl.push(AduanPage);
+    this.navCtrl.push(AduanV2Page);
   }
    onGoToSos(){
     this.navCtrl.push(SosPage);

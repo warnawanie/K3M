@@ -2,33 +2,36 @@ import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-// import { Page1 } from '../pages/page1/page1';
-// import { Page2 } from '../pages/page2/page2';
+import { Page1 } from '../pages/page1/page1';
+import { Page2 } from '../pages/page2/page2';
 import { LoginPage } from '../pages/login/login';
-// import { RegisterPage } from '../pages/register/register';
+import { RegisterPage } from '../pages/register/register';
 import { HomePage } from '../pages/home/home';
-// import { CuacaPage } from '../pages/cuaca/cuaca';
-// import { PasangPage } from '../pages/pasang/pasang';
-// import { PengumumanPage } from '../pages/pengumuman/pengumuman';
-// import { TalianPage } from '../pages/talian/talian';
-// import { AduanPage } from '../pages/aduan/aduan';
-// import { SosPage } from '../pages/sos/sos';
+import { CuacaPage } from '../pages/cuaca/cuaca';
+import { PasangPage } from '../pages/pasang/pasang';
+import { PengumumanPage } from '../pages/pengumuman/pengumuman';
+import { TalianPage } from '../pages/talian/talian';
+import { AduanPage } from '../pages/aduan/aduan';
+import { AduanV2Page } from '../pages/aduan/aduan-v2';
+import { SosPage } from '../pages/sos/sos';
 import { TentangPage } from '../pages/tentang/tentang';
-// import { SosialPage } from '../pages/sosial/sosial';
-// import { PrihatinPage } from '../pages/prihatin/prihatin';
-// import { AduanSendPage } from '../pages/aduan-send/aduan-send';
+import { SosialPage } from '../pages/sosial/sosial';
+import { PrihatinPage } from '../pages/prihatin/prihatin';
+import { AduanSendPage } from '../pages/aduan-send/aduan-send';
 import { ContactPage } from '../pages/contact/contact';
 import { LoopBackConfig} from './shared/sdk';
-// import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
+import { PengumumanDetailsPage } from '../pages/pengumuman-details/pengumuman-details';
 import { FaqPage } from '../pages/faq/faq';
-// import { PrihatinSuccessPage } from '../pages/prihatin-success/prihatin-success';
-// import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
+import { PrihatinSuccessPage } from '../pages/prihatin-success/prihatin-success';
+import { EmergencySendPagePage } from '../pages/emergency-send-page/emergency-send-page';
 
 import { MenuController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { CustomerApi } from './shared/sdk/services';
 import { LoopBackAuth } from './shared/sdk/services/core/auth.service';
 import { LoadingController  } from 'ionic-angular';
+
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 @Component({
@@ -39,10 +42,11 @@ export class MyApp {
 
   rootPage: any = LoginPage;
   loader: any;
+  apiPath: any = "";
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController, private loopbackAuth: LoopBackAuth, public loadingCtrl: LoadingController) {
+  constructor(public platform: Platform, translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController, private loopbackAuth: LoopBackAuth, public loadingCtrl: LoadingController, private geolocation: Geolocation) {
 
       translate.setDefaultLang('ms');
 
@@ -61,7 +65,6 @@ export class MyApp {
       { title: 'Tentang K3M', component: TentangPage},
       { title: 'FAQ', component: FaqPage},
       { title: 'Hubungi Kami', component: ContactPage }
-
     ];
 
     LoopBackConfig.setDebugMode(false); // defaults true
@@ -71,6 +74,8 @@ export class MyApp {
     // LoopBackConfig.setBaseURL('http://localhost:3000');                // Development
     LoopBackConfig.setBaseURL('https://mobile.k3m.komunitimaritim.my');   // Production
     LoopBackConfig.setApiVersion('api');
+
+    this.apiPath = LoopBackConfig.getPath();
 
   }
 

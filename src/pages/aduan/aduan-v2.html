@@ -1,0 +1,166 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title> {{ "ADUAN" | translate }}</ion-title>
+          <ion-buttons end class="logo-top">
+         <img src="assets/images/logo.png">
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+
+
+
+
+
+  <ion-content padding class="aduan-wrap">
+
+  <ion-col>
+
+          <ion-list>
+
+
+
+  <form>
+
+
+  <input name="customer_id" type="text" [(ngModel)]="aduan.customer_id" hidden/>
+  <input name="name" type="text" [(ngModel)]="aduan.name" hidden/>
+  <input name="ic_number" type="text" [(ngModel)]="aduan.ic_number" hidden/>
+  <input name="phone_number" type="text" [(ngModel)]="aduan.phone_number" hidden/>
+
+
+
+  <ion-row>
+      <ion-col class="aduan-heading" text-center="">
+        {{ "JENIS_ADUAN" | translate }}
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+  <ion-row class="aduan-icon">
+
+    <ion-list radio-group name="report_type_id" [(ngModel)]="aduan.report_type_id">
+
+  <ion-col width-33>
+    <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_KEROSAKAN' | translate }}.png"></ion-label>
+      <ion-radio value="2"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+    <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_KEBAKARAN' | translate }}.png"></ion-label>
+      <ion-radio value="4"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+    <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_KEMALANGAN' | translate }}.png"></ion-label>
+      <ion-radio checked="true" value="1"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+      <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_JATUHLAUT' | translate }}.png"></ion-label>
+      <ion-radio value="7"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+      <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_PELANUNAN' | translate }}.png"></ion-label>
+      <ion-radio value="5"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+    <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_PENCEMARAN' | translate }}.png"></ion-label>
+      <ion-radio value="3"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+      <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_PENCEROBOHAN' | translate }}.png"></ion-label>
+      <ion-radio value="6"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <!-- Baru -->
+
+  <ion-col width-33>
+      <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_PENYELUDUPAN' | translate }}.png"></ion-label>
+      <ion-radio value="8"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  <ion-col width-33>
+      <ion-item>
+      <ion-label><img src="assets/images/icons/{{ 'ICON_UGUTAN' | translate }}.png"></ion-label>
+      <ion-radio value="9"></ion-radio>
+    </ion-item>
+  </ion-col>
+
+  </ion-list>
+
+
+  </ion-row>
+
+
+  <!-- <ion-item><ion-input name="radio_details" type="text" [(ngModel)]="aduan.radio_details" placeholder='{{ "RADIO_PENGADU" | translate }}' ></ion-input></ion-item> -->
+  <ion-item><ion-input name="location" type="text" [(ngModel)]="aduan.location" placeholder='{{ "POSISI_PENGADU" | translate }}'></ion-input></ion-item>
+  <ion-item><ion-input name="time" type="text" [(ngModel)]="aduan.time" placeholder='{{ "MASA_PENGADU" | translate }}'></ion-input></ion-item>
+  <ion-item>
+   <ion-label stacked class="textarea-maklumat">{{ "MAKLUMAT_KEJADIAN_PENGADU" | translate }}</ion-label>
+    <ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea>
+  </ion-item>
+  <ion-item [hidden]="lastImage === null">
+    <img src="{{pathForImage(lastImage)}}" style="width: 500" [hidden]="isAttachmentImage === false">
+    <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3> -->
+    <p [hidden]="isAttachmentImage != false">
+        {{pathForImage(lastImage)}}
+    </p>
+  </ion-item>
+
+
+  <button ion-button round (click)="openMenu()" class="submitButton">{{ "LAMPIRAN" | translate }}</button>
+  <button ion-button round (click)="report()" class="submitButton">{{ "HANTAR" | translate }}</button>
+
+
+
+    </form>
+
+   </ion-list>
+
+
+
+  </ion-col>
+
+
+
+  </ion-content>
+
+
+  <ion-footer class="footer-apps">
+
+    <ion-grid>
+    <ion-row>
+
+
+    <ion-col width-100 text-right class="footer-logo"><img src="assets/images/footerLogo.png" > </ion-col>
+
+    </ion-row>
+    </ion-grid>
+
+  </ion-footer>

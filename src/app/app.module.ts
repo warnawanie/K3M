@@ -4,7 +4,11 @@ import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { Transfer} from '@ionic-native/transfer';
 import { Geolocation } from '@ionic-native/geolocation';
+
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { Camera } from '@ionic-native/camera';
+
 import { SMS } from '@ionic-native/sms';
 import { Network } from '@ionic-native/network';
 import { MyApp } from './app.component';
@@ -18,6 +22,7 @@ import { PasangPage } from '../pages/pasang/pasang';
 import { PengumumanPage } from '../pages/pengumuman/pengumuman';
 import { TalianPage } from '../pages/talian/talian';
 import { AduanPage } from '../pages/aduan/aduan';
+import { AduanV2Page } from '../pages/aduan/aduan-v2';
 import { SosPage } from '../pages/sos/sos';
 import { TentangPage } from '../pages/tentang/tentang';
 import { SosialPage } from '../pages/sosial/sosial';
@@ -56,6 +61,7 @@ export function createTranslateLoader(http: Http) {
     PengumumanPage,
     TalianPage,
     AduanPage,
+    AduanV2Page,
     SosPage,
     TentangPage,
     SosialPage,
@@ -89,6 +95,7 @@ export function createTranslateLoader(http: Http) {
     PengumumanPage,
     TalianPage,
     AduanPage,
+    AduanV2Page,
     PrihatinSuccessPage,
     SosPage,
     TentangPage,
@@ -100,7 +107,7 @@ export function createTranslateLoader(http: Http) {
     PrihatinPage,
     EmergencySendPagePage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, GoogleMaps, Connectivity, Storage, File, SMS, Transfer, Geolocation, Network]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, GoogleMaps, Connectivity, Storage, File, SMS, Transfer, Geolocation, Network, FileTransfer, FileTransferObject, File,Camera]
 })
 export class AppModule {}
 
