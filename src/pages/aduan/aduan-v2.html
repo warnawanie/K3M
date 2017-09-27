@@ -125,11 +125,11 @@
    <ion-label stacked class="textarea-maklumat">{{ "MAKLUMAT_KEJADIAN_PENGADU" | translate }}</ion-label>
     <ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea>
   </ion-item>
-  <ion-item [hidden]="lastImage === null">
-    <img src="{{pathForImage(lastImage)}}" style="width: 500" [hidden]="isAttachmentImage === false">
-    <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3> -->
-    <p [hidden]="isAttachmentImage != false">
-        {{pathForImage(lastImage)}}
+  <ion-item [hidden]="myFile === null">
+    <img src="{{pathForImage(myFile)}}" style="width: 500" [hidden]="isAttachmentImage === false">
+    <!-- <h3 [hidden]="myFile !== null">Please Select Image!</h3> -->
+    <p [hidden]="isAttachmentImage != false" *ngIf="isAttachmentImage == false">
+        {{getFilenameWithExtension(myFile)}}
     </p>
   </ion-item>
 

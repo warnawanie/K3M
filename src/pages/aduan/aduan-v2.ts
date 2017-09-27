@@ -28,10 +28,13 @@ export class AduanV2Page {
 
   public aduan: Report = new Report();
   aduanData:any;
-  lastImage: string = null;
-  serverFilename: string = null;
   loading: Loading;
+
   isAttachmentImage:Boolean = false;
+  myFile: any = null;
+  myFIleURL: any;
+
+
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -66,7 +69,7 @@ export class AduanV2Page {
     this.reportApi.create(this.aduan).subscribe((aduan: Report) => {
         this.aduan = aduan;
         // if attachment is available - upload image
-        if(this.lastImage){
+        if(this.myFile){
           this.uploadImage();
         }else{
           this.navCtrl.setRoot(AduanSendPage);
@@ -138,41 +141,69 @@ export class AduanV2Page {
 
   getCamera() {
     const options: CameraOptions = {
-      quality: 70,
-      destinationType: this.camera.DestinationType.DATA_URL,
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
       sourceType: this.camera.PictureSourceType.CAMERA,
-      saveToPhotoAlbum: false,
-      correctOrientation: true,
-      targetWidth: 500
+      saveToPhotoAlbum: true,
+      correctOrientation: true
     }
 
-    this.camera.getPicture(options).then((imageData) => {
-      this.lastImage = "";
-      this.lastImage = imageData;
+    this.camera.getPicture(options).then((imagePath) => {
+      // Special handling for Android library
+      if (this.platform.is('android') && options.sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
+        FilePath.resolveNativePath(imagePath)
+        .then(filePath => {
+            let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
+            let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
+          this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+        });
+      } else {
+        var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+        var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+        this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+      }
     }, (err) => {
-      console.log(err);
       this.presentToast('Error while selecting image.');
     });
   }
 
   getImage() {
     const options: CameraOptions = {
-      quality: 70,
-      destinationType: this.camera.DestinationType.DATA_URL,
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       saveToPhotoAlbum: false,
-      correctOrientation: true,
-      targetWidth: 500
+      correctOrientation: true
     }
 
-    this.camera.getPicture(options).then((imageData) => {
-      this.lastImage = "";
-      this.lastImage = imageData;
+    this.camera.getPicture(options).then((imagePath) => {
+    //   this.myFile = "";
+    //   this.myFile = imageData;
+    // }, (err) => {
+    //   console.log(err);
+    //   this.presentToast('Error while selecting image.');
+    // });
+    // Special handling for Android library
+      if (this.platform.is('android') && options.sourceType === this.camera.PictureSourceType.PHOTOLIBRARY) {
+        FilePath.resolveNativePath(imagePath)
+        .then(filePath => {
+            let correctPath = filePath.substr(0, filePath.lastIndexOf('/') + 1);
+            let currentName = imagePath.substring(imagePath.lastIndexOf('/') + 1, imagePath.lastIndexOf('?'));
+          this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+        });
+      } else {
+        var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
+        var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+        this.copyFileToLocalDir(correctPath, currentName, this.createFileName());
+      }
     }, (err) => {
-      console.log(err);
       this.presentToast('Error while selecting image.');
     });
   }
+
+
+  ////////////////////////////////////////////////////////////////
+  //  GET VIDEO HANDLER
 
   getVideo() {
     const options: CameraOptions = {
@@ -183,21 +214,28 @@ export class AduanV2Page {
     }
 
     this.camera.getPicture(options).then((imageData) => {
-      this.lastImage = imageData;
+      this.myFile = imageData;
     }, (err) => {
       console.log(err);
       this.presentToast('Error while selecting image.');
     });
   }
 
+  public getFilenameWithExtension(img){
+    if(img){
+      let _filename = img.substr(img.lastIndexOf('/') + 1);
+      console.log("_filename = " + _filename);
+      return _filename;
+    }
+  }
+
   public pathForImage(img) {
     if(img){
       if(this.isAttachmentImage == true){
-        return 'data:image/jpg;base64,' + img;
+        // return 'data:image/jpg;base64,' + img;
+        return cordova.file.dataDirectory + img;
       }else{
-        let _filename = img.substr(img.lastIndexOf('/') + 1);
-        console.log("_filename = " + _filename);
-        return _filename;
+        return img;
       }
     }
   }
@@ -256,7 +294,7 @@ export class AduanV2Page {
   // Copy the image to a local folder
   private copyFileToLocalDir(namePath, currentName, newFileName) {
     this.file.copyFile(namePath, currentName, cordova.file.dataDirectory, newFileName).then(success => {
-      this.lastImage = newFileName;
+      this.myFile = newFileName;
     }, error => {
       this.presentToast('Error while storing file.');
     });
@@ -288,10 +326,10 @@ export class AduanV2Page {
     let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() + "/storages/attachments/upload";
 
     // File for Upload
-    var targetPath = this.pathForImage(this.lastImage);
+    var targetPath = this.pathForImage(this.myFile);
 
     // File name only
-    var filename = this.lastImage;
+    var filename = this.myFile;
     var _token = this.customerApi.getCurrentToken();
 
     console.log( url );
@@ -321,10 +359,10 @@ export class AduanV2Page {
       var _response = JSON.parse( data.response );
       console.log( _response );
 
-      this.serverFilename = _response.result.files.file[0].name;
-      console.log(this.serverFilename);
+      this.myFIleURL = _response.result.files.file[0].name;
+      console.log(this.myFIleURL);
 
-      if(this.serverFilename){
+      if(this.myFIleURL){
         this.updateReport();
       }else{
         this.loading.dismissAll()
@@ -369,7 +407,7 @@ export class AduanV2Page {
   // Update report after upload attachment file
   private updateReport(){
     // report.name = customer.fullname
-    this.reportApi.patchAttributes(this.aduan.id, {"file": this.serverFilename }).subscribe((aduan: Report) => {
+    this.reportApi.patchAttributes(this.aduan.id, {"file": this.myFIleURL }).subscribe((aduan: Report) => {
         console.log("filename updated");
         console.log(aduan);
         this.loading.dismissAll()
