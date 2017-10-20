@@ -96,28 +96,28 @@ export class PasangPage {
 
 
 
-  // private responseData(location : any) {
-  //   this.loader = this.loadingCtrl.create({
-  //             content: "Loading"
-  //           });
-  //          this.loader.present();
+  private responseData(location : any) {
+    this.loader = this.loadingCtrl.create({
+              content: "Loading"
+            });
+           this.loader.present();
 
-  //     console.log(location);
-  //   this.tideLocationApi.getForecast(location.id)
+      console.log(location);
+    this.tideLocationApi.getForecast(location.id)
 
-  //     .subscribe(
-  //       data => {
-  //         this.loader.dismiss();
-  //         this.responses = data;
-  //       //  this.keys = Object.keys(this.responses);
-  //         console.log(data);
-  //     },
-  //     err => {
-  //         console.log("Oops!");
-  //     }
-  //   );
-  //  // console.log(id);
-  // }
+      .subscribe(
+        data => {
+          this.loader.dismiss();
+          this.responses = data;
+        //  this.keys = Object.keys(this.responses);
+          console.log(data);
+      },
+      err => {
+          console.log("Oops!");
+      }
+    );
+   // console.log(id);
+  }
 
   pad(num, size) {
       let s = "000000000" + num;
