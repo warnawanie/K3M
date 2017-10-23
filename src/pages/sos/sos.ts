@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { TranslateService } from 'ng2-translate';
 import { Emergency}  from '../../app/shared/sdk/models';
@@ -28,8 +28,7 @@ export class SosPage {
 
   map: any;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, public geolocation: Geolocation, public maps: GoogleMaps) {
-
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, public geolocation: Geolocation, public maps: GoogleMaps) {
 
     // Predefined emergency data
     this.customerApi.getCurrent().subscribe( data => {
@@ -131,7 +130,30 @@ export class SosPage {
     });
   }
 
+  confirmSos() {
+    let confirm = this.alertCtrl.create({
+      title: 'Hantar SOS?',
+      message: 'Latitude: '+ this.emergency.latitude + '\n Longitude: ' + this.emergency.longitude,
+      buttons: [
+        {
+          text: 'Tidak',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Ya',
+          handler: () => {
+            this.sendSos();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
   sendSos() {
+
     this.loader = this.loadingCtrl.create({
       content: "Loading"
     });

@@ -29,6 +29,7 @@ export class AduanV2Page {
   public aduan: Report = new Report();
   aduanData:any;
   loading: Loading;
+  public tnc: boolean;
 
   isAttachmentImage:Boolean = false;
   myFile: any = null;
@@ -58,6 +59,7 @@ export class AduanV2Page {
           this.aduan.name = data.fullname;
           this.aduan.ic_number = data.ic_number;
           this.aduan.phone_number = data.phone_number;
+          //this.aduan.tnc = data.tnc;
          // console.log(this.aduan.name);
         }
      );
@@ -66,18 +68,24 @@ export class AduanV2Page {
 
    report() {
    // report.name = customer.fullname
-    this.reportApi.create(this.aduan).subscribe((aduan: Report) => {
-        this.aduan = aduan;
-        // if attachment is available - upload image
-        if(this.myFile){
-          this.uploadImage();
-        }else{
-          this.navCtrl.setRoot(AduanSendPage);
-        }
-      },
-      err => {
-          console.log("Oops!");
-      });
+
+      if(this.tnc){
+          this.reportApi.create(this.aduan).subscribe((aduan: Report) => {
+            this.aduan = aduan;
+            // if attachment is available - upload image
+            if(this.myFile){
+              this.uploadImage();
+            }else{
+              this.navCtrl.setRoot(AduanSendPage);
+            }
+          },
+          err => {
+              console.log("Oops! "+err);
+          });
+      } else {
+        alert('Sila setuju pada terma dan syarat');
+      }
+      
    }
 
 
