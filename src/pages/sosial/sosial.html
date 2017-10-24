@@ -11,9 +11,6 @@
 </ion-header>
 
 
-
-
-
 <ion-content padding>
 
 
@@ -43,13 +40,31 @@
   </ion-item>
 </ion-list>
 
+
 <ion-list class="social-wrap">
   <ion-item text-wrap (click)="toggleGroup(2)" [ngClass]="{active: isGroupShown(2)}">
     <h3>
-     APMM
+     ESSCOM
       <ion-icon color="success" item-right [name]="isGroupShown(2) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
     <div *ngIf="isGroupShown(2)">
+      
+<ion-row>
+      <img src="assets/images/socialWeb.png"><a onclick="window.open('https://esscom.gov.my', '_system', 'location=yes'); return false">www.esscom.gov.my</a>
+      </ion-row>
+
+    </div>
+  </ion-item>
+</ion-list>
+
+
+<ion-list class="social-wrap">
+  <ion-item text-wrap (click)="toggleGroup(3)" [ngClass]="{active: isGroupShown(3)}">
+    <h3>
+     APMM
+      <ion-icon color="success" item-right [name]="isGroupShown(3) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+    </h3>
+    <div *ngIf="isGroupShown(3)">
       
 <ion-row>
       <img src="assets/images/socialFb.png"><a onclick="window.open('https://www.facebook.com/maritimmalaysia/', '_system', 'location=yes'); return false;"> @maritimmalaysia</a>
@@ -70,12 +85,12 @@
 
 
 <ion-list class="social-wrap">
-  <ion-item text-wrap (click)="toggleGroup(3)" [ngClass]="{active: isGroupShown(3)}">
+  <ion-item text-wrap (click)="toggleGroup(4)" [ngClass]="{active: isGroupShown(4)}">
     <h3>
      PDRM
-      <ion-icon color="success" item-right [name]="isGroupShown(3) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+      <ion-icon color="success" item-right [name]="isGroupShown(4) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
-    <div *ngIf="isGroupShown(3)">
+    <div *ngIf="isGroupShown(4)">
 
         <ion-row>
       <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/PolisDirajaMalaysia/', '_system', 'location=yes'); return false">Polis Diraja Malaysia</a>
@@ -101,12 +116,12 @@
 
 
 <ion-list class="social-wrap">
-  <ion-item text-wrap (click)="toggleGroup(4)" [ngClass]="{active: isGroupShown(4)}">
+  <ion-item text-wrap (click)="toggleGroup(5)" [ngClass]="{active: isGroupShown(5)}">
     <h3>
      KASTAM
-      <ion-icon color="success" item-right [name]="isGroupShown(4) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+      <ion-icon color="success" item-right [name]="isGroupShown(5) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
-    <div *ngIf="isGroupShown(4)">
+    <div *ngIf="isGroupShown(5)">
 
         <ion-row>
       <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/JabatanKastamDirajaMalaysia/', '_system', 'location=yes'); return false">@JabatanKastamDirajaMalaysia</a>
@@ -132,12 +147,12 @@
 
 
 <ion-list class="social-wrap">
-  <ion-item text-wrap (click)="toggleGroup(5)" [ngClass]="{active: isGroupShown(5)}">
+  <ion-item text-wrap (click)="toggleGroup(6)" [ngClass]="{active: isGroupShown(6)}">
     <h3>
      SPRM
-      <ion-icon color="success" item-right [name]="isGroupShown(5) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+      <ion-icon color="success" item-right [name]="isGroupShown(6) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
-    <div *ngIf="isGroupShown(5)">
+    <div *ngIf="isGroupShown(6)">
 
         <ion-row>
       <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/sprm.benci.rasuah/', '_system', 'location=yes'); return false">@SPRMMalaysia</a>
@@ -163,12 +178,12 @@
 
 
 <ion-list class="social-wrap">
-  <ion-item text-wrap (click)="toggleGroup(6)" [ngClass]="{active: isGroupShown(6)}">
+  <ion-item text-wrap (click)="toggleGroup(7)" [ngClass]="{active: isGroupShown(7)}">
     <h3>
      LKIM
-      <ion-icon color="success" item-right [name]="isGroupShown(6) ? 'arrow-up' : 'arrow-down'"></ion-icon>
+      <ion-icon color="success" item-right [name]="isGroupShown(7) ? 'arrow-up' : 'arrow-down'"></ion-icon>
     </h3>
-    <div *ngIf="isGroupShown(6)">
+    <div *ngIf="isGroupShown(7)">
 
         <ion-row>
       <img src="assets/images/socialFb.png"> <a onclick="window.open('https://www.facebook.com/LKIM.MOA/', '_system', 'location=yes'); return false">@LKIM.MOA</a>

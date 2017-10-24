@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { TranslateService } from 'ng2-translate';
 import { Emergency}  from '../../app/shared/sdk/models';
@@ -20,6 +20,9 @@ declare var google;
 
 export class SosPage {
   loader: any;
+  sosConfirmText: string;
+  btnYA: string;
+  btnTIDAK: string;
 
   public emergency: Emergency = new Emergency();
 
@@ -28,18 +31,33 @@ export class SosPage {
 
   map: any;
 
-  constructor( public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, public geolocation: Geolocation, public maps: GoogleMaps) {
-
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController, public translateService: TranslateService, private customerApi: CustomerApi, private emergencyApi: EmergencyApi, public geolocation: Geolocation, public maps: GoogleMaps) {
 
     // Predefined emergency data
     this.customerApi.getCurrent().subscribe( data => {
       this.emergency.customer_id = data.id;
     });
     this.updateSOSData();
+
+    translateService.get('ALERT_SOS').subscribe(
+      value => {
+        this.sosConfirmText = value;
+      }
+    )
+
+    translateService.get('SOS_BTTN1').subscribe(
+      value => {
+        this.btnYA = value;
+      }
+    )
+
+    translateService.get('SOS_BTTN2').subscribe(
+      value => {
+        this.btnTIDAK = value;
+      }
+    )
+
   }
-
-
-
 
 
   ionViewLoaded(){
@@ -131,7 +149,30 @@ export class SosPage {
     });
   }
 
+  confirmSos() {
+    let confirm = this.alertCtrl.create({
+      title: this.sosConfirmText,
+      message: 'Latitude: '+ this.emergency.latitude + '\n Longitude: ' + this.emergency.longitude,
+      buttons: [
+        {
+          text: this.btnTIDAK,
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: this.btnYA,
+          handler: () => {
+            this.sendSos();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
   sendSos() {
+
     this.loader = this.loadingCtrl.create({
       content: "Loading"
     });

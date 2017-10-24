@@ -9,26 +9,18 @@
 
 <ion-content padding class="registerWrap" scroll="false">
 
-<ion-row padding class="register-welcome">
+<!-- <ion-row padding class="register-welcome">
   <ion-col>
 
     Selamat Datang
   </ion-col>
 
-</ion-row>
+</ion-row> -->
 
 <ion-row padding class="register-input">
       <ion-col>
 
-
-
-
-
-
 <form>
-
-
-
 
 <ion-list>
 
@@ -39,41 +31,48 @@
 
           <ion-item>
       
-            <ion-input name="ic_number" type="text" [(ngModel)]="account.ic_number" placeholder="No MyKad"></ion-input>
+            <ion-input name="ic_number" type="number" [(ngModel)]="account.ic_number" placeholder="No MyKad"></ion-input>
           </ion-item>
 
 
 
           <ion-item>
     
-          <ion-input name="phone_number" type="text" [(ngModel)]="account.phone_number" placeholder="No Telefon Bimbit"></ion-input>
+          <ion-input name="phone_number" type="number" [(ngModel)]="account.phone_number" placeholder="No Telefon Bimbit"></ion-input>
           </ion-item>
 
 <ion-item>
       
-            <ion-input name="username" type="text" [(ngModel)]="account.username" placeholder="Username"></ion-input>
+            <ion-input name="username" type="text" [(ngModel)]="account.username" placeholder="ID Penggguna"></ion-input>
           </ion-item>
 
           <ion-item>
             <ion-input name="password" type="password" [(ngModel)]="account.password" placeholder="Kata Laluan"></ion-input>
           </ion-item>
 
-
-
-          
-
-
-
           <ion-item>
   <ion-label>Kategori Pengguna</ion-label>
 
-  <ion-select name="category_id" [(ngModel)]="account.category_id" required>
-    <ion-option value="1" selected="true">Pelancongan</ion-option>
-    <ion-option value="2">Perikanan</ion-option>
+  <ion-select name="category_id" [(ngModel)]="account.category_id" (ionChange)="kategoriSelected()" required>
+    <ion-option *ngFor="let kat of kategori" value="{{kat.id}}" >{{kat.name}}</ion-option>
+    <!-- <ion-option value="2">Perikanan</ion-option>
      <ion-option value="3">Petroleum</ion-option>
       <ion-option value="4">Rekreasi</ion-option>
-       <ion-option value="5">Lain-lain</ion-option>
+       <ion-option value="5">Lain-lain</ion-option> -->
   </ion-select>
+</ion-item>
+
+<ion-item *ngIf="!isEmpty(subkategori)">
+    <ion-label>Subkategori Pengguna</ion-label>
+  
+    <ion-select name="subcategory_id">
+      <ion-option *ngFor="let subkat of subkategori" value="{{subkat.id}}">{{subkat.name}}</ion-option>
+      <!-- <ion-option value="1">Pelancongan</ion-option>
+      <ion-option value="2">Perikanan</ion-option>
+       <ion-option value="3">Petroleum</ion-option>
+        <ion-option value="4">Rekreasi</ion-option>
+         <ion-option value="5">Lain-lain</ion-option> -->
+    </ion-select>
 </ion-item>
 
 

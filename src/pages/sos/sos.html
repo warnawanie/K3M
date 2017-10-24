@@ -27,7 +27,7 @@
       <input name="customer_id" type="text" [(ngModel)]="emergency.customer_id" hidden/>
       <input type=number name="latitude" [(ngModel)]="emergency.latitude" hidden/>
       <input type=number name="longitude" [(ngModel)]="emergency.longitude" hidden/>
-      <button ion-button block color="danger" (click)="sendSos()" class="sendSos">{{ "SEND_SOS" | translate }}</button>
+      <button ion-button block color="danger" (click)="confirmSos()" class="sendSos">{{ "SEND_SOS" | translate }}</button>
     </form>
   </ion-row>
 </ion-content>

@@ -21330,6 +21330,23 @@ button.submitButton {
   font-size: 10px;
 }
 
+.transparent {
+  background-color: transparent !important;
+  color: white;
+}
+
+page-aduan .tnc {
+  font-size: 1.3rem;
+  background-color: transparent !important;
+  color: white;
+  border-bottom: 0px solid #a7a9ac !important;
+  text-align: justify;
+}
+
+page-aduan .justify {
+  text-align: justify;
+}
+
 page-aduan .list-ios {
   margin-bottom: 20px;
 }
@@ -21609,6 +21626,12 @@ page-home .icon-right {
   font-size: 20px;
 }
 
+.ios .login-btn, .md .login-btn {
+  padding-top: 1% !important;
+  position: relative;
+  float: center;
+}
+
 .ios page-login .scroll-content, .md page-login .scroll-content {
   background: url("../assets/images/login.png") no-repeat;
   background-size: cover;
@@ -21786,6 +21809,18 @@ page-prihatin ion-list.derma-content {
   font-size: 1.3rem;
 }
 
+page-prihatin .derma-content {
+  border-top: 1px solid #BCBEC0;
+  border-bottom: 1px solid #BCBEC0;
+  padding: 25px 0px;
+  margin: 10px 0px;
+  font-size: 1.3rem;
+}
+
+page-prihatin .derma-left {
+  border-right: 3px solid #000000;
+}
+
 page-prihatin ion-item.amountSumbangan {
   border: 1px solid #006838;
   border-radius: 4px;
@@ -21831,7 +21866,7 @@ page-prihatin-success .userDetail {
 }
 
 page-register .scroll-content {
-  background: #337a9d url("../assets/images/register.png") no-repeat;
+  background-color: #1479ad;
   background-size: cover;
   background-position: center -50px;
   z-index: 2;

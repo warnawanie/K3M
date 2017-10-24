@@ -132,6 +132,22 @@
         {{getFilenameWithExtension(myFile)}}
     </p>
   </ion-item>
+  <ion-item text-wrap class="tnc">
+        <ion-checkbox color="light" [(ngModel)]="tnc" [ngModelOptions]="{standalone:true}"></ion-checkbox>
+        <ion-label>
+          {{ "ADUAN_TNC" | translate }} 
+          <!-- Pengadu akan bertanggungjawab atas setiap aduan yang dikemukakan. Aduan palsu adalah dilarang. Jika pengadu menerima terima ini, sila klik butang HANTAR di bawah. -->
+          </ion-label>
+  </ion-item>
+
+  <!-- <div style="padding-top: 1em;"></div>
+  <div align="left"><ion-checkbox color="light" [(ngModel)]="tnc" [ngModelOptions]="{standalone:true}"></ion-checkbox>
+      <span color="light" class="justify">Pengadu akan bertanggungjawab atas setiap aduan yang dikemukakan. Aduan palsu adalah dilarang. Jika pengadu menerima terima ini, sila klik butang HANTAR di bawah.</span>
+  </div>
+  <div padding></div> -->
+
+
+  
 
 
   <button ion-button round (click)="openMenu()" class="submitButton">{{ "LAMPIRAN" | translate }}</button>

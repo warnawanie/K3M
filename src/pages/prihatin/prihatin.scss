@@ -4,6 +4,7 @@ page-prihatin {
     padding: 10px;
     /* border-radius: 4px; */
 }
+
 .dermaButton{
     margin-top: 15px;
     background: #00af4f;
@@ -21,6 +22,18 @@ ion-list.derma-content {
     padding: 25px 0px;
     margin: 10px 0px;
     font-size: 1.3rem;
+}
+
+.derma-content {
+    border-top: 1px solid #BCBEC0;
+    border-bottom: 1px solid #BCBEC0;
+    padding: 25px 0px;
+    margin: 10px 0px;
+    font-size: 1.3rem;
+}
+
+.derma-left {
+    border-right: 3px solid #000000;
 }
 
 ion-item.amountSumbangan {
