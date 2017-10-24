@@ -20,6 +20,9 @@ declare var google;
 
 export class SosPage {
   loader: any;
+  sosConfirmText: string;
+  btnYA: string;
+  btnTIDAK: string;
 
   public emergency: Emergency = new Emergency();
 
@@ -35,10 +38,26 @@ export class SosPage {
       this.emergency.customer_id = data.id;
     });
     this.updateSOSData();
+
+    translateService.get('ALERT_SOS').subscribe(
+      value => {
+        this.sosConfirmText = value;
+      }
+    )
+
+    translateService.get('SOS_BTTN1').subscribe(
+      value => {
+        this.btnYA = value;
+      }
+    )
+
+    translateService.get('SOS_BTTN2').subscribe(
+      value => {
+        this.btnTIDAK = value;
+      }
+    )
+
   }
-
-
-
 
 
   ionViewLoaded(){
@@ -132,17 +151,17 @@ export class SosPage {
 
   confirmSos() {
     let confirm = this.alertCtrl.create({
-      title: 'Hantar SOS?',
+      title: this.sosConfirmText,
       message: 'Latitude: '+ this.emergency.latitude + '\n Longitude: ' + this.emergency.longitude,
       buttons: [
         {
-          text: 'Tidak',
+          text: this.btnTIDAK,
           handler: () => {
             console.log('Disagree clicked');
           }
         },
         {
-          text: 'Ya',
+          text: this.btnYA,
           handler: () => {
             this.sendSos();
           }

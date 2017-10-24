@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 // import { NavController, NavParams } from 'ionic-angular';
 // import { Platform, ActionSheetController } from 'ionic-angular';
-import { NavController, ActionSheetController, ToastController, Platform, LoadingController, Loading, NavParams } from 'ionic-angular';
+import { NavController, AlertController,  ActionSheetController, ToastController, Platform, LoadingController, Loading, NavParams } from 'ionic-angular';
 import { AduanSendPage } from '../aduan-send/aduan-send';
 import { Report } from '../../app/shared/sdk/models';
 import { ReportApi } from '../../app/shared/sdk/services';
@@ -49,7 +49,8 @@ export class AduanV2Page {
     public translateService: TranslateService,
     private file: File,
     private transfer: Transfer,
-    private camera: Camera
+    private camera: Camera,
+    private alertCtrl: AlertController
     ) {
 
     this.customerApi.getCurrent().subscribe(
@@ -83,7 +84,12 @@ export class AduanV2Page {
               console.log("Oops! "+err);
           });
       } else {
-        alert('Sila setuju pada terma dan syarat');
+        //alert('Sila setuju pada terma dan syarat');
+        let alert = this.alertCtrl.create({
+          title: 'Sila setuju pada terma dan syarat',
+          buttons: ['OK']
+            });
+          alert.present();
       }
       
    }

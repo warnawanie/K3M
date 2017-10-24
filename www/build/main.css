@@ -21330,6 +21330,11 @@ button.submitButton {
   font-size: 10px;
 }
 
+.transparent {
+  background-color: transparent !important;
+  color: white;
+}
+
 page-aduan .tnc {
   font-size: 1.3rem;
   background-color: transparent !important;

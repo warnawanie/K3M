@@ -27,6 +27,11 @@ export class RegisterPage {
       {
         id: 2, 
         name: "Industri Perkapalan",
+        subkategori: []
+      },
+      {
+        id: 3, 
+        name: "Perikanan",
         subkategori: [
           {id: 1, name: "Ketua Persatuan Nelayan"},
           {id: 2, name: "Pengurusan Persatuan Nelayan"},
@@ -34,11 +39,6 @@ export class RegisterPage {
           {id: 4, name: "Tekong"},
           {id: 5, name: "Awak-awak"}
         ]
-      },
-      {
-        id: 3, 
-        name: "Perikanan",
-        subkategori: []
       },
       {
         id: 4, 
@@ -61,14 +61,18 @@ export class RegisterPage {
         id: 7, 
         name: "Agensi Keselamatan",
         subkategori: [
-          {id: 9, name: "TUDM"}
+          {id: 9, name: "TUDM"},
+          {id: 10, name: "SPRM"},
+          {id: 11, name: "PDRM"},
+          {id: 12, name: "APMM"}
         ]
       },
       {
         id: 8, 
         name: "Agensi Kerajaan",
         subkategori: [
-          {id: 10, name: "SPRM"}
+          {id: 13, name: "SKMM"},
+          {id: 14, name: "MOSTI"}
         ]
       },
     ]
@@ -88,7 +92,11 @@ export class RegisterPage {
     // this.accountApi.create(this.account).subscribe((account: Customer) => this.navCtrl.setRoot(LoginPage));
 
     if (this.account.ic_number.length != 12){
-      alert('IC number mesti tidak lebih atau kurang dari 12');
+      let alert = this.alertCtrl.create({
+        title: 'IC number mesti tidak lebih atau kurang dari 12',
+        buttons: ['OK']
+          });
+        alert.present();
       return;
     }
     
