@@ -3,6 +3,7 @@ import { NavController, NavParams, LoadingController, AlertController  } from 'i
 import { LoginPage } from '../login/login';
 import { Customer } from '../../app/shared/sdk/models';
 import { CustomerApi } from '../../app/shared/sdk/services';
+import { CustomerCategoryApi }  from '../../app/shared/sdk/services';
 
 @Component({
   selector: 'page-register',
@@ -13,69 +14,98 @@ export class RegisterPage {
 
   kategori: Array<any>;
   subkategori: Array<any>;
+  states: Array<any>;
 
   public account: Customer = new Customer();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
+  constructor(private customerCategoryApi: CustomerCategoryApi, public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
+    this.kategori = [];
+    this.customerCategoryApi.getAllCategories().then(categories => {
+      let arrayKategori: any = categories;
+      this.customerCategoryApi.getAllSubCategories().then(subcategories => {
+        let arraySubkategori: any = subcategories;
+        let newCategory: any;
+        let subkategori: Array<any> = [];
+        for(let kat of arrayKategori){
+          newCategory = kat;
+          subkategori = [];
+          for (let sub of arraySubkategori){
+            if (sub.category_id == kat.id){
+              subkategori.push(sub);
+            } 
+          }
+          newCategory.subkategori = subkategori;
+          this.kategori.push(newCategory);
+        }
+
+        this.customerCategoryApi.getStates().then(states => {
+          this.states = states;
+        })
+
+      })
+      //console.log(this.kategori);
+
+    })
+    
     this.subkategori = [];
-    this.kategori = [
-      {
-        id: 1, 
-        name: "Pelancongan",
-        subkategori: []
-      },
-      {
-        id: 2, 
-        name: "Industri Perkapalan",
-        subkategori: []
-      },
-      {
-        id: 3, 
-        name: "Perikanan",
-        subkategori: [
-          {id: 1, name: "Ketua Persatuan Nelayan"},
-          {id: 2, name: "Pengurusan Persatuan Nelayan"},
-          {id: 3, name: "Pengusaha Bot"},
-          {id: 4, name: "Tekong"},
-          {id: 5, name: "Awak-awak"}
-        ]
-      },
-      {
-        id: 4, 
-        name: "Industri Petroleum",
-        subkategori: []
-      },
-      {
-        id: 5, 
-        name: "Rekreasi Maritim",
-        subkategori: [
-          {id: 6, name: "Orang Awam"}
-        ]
-      },
-      {
-        id: 6, 
-        name: "Lain-lain",
-        subkategori: []
-      },
-      {
-        id: 7, 
-        name: "Agensi Keselamatan",
-        subkategori: [
-          {id: 9, name: "TUDM"},
-          {id: 10, name: "SPRM"},
-          {id: 11, name: "PDRM"},
-          {id: 12, name: "APMM"}
-        ]
-      },
-      {
-        id: 8, 
-        name: "Agensi Kerajaan",
-        subkategori: [
-          {id: 13, name: "SKMM"},
-          {id: 14, name: "MOSTI"}
-        ]
-      },
-    ]
+    // this.kategori = [
+    //   {
+    //     id: 1, 
+    //     name: "Pelancongan",
+    //     subkategori: []
+    //   },
+    //   {
+    //     id: 2, 
+    //     name: "Industri Perkapalan",
+    //     subkategori: []
+    //   },
+    //   {
+    //     id: 3, 
+    //     name: "Perikanan",
+    //     subkategori: [
+    //       {id: 1, name: "Ketua Persatuan Nelayan"},
+    //       {id: 2, name: "Pengurusan Persatuan Nelayan"},
+    //       {id: 3, name: "Pengusaha Bot"},
+    //       {id: 4, name: "Tekong"},
+    //       {id: 5, name: "Awak-awak"}
+    //     ]
+    //   },
+    //   {
+    //     id: 4, 
+    //     name: "Industri Petroleum",
+    //     subkategori: []
+    //   },
+    //   {
+    //     id: 5, 
+    //     name: "Rekreasi Maritim",
+    //     subkategori: [
+    //       {id: 6, name: "Orang Awam"}
+    //     ]
+    //   },
+    //   {
+    //     id: 6, 
+    //     name: "Lain-lain",
+    //     subkategori: []
+    //   },
+    //   {
+    //     id: 7, 
+    //     name: "Agensi Keselamatan",
+    //     subkategori: [
+    //       {id: 9, name: "TUDM"},
+    //       {id: 10, name: "SPRM"},
+    //       {id: 11, name: "PDRM"},
+    //       {id: 12, name: "APMM"}
+    //     ]
+    //   },
+    //   {
+    //     id: 8, 
+    //     name: "Agensi Kerajaan",
+    //     subkategori: [
+    //       {id: 13, name: "SKMM"},
+    //       {id: 14, name: "MOSTI"}
+    //     ]
+    //   },
+    // ]
   }
 
   kategoriSelected(){
