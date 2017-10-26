@@ -21550,6 +21550,25 @@ page-emergency-send-page .aduan-result {
   font-size: 2rem;
 }
 
+page-forgot-password .close-btn {
+  background-color: #000000;
+}
+
+page-forgot-password .close-icon {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+page-forgot-password .item-padding {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+page-forgot-password .alert-danger {
+  color: red;
+  font-size: .8em;
+}
+
 page-home ion-slides {
   height: auto;
 }

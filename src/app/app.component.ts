@@ -1,3 +1,4 @@
+import { ForgotPassword } from './../pages/forgot-password/forgot-password';
 import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { Nav, Platform } from 'ionic-angular';
@@ -70,7 +71,7 @@ export class MyApp {
     LoopBackConfig.setDebugMode(false); // defaults true
     //this.log.info('Component is Loaded');
 
-    LoopBackConfig.setBaseURL('https://rakam.onsetfocus.com');         // Staging
+    LoopBackConfig.setBaseURL('https://staging.rakam.onsetfocus.com');         // Staging
     // LoopBackConfig.setBaseURL('http://localhost:3000');                // Development
     // LoopBackConfig.setBaseURL('https://mobile.k3m.komunitimaritim.my');   // Production
     LoopBackConfig.setApiVersion('api');

@@ -1,3 +1,4 @@
+import { ForgotPassword } from './../pages/forgot-password/forgot-password';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Http } from '@angular/http';
@@ -71,7 +72,8 @@ export function createTranslateLoader(http: Http) {
     FaqPage,
     PrihatinPage,
     PrihatinSuccessPage,
-    EmergencySendPagePage
+    EmergencySendPagePage,
+    ForgotPassword
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -105,7 +107,8 @@ export function createTranslateLoader(http: Http) {
     PengumumanDetailsPage,
     FaqPage,
     PrihatinPage,
-    EmergencySendPagePage
+    EmergencySendPagePage,
+    ForgotPassword
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, LocationTracker, PengumumanService, GoogleMaps, Connectivity, Storage, File, SMS, Transfer, Geolocation, Network, FileTransfer, FileTransferObject, File,Camera]
 })

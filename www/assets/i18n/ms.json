@@ -19,7 +19,7 @@
     "INFO_CUACA": "Cuaca",
     "INFO_PASANG_SURUT": "Pasang Surut",
     "PENGUMUMAN": "Pengumuman",
-    "TALIAN_KECEMASAN": "Talian Kecemasan",
+    "TALIAN_KECEMASAN": "Direktori",
     "SOS": "SOS",
     "TENTANG": "Tentang K3M",
     "ADUAN": "Aduan",
@@ -40,7 +40,7 @@
     "FAQ_QUESTION_4": "Apakah agensi yang terlibat dalam penggunaan aplikasi K3M?",
     "FAQ_ANSWER_4": "• Tentera Laut Diraja Malaysia<br>• Agensi Penguatkuasaan Maritim Malaysia<br>• Jabatan Taman Laut Malaysia<br>• Polis Diraja Malaysia<br>• Jabatan Imigresen Malaysia<br>• Jabatan Perikanan Malaysia<br>• Jabatan Laut Malaysia<br>• Jabatan Kastam Diraja<br>• Suruhanjaya Pencegahan Rasuah Malaysia<br>• Lembaga Kemajuan Ikan Malaysia",
     "FAQ_QUESTION_5": "Bagaimana cara untuk saya menghantar isyarat kecemasan (SOS) kepada pihak penguatkuasa?",
-    "FAQ_ANSWER_5": "Sekiranya berlaku kecemasan atau ancaman di laut, anda boleh menghantar isyarat kecemasan melalui menu SOS yang terdapat di dalam aplikasi K3M. Dengan menekan butang Set Lokasi, koordinat lokasi semasa anda akan dihantar kepada agensi penguatkuasa. Anda perlu membuat pengesahan isyarat kecemasan sebelum menekan butang Hantar.",
+    "FAQ_ANSWER_5": "Sekiranya berlaku kecemasan atau ancaman di laut, anda boleh menghantar isyarat kecemasan melalui menu SOS yang terdapat di dalam aplikasi K3M. Dengan menekan butang Hantar, koordinat lokasi semasa anda akan dihantar kepada agensi penguatkuasa. Anda perlu membuat pengesahan isyarat kecemasan sebelum menekan butang Hantar.",
     "FAQ_QUESTION_6": "Apakah informasi yang terdapat di dalam aplikasi K3M? ",
     "FAQ_ANSWER_6": "Berikut adalah maklumat dan informasi yang disediakan oleh aplikasi K3M yang boleh diguna pakai oleh komuniti maritim; <br><br>• Maklumat Ramalan Cuaca dan Pasang Surut.<br>• Maklumat Talian Kecemasan. <br>• Maklumat Pengumuman, aktiviti dan berita terkini tentang komuniti maritim",
     "FAQ_QUESTION_7": "Bolehkah saya menghantar gambar atau video sebagai lampiran kepada aduan yang dibuat?",
@@ -84,7 +84,14 @@
     "ADUAN_TNC": "Pengadu akan bertanggungjawab atas setiap aduan yang dikemukakan. Aduan palsu adalah dilarang. Jika pengadu menerima terma ini, sila klik butang HANTAR di bawah.",
     "PRIHATIN_TXT2": "HULURKAN SUMBANGAN ANDA",
     "PRIHATIN_TXT3": "PERSATUAN VETERAN ANGKATAN TENTERA MALAYSIA",
+    "PROFIL_SAYA": "PROFIL SAYA",
     "HUBUNGI_KAMI": "HUBUNGI KAMI",
     "ALAMAT": "Alamat",
-    "PROFIL_SAYA": "PROFIL SAYA"
+    "MENU_BURGER": "MENU",
+    "UTAMA_BURGER": "Utama",
+    "PROFIL_SAYA_BURGER": "Profil Saya",
+    "TENTANG_K3M_BURGER": "Tentang K3M",
+    "HUBUNGI_KAMI_BURGER": "Hubungi Kami",
+    "LOG_KELUAR_BURGER": "Log Keluar",
+    "VERSI_BURGER": "Versi"
 }
