@@ -1,3 +1,64 @@
 page-page1 {
+    
+    .scroll-content{    
+        background-color: #1479ad;
+        background-size: cover; 
+        background-position:center -50px; 
+        z-index: 2; 
+    }
+
+    .input-cover {
+        position: static;
+    }
+
+    .profile{
+        margin: auto; 
+        padding-top: 10%;
+        width: 55%;
+    }
+
+    img {
+        max-width: 140px;
+        border-radius: 50%;
+    }
+
+    .register-input{
+        text-align: center;
+    }
+
+    img.daftar-button {
+        width: 50%;
+        height: auto;
+        margin-top: 0px;
+        cursor: pointer;
+    }
+
+    .item-block {
+        border: none !important;
+        margin-bottom: 10px;
+        border-radius: 4px !important;
+        color:#58595B;
+        margin: 0px auto 5px auto;
+    }
+
+    ion-row.register-welcome {
+        color: #FFF;
+        font-size: 20px;
+        font-weight: bold;
+        top: 130px;
+        /* margin-bottom: 75px; */
+        position: fixed;
+        width: 90%;
+    }
+
+    ion-row.register-input {
+        position: fixed;
+        bottom: 0px;
+        width: 92%;
+    }
+
+    ion-label.label {
+        color: #58595B !important;
+    }
 
 }

@@ -21357,6 +21357,10 @@ page-aduan .aduan-wrap ion-item {
   border-bottom: 3px solid #a7a9ac;
 }
 
+page-aduan ion-label.label-masa {
+  color: #6c6d6e !important;
+}
+
 page-aduan .aduan-wrap ion-item.aduan-type {
   background: #bc96c5;
   border-radius: 4px;
@@ -21687,6 +21691,67 @@ page-home .icon-right {
   width: 100%;
   color: #58595B;
   margin: 0px auto 5px auto;
+}
+
+page-page1 .scroll-content {
+  background-color: #1479ad;
+  background-size: cover;
+  background-position: center -50px;
+  z-index: 2;
+}
+
+page-page1 .input-cover {
+  position: static;
+}
+
+page-page1 .profile {
+  margin: auto;
+  padding-top: 10%;
+  width: 55%;
+}
+
+page-page1 img {
+  max-width: 140px;
+  border-radius: 50%;
+}
+
+page-page1 .register-input {
+  text-align: center;
+}
+
+page-page1 img.daftar-button {
+  width: 50%;
+  height: auto;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+page-page1 .item-block {
+  border: none !important;
+  margin-bottom: 10px;
+  border-radius: 4px !important;
+  color: #58595B;
+  margin: 0px auto 5px auto;
+}
+
+page-page1 ion-row.register-welcome {
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  top: 130px;
+  /* margin-bottom: 75px; */
+  position: fixed;
+  width: 90%;
+}
+
+page-page1 ion-row.register-input {
+  position: fixed;
+  bottom: 0px;
+  width: 92%;
+}
+
+page-page1 ion-label.label {
+  color: #58595B !important;
 }
 
 page-pasang .date-top .datetime-disabled {

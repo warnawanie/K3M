@@ -11,14 +11,21 @@ page-aduan {
     .justify{
         text-align: justify;
     }
+
     .list-ios{
         margin-bottom: 20px;
     }
+
     .aduan-wrap ion-item{
         margin-bottom: 10px;
         border-radius: 4px;
         border-bottom: 3px solid #a7a9ac;
     }
+    
+    ion-label.label-masa{
+        color: #6c6d6e !important;
+    }
+
     .aduan-wrap ion-item.aduan-type{
         background: #bc96c5;
         border-radius: 4px;
@@ -26,61 +33,66 @@ page-aduan {
         border-bottom: 3px solid #a479b5;
         border-top: none !important;
     }
+    
      .list .item-block .item-inner{
         border: none !important;
         padding: 0px;
     }
+
     ion-select .select-icon .select-icon-inner{
         color: #FFF !important;
 
     }
 
     ion-item.item.item-block.item-radio {
-    background: #FFF;
-    border: none;
-}
+        background: #FFF;
+        border: none;
+    }
+
     .textarea-maklumat[stacked]{ 
         font-size: 1.7rem;
         color: #666;
     }
+
     img.uploadImage {
-    width: 25%;
+        width: 25%;
     }
+
     .action-upload-image{
         text-align: right;
     }
+
     .aduan-heading{
-     background: #bc96c5;
-     border-bottom: 3px solid #a479b5;
-    padding: 15px 25px !important;
-    color: #FFF;
-    font-weight: bold;
-    border-radius: 4px;
-    margin-bottom: 20px;
+        background: #bc96c5;
+        border-bottom: 3px solid #a479b5;
+        padding: 15px 25px !important;
+        color: #FFF;
+        font-weight: bold;
+        border-radius: 4px;
+        margin-bottom: 20px;
     }
 
     .aduan-icon ion-col{
         float: left;
     }
-      ion-radio.radio {
-
-    margin: 0px !important;
-
+      
+    ion-radio.radio {
+        margin: 0px !important;
     }
 
     .radio-icon {
-    position: absolute !important;
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-    left: 0px;
-    top: 0px;
-}
+        position: absolute !important;
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        left: 0px;
+        top: 0px;
+    }
 
 
     ion-item.item.item-block.item-radio {
-    margin: 0px;
-    padding: 0px;
+        margin: 0px;
+        padding: 0px;
     }
 
     .aduan-icon ion-label{
@@ -91,6 +103,5 @@ page-aduan {
         border: transparent !important;
         border-radius: 4px !important;
     }
-
 
 }
