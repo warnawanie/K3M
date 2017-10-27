@@ -44,10 +44,6 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
-import { SocketBrowser } from './sockets/socket.browser';
-import { SocketDriver } from './sockets/socket.driver';
-import { SocketConnection } from './sockets/socket.connections';
-import { RealTime } from './services/core/real.time';
 import { ReportTypeApi } from './services/custom/ReportType';
 import { ReportApi } from './services/custom/Report';
 import { StateApi } from './services/custom/State';
@@ -77,8 +73,7 @@ import { CustomerAccessTokenApi } from './services/custom/CustomerAccessToken';
   declarations: [ ],
   exports:      [ ],
   providers:    [
-    ErrorHandler,
-    SocketConnection
+    ErrorHandler
   ]
 })
 export class SDKBrowserModule {
@@ -93,7 +88,6 @@ export class SDKBrowserModule {
         LoggerService,
         JSONSearchParams,
         SDKModels,
-        RealTime,
         ReportTypeApi,
         ReportApi,
         StateApi,
@@ -110,8 +104,7 @@ export class SDKBrowserModule {
         CustomerApi,
         CustomerAccessTokenApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
-        { provide: SocketDriver, useClass: SocketBrowser }
+        { provide: SDKStorage, useClass: StorageBrowser }
       ]
     };
   }

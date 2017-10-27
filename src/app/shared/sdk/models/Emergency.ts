@@ -59,6 +59,7 @@ export class Emergency implements EmergencyInterface {
     return {
       name: 'Emergency',
       plural: 'emergencies',
+      path: 'emergencies',
       properties: {
         "customer_id": {
           name: 'customer_id',

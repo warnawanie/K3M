@@ -11,7 +11,6 @@ import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
 import { Storage } from '../../models/Storage';
-import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
@@ -22,13 +21,12 @@ export class StorageApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
-    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  connection,  models, auth, searchParams, errorHandler);
+    super(http,  models, auth, searchParams, errorHandler);
   }
 
   /**
@@ -262,8 +260,6 @@ export class StorageApi extends BaseLoopBackApi {
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof req !== 'undefined' && req !== null) _urlParams.req = req;
-    if (typeof res !== 'undefined' && res !== null) _urlParams.res = res;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -297,8 +293,6 @@ export class StorageApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof req !== 'undefined' && req !== null) _urlParams.req = req;
-    if (typeof res !== 'undefined' && res !== null) _urlParams.res = res;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

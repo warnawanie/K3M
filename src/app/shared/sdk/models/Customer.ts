@@ -94,6 +94,7 @@ export class Customer implements CustomerInterface {
     return {
       name: 'Customer',
       plural: 'users',
+      path: 'users',
       properties: {
         "fullname": {
           name: 'fullname',

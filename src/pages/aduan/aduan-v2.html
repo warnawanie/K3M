@@ -120,7 +120,8 @@
 
   <!-- <ion-item><ion-input name="radio_details" type="text" [(ngModel)]="aduan.radio_details" placeholder='{{ "RADIO_PENGADU" | translate }}' ></ion-input></ion-item> -->
   <ion-item><ion-input name="location" type="text" [(ngModel)]="aduan.location" placeholder='{{ "POSISI_PENGADU" | translate }}'></ion-input></ion-item>
-  <ion-item><ion-input name="time" type="text" [(ngModel)]="aduan.time" placeholder='{{ "MASA_PENGADU" | translate }}'></ion-input></ion-item>
+  <!-- <ion-item><ion-input name="time" type="text" [(ngModel)]="aduan.time" placeholder='{{ "MASA_PENGADU" | translate }}'></ion-input></ion-item> -->
+  <ion-item><ion-label>{{ "MASA_PENGADU" | translate }}</ion-label><ion-datetime displayFormat="DD MMM h:mm A" pickerFormat="DD MMM YYYY h mm A" [(ngModel)]="aduan.time" [ngModelOptions]="{standalone:true}"></ion-datetime></ion-item>
   <ion-item>
    <ion-label stacked class="textarea-maklumat">{{ "MAKLUMAT_KEJADIAN_PENGADU" | translate }}</ion-label>
     <ion-textarea name="description" type="text" [(ngModel)]="aduan.description"></ion-textarea>
@@ -136,23 +137,17 @@
         <ion-checkbox color="light" [(ngModel)]="tnc" [ngModelOptions]="{standalone:true}"></ion-checkbox>
         <ion-label>
           {{ "ADUAN_TNC" | translate }} 
-          <!-- Pengadu akan bertanggungjawab atas setiap aduan yang dikemukakan. Aduan palsu adalah dilarang. Jika pengadu menerima terima ini, sila klik butang HANTAR di bawah. -->
           </ion-label>
   </ion-item>
-
-  <!-- <div style="padding-top: 1em;"></div>
-  <div align="left"><ion-checkbox color="light" [(ngModel)]="tnc" [ngModelOptions]="{standalone:true}"></ion-checkbox>
-      <span color="light" class="justify">Pengadu akan bertanggungjawab atas setiap aduan yang dikemukakan. Aduan palsu adalah dilarang. Jika pengadu menerima terima ini, sila klik butang HANTAR di bawah.</span>
-  </div>
-  <div padding></div> -->
-
-
+  <ion-row>
+    <ion-col>
+      <button ion-button round icon-only (click)="openMenu()" class="submitButton"><ion-icon name="camera"></ion-icon></button>
+    </ion-col>
+    <ion-col>
+      <button ion-button round (click)="report()" class="submitButton">{{ "HANTAR" | translate }}</button>
+    </ion-col>
+  </ion-row>
   
-
-
-  <button ion-button round (click)="openMenu()" class="submitButton">{{ "LAMPIRAN" | translate }}</button>
-  <button ion-button round (click)="report()" class="submitButton">{{ "HANTAR" | translate }}</button>
-
 
 
     </form>

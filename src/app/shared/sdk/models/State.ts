@@ -51,6 +51,7 @@ export class State implements StateInterface {
     return {
       name: 'State',
       plural: 'states',
+      path: 'states',
       properties: {
         "name": {
           name: 'name',
