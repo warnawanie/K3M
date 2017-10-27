@@ -51,6 +51,15 @@
           </ion-item>
 
           <ion-item>
+              <ion-label>Lokasi</ion-label>
+            
+              <ion-select name="state" [(ngModel)]="account.state" required>
+                <ion-option *ngFor="let state of states" value="{{state.name}}" >{{state.name}}</ion-option>
+                
+              </ion-select>
+            </ion-item>
+
+          <ion-item>
   <ion-label>Kategori Pengguna</ion-label>
 
   <ion-select name="category_id" [(ngModel)]="account.category_id" (ionChange)="kategoriSelected()" required>
@@ -64,8 +73,7 @@
 
 <ion-item *ngIf="!isEmpty(subkategori)">
     <ion-label>Subkategori Pengguna</ion-label>
-  
-    <ion-select name="subcategory_id">
+    <ion-select name="subcategory_id" [(ngModel)]="account.subcategory_id">
       <ion-option *ngFor="let subkat of subkategori" value="{{subkat.id}}">{{subkat.name}}</ion-option>
       <!-- <ion-option value="1">Pelancongan</ion-option>
       <ion-option value="2">Perikanan</ion-option>
