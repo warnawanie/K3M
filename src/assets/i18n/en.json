@@ -102,5 +102,6 @@
     "NAMA": "Name",
     "KATA_LALUAN_LAMA": "Old Password",
     "KATA_LALUAN_BARU": "New Password",
-    "DAFTAR": "REGISTER"
+    "DAFTAR": "REGISTER",
+    "NO_INTERNET": "No Internet connection"
 }
