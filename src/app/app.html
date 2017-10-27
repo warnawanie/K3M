@@ -1,7 +1,7 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-    <ion-title>{{ "MENU" | translate }}</ion-title>
+    <ion-title>{{ "MENU_BURGER" | translate }}</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -11,12 +11,12 @@
         {{p.title}}
       </button>
       <button ion-item (click)="initLogOut()">
-        Log Keluar
+        {{ "LOG_KELUAR_BURGER" | translate }}
       </button>
       <ion-item class="transparent">
-        <span class="version-text">Version 1.4</span>
+        <span class="version-text">{{ "VERSI_BURGER" | translate }} 1.4</span>
       </ion-item>
-
+      {{listenChange()}}
       <!-- <ion-item>
         <span class="version-text">{{apiPath}}</span>
       </ion-item> -->

@@ -57,6 +57,7 @@ export class TideLocation implements TideLocationInterface {
     return {
       name: 'TideLocation',
       plural: 'tides-locations',
+      path: 'tides-locations',
       properties: {
         "name": {
           name: 'name',

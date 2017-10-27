@@ -8,6 +8,7 @@ declare var Object: any;
 export interface CustomerCategoryInterface {
   "name": string;
   "description"?: string;
+  "sort_id"?: number;
   "created_at"?: Date;
   "updated_at"?: Date;
   "id"?: number;
@@ -18,6 +19,7 @@ export interface CustomerCategoryInterface {
 export class CustomerCategory implements CustomerCategoryInterface {
   "name": string;
   "description": string;
+  "sort_id": number;
   "created_at": Date;
   "updated_at": Date;
   "id": number;
@@ -53,6 +55,7 @@ export class CustomerCategory implements CustomerCategoryInterface {
     return {
       name: 'CustomerCategory',
       plural: 'customer-categories',
+      path: 'customer-categories',
       properties: {
         "name": {
           name: 'name',
@@ -61,6 +64,10 @@ export class CustomerCategory implements CustomerCategoryInterface {
         "description": {
           name: 'description',
           type: 'string'
+        },
+        "sort_id": {
+          name: 'sort_id',
+          type: 'number'
         },
         "created_at": {
           name: 'created_at',

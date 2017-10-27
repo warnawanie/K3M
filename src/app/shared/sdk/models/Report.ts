@@ -24,7 +24,6 @@ export interface ReportInterface {
   "updated_at"?: Date;
   "file"?: string;
   "id"?: number;
-  "tnc"?: boolean;
   report_type?: ReportType;
   status?: StatusReport;
   customer?: Customer;
@@ -48,7 +47,6 @@ export class Report implements ReportInterface {
   "updated_at": Date;
   "file": string;
   "id": number;
-  "tnc": boolean;
   report_type: ReportType;
   status: StatusReport;
   customer: Customer;
@@ -82,6 +80,7 @@ export class Report implements ReportInterface {
     return {
       name: 'Report',
       plural: 'reports',
+      path: 'reports',
       properties: {
         "customer_id": {
           name: 'customer_id',

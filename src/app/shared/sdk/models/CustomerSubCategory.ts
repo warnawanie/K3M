@@ -55,6 +55,7 @@ export class CustomerSubCategory implements CustomerSubCategoryInterface {
     return {
       name: 'CustomerSubCategory',
       plural: 'customer-subcategories',
+      path: 'customer-subcategories',
       properties: {
         "name": {
           name: 'name',
