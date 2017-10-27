@@ -20,6 +20,8 @@ export class RegisterPage {
 
   constructor(private customerCategoryApi: CustomerCategoryApi, public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
     this.kategori = [];
+    this.subkategori = [];
+
     this.customerCategoryApi.getAllCategories().then(categories => {
       let arrayKategori: any = categories;
       this.customerCategoryApi.getAllSubCategories().then(subcategories => {
@@ -44,10 +46,8 @@ export class RegisterPage {
 
       })
       //console.log(this.kategori);
-
     })
     
-    this.subkategori = [];
     // this.kategori = [
     //   {
     //     id: 1, 
@@ -109,7 +109,7 @@ export class RegisterPage {
   }
 
   kategoriSelected(){
-    //this.subkategori = [];
+    this.account.subcategory_id = null;
     let kategoriIndex = this.kategori.findIndex(cat => cat.id == this.account.category_id);
     this.subkategori = this.kategori[kategoriIndex].subkategori;
   }
