@@ -54,6 +54,7 @@ export class CustomerAccessToken implements CustomerAccessTokenInterface {
     return {
       name: 'CustomerAccessToken',
       plural: 'CustomerAccessTokens',
+      path: 'CustomerAccessTokens',
       properties: {
         "created_at": {
           name: 'created_at',
