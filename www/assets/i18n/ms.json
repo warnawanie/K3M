@@ -93,5 +93,14 @@
     "TENTANG_K3M_BURGER": "Tentang K3M",
     "HUBUNGI_KAMI_BURGER": "Hubungi Kami",
     "LOG_KELUAR_BURGER": "Log Keluar",
-    "VERSI_BURGER": "Versi"
+    "VERSI_BURGER": "Versi",
+    "FAQ_BURGER": "FAQ",
+    "PROFILE_SUCCESS": "Profil anda berjaya dikemaskini",
+    "INVALID_PASSWORD": "Kata laluan lama tidak tepat",
+    "INSERT_OLD_PASSWORD": "Sila masukkan kata laluan lama",
+    "LOKASI": "Lokasi",
+    "NAMA": "Nama",
+    "KATA_LALUAN_LAMA": "Kata Laluan Lama",
+    "KATA_LALUAN_BARU": "Kata Laluan Baru",
+    "DAFTAR": "DAFTAR"
 }

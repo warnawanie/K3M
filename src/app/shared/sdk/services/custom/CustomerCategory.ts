@@ -49,8 +49,8 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    */
 
   public getAllCategories(): Promise<any>{
-    let url: string = 'api/customer-categories';
-
+    let url: string = 'api/customer-categories?filter={"order" : "sort_id ASC"}';
+    //https://k3m.komunitimaritim.my/api/customer-categories?filter={"order" : "sort_id ASC"}
     return new Promise((resolve, reject)=> {
       this.http.get(this.baseURL + url).map(res => res.json()).subscribe(
         data => {
