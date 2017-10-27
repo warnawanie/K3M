@@ -92,6 +92,14 @@
     "TENTANG_K3M_BURGER": "约K3M",    
     "HUBUNGI_KAMI_BURGER": "联系我们",
     "LOG_KELUAR_BURGER": "登出",
-    "VERSI_BURGER": "版本"
-
+    "VERSI_BURGER": "版本",
+    "FAQ_BURGER": "常问问题",
+    "PROFILE_SUCCESS": "你的个人资料已经更新",
+    "INVALID_PASSWORD": "旧密码无效",
+    "INSERT_OLD_PASSWORD": "请输入您的旧密码",
+    "LOKASI": "位置",
+    "NAMA": "名称",
+    "KATA_LALUAN_LAMA": "旧密码",
+    "KATA_LALUAN_BARU": "新密码",
+    "DAFTAR": "寄存器"
 }

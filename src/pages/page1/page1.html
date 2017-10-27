@@ -18,23 +18,26 @@
       <form>
         <ion-list>
           <ion-item>
-          <ion-input name="fullname" type="text" [(ngModel)]="account.fullname" placeholder="Nama"></ion-input>
+          <ion-input name="fullname" type="text" [(ngModel)]="account.fullname" placeholder="{{'NAMA' | translate}}"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input name="ic_number" type="number" [(ngModel)]="account.ic_number" placeholder="No MyKad" (ionChange)="convertIC()"></ion-input>
+            <ion-input name="ic_number" type="number" [(ngModel)]="account.ic_number" placeholder="{{'IC_PENGADU' | translate}}" (ionChange)="convertIC()"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input name="phone_number" type="number" [(ngModel)]="account.phone_number" placeholder="No Telefon Bimbit"></ion-input>
+            <ion-input name="phone_number" type="number" [(ngModel)]="account.phone_number" placeholder="{{'PHONE_PENGADU' | translate}}"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input name="password" type="password" [(ngModel)]="account.password" placeholder="Kata Laluan"></ion-input>
+            <ion-input name="old_password" type="password" [(ngModel)]="oldPassword" [ngModelOptions]="{standalone:true}" placeholder="{{'KATA_LALUAN_LAMA' | translate}}"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input name="address_1" type="text" [(ngModel)]="account.address_1" placeholder="Lokasi"></ion-input>
+            <ion-input name="new_password" type="password" [(ngModel)]="newPassword" [ngModelOptions]="{standalone:true}" placeholder="{{'KATA_LALUAN_BARU' | translate}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="address_1" type="text" [(ngModel)]="account.address_1" placeholder="{{'LOKASI' | translate}}"></ion-input>
           </ion-item>
         </ion-list>
         <ion-list>
-          <button ion-button (click)="register()" block color="danger">Daftar</button>  
+          <button ion-button (click)="updateProfile()" block color="danger">{{'DAFTAR' | translate}}</button>  
         </ion-list>
       </form>
     </ion-col>

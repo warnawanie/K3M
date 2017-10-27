@@ -107,7 +107,7 @@ export class MyApp {
       }
     )
 
-    this.translate.get('SOS_BTTN2').subscribe(
+    this.translate.get('FAQ_BURGER').subscribe(
       value => {
         this.titleFAQ = value;
       }
@@ -128,7 +128,7 @@ export class MyApp {
       { title: this.titleUtama, component: HomePage },
       { title: this.titleProfile, component: Page1 },
       { title: this.titleTentang, component: TentangPage},
-      { title: 'FAQ', component: FaqPage},
+      { title: this.titleFAQ, component: FaqPage},
       { title: this.titleHubungi, component: ContactPage }
     ];
 
