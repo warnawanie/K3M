@@ -50,6 +50,7 @@ export class ReportType implements ReportTypeInterface {
     return {
       name: 'ReportType',
       plural: 'report-types',
+      path: 'report-types',
       properties: {
         "name": {
           name: 'name',

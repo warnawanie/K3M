@@ -54,6 +54,7 @@ export class Tide implements TideInterface {
     return {
       name: 'Tide',
       plural: 'tides',
+      path: 'tides',
       properties: {
         "date": {
           name: 'date',

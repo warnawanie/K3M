@@ -49,6 +49,7 @@ export class Announcement implements AnnouncementInterface {
     return {
       name: 'Announcement',
       plural: 'announcements',
+      path: 'announcements',
       properties: {
         "title": {
           name: 'title',

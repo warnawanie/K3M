@@ -50,6 +50,7 @@ export class StatusEmergency implements StatusEmergencyInterface {
     return {
       name: 'StatusEmergency',
       plural: 'status-emergency',
+      path: 'status-emergency',
       properties: {
         "name": {
           name: 'name',

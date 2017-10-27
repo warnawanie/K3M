@@ -37,6 +37,7 @@ export class Weather implements WeatherInterface {
     return {
       name: 'Weather',
       plural: 'cuaca',
+      path: 'cuaca',
       properties: {
         "id": {
           name: 'id',
