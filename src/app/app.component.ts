@@ -45,11 +45,17 @@ export class MyApp {
   loader: any;
   apiPath: any = "";
 
+  titleUtama: string;
+  titleProfile: string;
+  titleTentang: string;
+  titleFAQ: string;
+  titleHubungi: string;
+
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController, private loopbackAuth: LoopBackAuth, public loadingCtrl: LoadingController, private geolocation: Geolocation) {
+  constructor(public platform: Platform, private translate: TranslateService, private accountApi: CustomerApi, private localStorage: Storage, private menuCtrl: MenuController, private loopbackAuth: LoopBackAuth, public loadingCtrl: LoadingController, private geolocation: Geolocation) {
 
-      translate.setDefaultLang('ms');
+    translate.setDefaultLang('ms');
 
     //  platform.ready().then(() => {
       //  StatusBar.styleDefault();
@@ -60,13 +66,16 @@ export class MyApp {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
+    /*this.pages = [
       { title: 'Utama', component: HomePage },
       { title: 'Profil Saya', component: Page1 },
       { title: 'Tentang K3M', component: TentangPage},
       { title: 'FAQ', component: FaqPage},
       { title: 'Hubungi Kami', component: ContactPage }
-    ];
+    ];*/
+
+    //set language and main menu
+    this.listenChange();
 
     LoopBackConfig.setDebugMode(false); // defaults true
     //this.log.info('Component is Loaded');
@@ -77,6 +86,52 @@ export class MyApp {
     LoopBackConfig.setApiVersion('api');
 
     this.apiPath = LoopBackConfig.getPath();
+
+  }
+
+  translateText(){
+    this.translate.get('UTAMA_BURGER').subscribe(
+      value => {
+        this.titleUtama = value;
+      }
+    )
+
+    this.translate.get('PROFIL_SAYA_BURGER').subscribe(
+      value => {
+        this.titleProfile = value;
+      }
+    )
+
+    this.translate.get('TENTANG_K3M_BURGER').subscribe(
+      value => {
+        this.titleTentang = value;
+      }
+    )
+
+    this.translate.get('FAQ_BURGER').subscribe(
+      value => {
+        this.titleFAQ = value;
+      }
+    )
+
+    this.translate.get('HUBUNGI_KAMI_BURGER').subscribe(
+      value => {
+        this.titleHubungi = value;
+      }
+    )
+  }
+
+  
+  listenChange(){
+    this.translateText();
+    
+    this.pages = [
+      { title: this.titleUtama, component: HomePage },
+      { title: this.titleProfile, component: Page1 },
+      { title: this.titleTentang, component: TentangPage},
+      { title: this.titleFAQ, component: FaqPage},
+      { title: this.titleHubungi, component: ContactPage }
+    ];
 
   }
 

@@ -93,5 +93,15 @@
     "TENTANG_K3M_BURGER": "About K3M",
     "HUBUNGI_KAMI_BURGER": "Contact Us",
     "LOG_KELUAR_BURGER": "Log Out",
-    "VERSI_BURGER": "Version"
+    "VERSI_BURGER": "Version",
+    "FAQ_BURGER": "FAQ",
+    "PROFILE_SUCCESS": "Your profile has been updated",
+    "INVALID_PASSWORD": "Invalid old password",
+    "INSERT_OLD_PASSWORD": "Please enter your old password",
+    "LOKASI": "Location",
+    "NAMA": "Name",
+    "KATA_LALUAN_LAMA": "Old Password",
+    "KATA_LALUAN_BARU": "New Password",
+    "DAFTAR": "REGISTER",
+    "NO_INTERNET": "No Internet connection"
 }
