@@ -50,6 +50,7 @@ export class StatusReport implements StatusReportInterface {
     return {
       name: 'StatusReport',
       plural: 'status-report',
+      path: 'status-report',
       properties: {
         "name": {
           name: 'name',
