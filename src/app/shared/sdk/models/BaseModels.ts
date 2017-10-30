@@ -22,7 +22,7 @@ export interface AccessTokenInterface {
 
 export class AccessToken implements AccessTokenInterface {
   "id": string;
-  "ttl": number = 1209600;
+  "ttl": number;
   "scopes": ["string"];
   "created": Date;
   "userId": string;
