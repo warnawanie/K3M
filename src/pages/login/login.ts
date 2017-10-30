@@ -8,6 +8,9 @@ import { Storage } from '@ionic/storage';
 //import { Router } from '@angular/router';
 import { LoopBackAuth } from '../../app/shared/sdk/services/core/auth.service';
 
+import { ModalController } from 'ionic-angular';
+import { ForgotPassword } from './../forgot-password/forgot-password';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -20,7 +23,7 @@ export class LoginPage {
   public account: Customer = new Customer();
   public rememberMe: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private localStorage: Storage, private loopbackAuth: LoopBackAuth) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private localStorage: Storage, private loopbackAuth: LoopBackAuth, public modalCtrl: ModalController) {
 
   //  storage.ready().then(() => {
        // set a key/value
@@ -37,7 +40,7 @@ export class LoginPage {
       });
       */
   }
-  
+
   showPassword()
 
   {
@@ -65,6 +68,11 @@ export class LoginPage {
     this.navCtrl.push(RegisterPage);
   }
 
+  onGoToForgetPassword(){
+    let modal = this.modalCtrl.create(ForgotPassword);
+    modal.present();
+  }
+
   onGoToHome(){
     this.navCtrl.setRoot(HomePage);
   }
@@ -75,7 +83,7 @@ export class LoginPage {
 
   login() {
 
-         this.accountApi.login(this.account, 'user', this.rememberMe).subscribe((token: AccessToken) => { 
+         this.accountApi.login(this.account, 'user', this.rememberMe).subscribe((token: AccessToken) => {
 
            console.log( token);
            this.localStorage.set('userToken', token);
@@ -83,15 +91,15 @@ export class LoginPage {
 
               this.loader = this.loadingCtrl.create({
                 content: "Loading"
-              });    
+              });
               this.loader.present();
 
-            this.navCtrl.setRoot(HomePage);  
-            this.loader.dismiss();              
+            this.navCtrl.setRoot(HomePage);
+            this.loader.dismiss();
         },  error => {
 
-        
-          
+
+
             let alert = this.alertCtrl.create({
             title: 'Incorrect Username or Password',
             subTitle: 'Try Again!',

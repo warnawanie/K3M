@@ -1,5 +1,5 @@
 <ion-content class="loginWrap" scroll="false">
-      
+
       <ion-row padding class="login-register-input">
             <ion-col>
                   <form>
@@ -8,9 +8,9 @@
                                     <ion-label><ion-icon ios="ios-contact-outline" md="md-contact"></ion-icon></ion-label>
                                     <ion-input name="email" type="username" [(ngModel)]="account.username" placeholder="username"></ion-input>
                               </ion-item>
-                              
+
                               <ion-item>
-                                    <ion-label> <ion-icon ios="ios-lock" md="md-lock"></ion-icon></ion-label>      
+                                    <ion-label> <ion-icon ios="ios-lock" md="md-lock"></ion-icon></ion-label>
                                     <ion-input type="{{type}}" name="password" [(ngModel)]="account.password" placeholder="password"></ion-input>
                               </ion-item>
 
@@ -38,9 +38,9 @@
             </ion-col>
 
       </ion-row>
-      
+
       <ion-footer padding text-center class="sign-up-login footer-action">
             <!-- <a href="#" (click)="onGoToRegister()">Daftar K3M</a> -->
-            <a href="#" >LUPA KATA LALUAN</a>
+            <a href="#" (click)="onGoToForgetPassword()" >LUPA KATA LALUAN</a>
       </ion-footer>
 </ion-content>

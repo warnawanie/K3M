@@ -4,6 +4,8 @@ import { LoginPage } from '../login/login';
 import { Customer } from '../../app/shared/sdk/models';
 import { CustomerApi } from '../../app/shared/sdk/services';
 import { CustomerCategoryApi }  from '../../app/shared/sdk/services';
+import { CustomerSubCategoryApi }  from '../../app/shared/sdk/services';
+import { StateApi } from './../../app/shared/sdk/services/custom/State';
 
 @Component({
   selector: 'page-register',
@@ -18,49 +20,92 @@ export class RegisterPage {
 
   public account: Customer = new Customer();
 
-  constructor(private customerCategoryApi: CustomerCategoryApi, public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
+  constructor(private customerCategoryApi: CustomerCategoryApi, private customerSubCategoryApi: CustomerSubCategoryApi, private stateApi: StateApi, public navCtrl: NavController, public navParams: NavParams, private accountApi: CustomerApi, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
     this.kategori = [];
     this.subkategori = [];
 
-    this.customerCategoryApi.getAllCategories().then(categories => {
-      let arrayKategori: any = categories;
-      this.customerCategoryApi.getAllSubCategories().then(subcategories => {
-        let arraySubkategori: any = subcategories;
-        let newCategory: any;
-        let subkategori: Array<any> = [];
-        for(let kat of arrayKategori){
-          newCategory = kat;
-          subkategori = [];
-          for (let sub of arraySubkategori){
-            if (sub.category_id == kat.id){
-              subkategori.push(sub);
-            } 
+    // this.customerCategoryApi.getAllCategories().then(categories => {
+    //   let arrayKategori: any = categories;
+    //   this.customerCategoryApi.getAllSubCategories().then(subcategories => {
+    //     let arraySubkategori: any = subcategories;
+    //     let newCategory: any;
+    //     let subkategori: Array<any> = [];
+    //     for(let kat of arrayKategori){
+    //       newCategory = kat;
+    //       subkategori = [];
+    //       for (let sub of arraySubkategori){
+    //         if (sub.category_id == kat.id){
+    //           subkategori.push(sub);
+    //         }
+    //       }
+    //       newCategory.subkategori = subkategori;
+    //       this.kategori.push(newCategory);
+    //     }
+
+    //     this.customerCategoryApi.getStates().then(states => {
+    //       this.states = states;
+    //     })
+
+    //   })
+    //   //console.log(this.kategori);
+    // })
+    this.customerCategoryApi.find({"order" : "sort_id ASC"}).subscribe(
+      categories => {
+        let arrayKategori: any = categories;
+
+        this.customerSubCategoryApi.find().subscribe(
+          subcategories => {
+            let arraySubkategori: any = subcategories;
+            let newCategory: any;
+            let subkategori: Array<any> = [];
+            for(let kat of arrayKategori){
+              newCategory = kat;
+              subkategori = [];
+              //console.log(arraySubkategori);
+              for (let sub of arraySubkategori){
+                if (sub.category_id == kat.id){
+                  subkategori.push(sub);
+                }
+              }
+              newCategory.subkategori = subkategori;
+              this.kategori.push(newCategory);
+            }
+            console.log( this.kategori);
+          },
+          err => {
+            console.log( err );
           }
-          newCategory.subkategori = subkategori;
-          this.kategori.push(newCategory);
-        }
+        );
+      },
+      err => {
+        console.log( err );
+      }
+    );
 
-        this.customerCategoryApi.getStates().then(states => {
-          this.states = states;
-        })
 
-      })
-      //console.log(this.kategori);
-    })
-    
+    // states
+    this.stateApi.find().subscribe(
+      data => {
+        this.states = data;
+      },
+      err => {
+        console.log( err );
+      }
+    );
+
     // this.kategori = [
     //   {
-    //     id: 1, 
+    //     id: 1,
     //     name: "Pelancongan",
     //     subkategori: []
     //   },
     //   {
-    //     id: 2, 
+    //     id: 2,
     //     name: "Industri Perkapalan",
     //     subkategori: []
     //   },
     //   {
-    //     id: 3, 
+    //     id: 3,
     //     name: "Perikanan",
     //     subkategori: [
     //       {id: 1, name: "Ketua Persatuan Nelayan"},
@@ -71,24 +116,24 @@ export class RegisterPage {
     //     ]
     //   },
     //   {
-    //     id: 4, 
+    //     id: 4,
     //     name: "Industri Petroleum",
     //     subkategori: []
     //   },
     //   {
-    //     id: 5, 
+    //     id: 5,
     //     name: "Rekreasi Maritim",
     //     subkategori: [
     //       {id: 6, name: "Orang Awam"}
     //     ]
     //   },
     //   {
-    //     id: 6, 
+    //     id: 6,
     //     name: "Lain-lain",
     //     subkategori: []
     //   },
     //   {
-    //     id: 7, 
+    //     id: 7,
     //     name: "Agensi Keselamatan",
     //     subkategori: [
     //       {id: 9, name: "TUDM"},
@@ -98,7 +143,7 @@ export class RegisterPage {
     //     ]
     //   },
     //   {
-    //     id: 8, 
+    //     id: 8,
     //     name: "Agensi Kerajaan",
     //     subkategori: [
     //       {id: 13, name: "SKMM"},
@@ -129,7 +174,7 @@ export class RegisterPage {
         alert.present();
       return;
     }
-    
+
     this.loader = this.loadingCtrl.create({
       content: "Loading"
     });
@@ -151,7 +196,7 @@ export class RegisterPage {
       },  error => {
 
         this.loader.dismiss();
-        
+
         let alert = this.alertCtrl.create({
           title: 'Sila isikan semua maklumat di dalam ruangan yang disediakan',
           subTitle: 'Cuba lagi',

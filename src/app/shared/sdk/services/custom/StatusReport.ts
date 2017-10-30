@@ -11,6 +11,7 @@ import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
 import { StatusReport } from '../../models/StatusReport';
+import { SocketConnection } from '../../sockets/socket.connections';
 import { Report } from '../../models/Report';
 
 
@@ -22,12 +23,13 @@ export class StatusReportApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
+    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  models, auth, searchParams, errorHandler);
+    super(http,  connection,  models, auth, searchParams, errorHandler);
   }
 
   /**
