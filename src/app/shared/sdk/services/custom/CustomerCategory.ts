@@ -11,6 +11,7 @@ import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
 import { CustomerCategory } from '../../models/CustomerCategory';
+import { SocketConnection } from '../../sockets/socket.connections';
 import { CustomerSubCategory } from '../../models/CustomerSubCategory';
 import { Customer } from '../../models/Customer';
 
@@ -20,15 +21,16 @@ import { Customer } from '../../models/Customer';
  */
 @Injectable()
 export class CustomerCategoryApi extends BaseLoopBackApi {
-  private baseURL = 'https://k3m.komunitimaritim.my/';
+
   constructor(
     @Inject(Http) protected http: Http,
+    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  models, auth, searchParams, errorHandler);
+    super(http,  connection,  models, auth, searchParams, errorHandler);
   }
 
   /**
@@ -47,51 +49,6 @@ export class CustomerCategoryApi extends BaseLoopBackApi {
    * This usually means the response is a `CustomerCategory` object.)
    * </em>
    */
-
-  public getAllCategories(): Promise<any>{
-    let url: string = 'api/customer-categories?filter={"order" : "sort_id ASC"}';
-    //https://k3m.komunitimaritim.my/api/customer-categories?filter={"order" : "sort_id ASC"}
-    return new Promise((resolve, reject)=> {
-      this.http.get(this.baseURL + url).map(res => res.json()).subscribe(
-        data => {
-          resolve(data);
-        },
-        err => {
-          reject(err);
-        })
-      })
-
-  }
-
-  public getAllSubCategories(): Promise<any>{
-    let url: string = 'api/customer-subcategories';
-
-    return new Promise((resolve, reject)=> {
-      this.http.get(this.baseURL + url).map(res => res.json()).subscribe(
-        data => {
-          resolve(data);
-        },
-        err => {
-          reject(err);
-        })
-      })
-      
-  }
-
-  public getStates(): Promise<any>{
-    let url: string = 'api/states';
-
-    return new Promise((resolve, reject)=> {
-      this.http.get(this.baseURL + url).map(res => res.json()).subscribe(
-        data => {
-          resolve(data);
-        },
-        err => {
-          reject(err);
-        })
-      })
-  }
-
   public findByIdSubcategories(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
