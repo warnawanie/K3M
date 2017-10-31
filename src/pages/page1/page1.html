@@ -9,9 +9,9 @@
 
 <ion-content padding class="registerWrap" scroll="false">
 
-  <div class="profile" align="center">
+  <!--<div class="profile" align="center">
     <img src="assets/images/profile.jpg">
-  </div>
+  </div>-->
 
   <ion-row padding class="register-input">
     <ion-col>
@@ -21,8 +21,26 @@
           <ion-input name="fullname" type="text" [(ngModel)]="account.fullname" placeholder="{{'NAMA' | translate}}"></ion-input>
           </ion-item>
           <ion-item>
+            <ion-input name="email" type="text" [(ngModel)]="account.email" placeholder="{{'EMAIL' | translate}}"></ion-input>
+          </ion-item>
+          <ion-item>
             <ion-input name="ic_number" type="number" [(ngModel)]="account.ic_number" placeholder="{{'IC_PENGADU' | translate}}" (ionChange)="convertIC()"></ion-input>
           </ion-item>
+          <ion-item>
+            <ion-input name="address_1" type="text" [(ngModel)]="account.address_1" placeholder="{{'ALAMAT1' | translate}}"></ion-input>
+          </ion-item>    
+          <ion-item>
+            <ion-input name="address_2" type="text" [(ngModel)]="account.address_2" placeholder="{{'ALAMAT2' | translate}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="postcode" type="number" [(ngModel)]="account.postcode" placeholder="{{'POSKOD' | translate}}"></ion-input>
+          </ion-item> 
+          <ion-item>
+            <ion-input name="town" type="text" [(ngModel)]="account.town" placeholder="{{'BANDAR' | translate}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="state" type="text" [(ngModel)]="account.state" placeholder="{{'NEGERI' | translate}}"></ion-input>
+          </ion-item>   
           <ion-item>
             <ion-input name="phone_number" type="number" [(ngModel)]="account.phone_number" placeholder="{{'PHONE_PENGADU' | translate}}"></ion-input>
           </ion-item>
@@ -32,12 +50,9 @@
           <ion-item>
             <ion-input name="new_password" type="password" [(ngModel)]="newPassword" [ngModelOptions]="{standalone:true}" placeholder="{{'KATA_LALUAN_BARU' | translate}}"></ion-input>
           </ion-item>
-          <ion-item>
-            <ion-input name="address_1" type="text" [(ngModel)]="account.address_1" placeholder="{{'LOKASI' | translate}}"></ion-input>
-          </ion-item>
         </ion-list>
         <ion-list>
-          <button ion-button (click)="updateProfile()" block color="danger">{{'DAFTAR' | translate}}</button>  
+          <button ion-button (click)="updateProfile()" block color="danger">{{'BTN_HANTAR' | translate}}</button>  
         </ion-list>
       </form>
     </ion-col>
