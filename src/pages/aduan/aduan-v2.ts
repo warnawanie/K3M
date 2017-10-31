@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import { NavController, NavParams } from 'ionic-angular';
-// import { Platform, ActionSheetController } from 'ionic-angular';
 import { NavController, AlertController,  ActionSheetController, ToastController, Platform, LoadingController, Loading, NavParams } from 'ionic-angular';
 import { AduanSendPage } from '../aduan-send/aduan-send';
 import { Report } from '../../app/shared/sdk/models';
@@ -8,6 +6,7 @@ import { ReportApi } from '../../app/shared/sdk/services';
 import { CustomerApi, StorageApi }  from '../../app/shared/sdk/services';
 import { TranslateService } from 'ng2-translate';
 import { FilePath } from 'ionic-native';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -50,21 +49,43 @@ export class AduanV2Page {
     private file: File,
     private transfer: Transfer,
     private camera: Camera,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private geolocation: Geolocation
     ) {
 
-    this.customerApi.getCurrent().subscribe(
+      this.aduan.time = new Date().toISOString();
 
-        data => {
-          this.aduan.customer_id = data.id;
-          this.aduan.name = data.fullname;
-          this.aduan.ic_number = data.ic_number;
-          this.aduan.phone_number = data.phone_number;
-          //this.aduan.tnc = data.tnc;
-         // console.log(this.aduan.name);
-        }
-     );
+      this.customerApi.getCurrent().subscribe(
+        
+          data => {
+            this.aduan.customer_id = data.id;
+            this.aduan.name = data.fullname;
+            this.aduan.ic_number = data.ic_number;
+            this.aduan.phone_number = data.phone_number;
+            
+          }
+      );
 
+  }
+
+  updateGeolocation(){
+    
+    let loading = this.loadingCtrl.create({
+      spinner: 'circles'
+    });
+
+    loading.present();
+
+    this.geolocation.getCurrentPosition().then((position) => {
+      loading.dismiss();
+      this.aduan.latitude = position.coords.latitude;
+      this.aduan.longitude = position.coords.longitude;
+      console.log(position);
+      console.log("location aduan updated");
+    }, (err) => {
+      loading.dismiss();
+      console.log(err);
+    });
   }
 
    report() {
@@ -99,6 +120,7 @@ export class AduanV2Page {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AduanPage');
+    this.updateGeolocation();
   }
 
 
