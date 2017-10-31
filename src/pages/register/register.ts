@@ -61,7 +61,6 @@ export class RegisterPage {
             for(let kat of arrayKategori){
               newCategory = kat;
               subkategori = [];
-              //console.log(arraySubkategori);
               for (let sub of arraySubkategori){
                 if (sub.category_id == kat.id){
                   subkategori.push(sub);
