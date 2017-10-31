@@ -103,5 +103,12 @@
     "KATA_LALUAN_LAMA": "Kata Laluan Lama",
     "KATA_LALUAN_BARU": "Kata Laluan Baru",
     "DAFTAR": "DAFTAR",
-    "NO_INTERNET": "Tiada sambungan ke Internet"
+    "NO_INTERNET": "Tiada sambungan ke Internet",
+    "EMAIL": "Emel",
+    "ALAMAT1": "Alamat1",
+    "ALAMAT2": "Alamat2",
+    "POSKOD": "Poskod",
+    "BANDAR": "Bandar",
+    "NEGERI": "Negeri",
+    "BTN_HANTAR": "HANTAR"
 }

@@ -103,5 +103,12 @@
     "KATA_LALUAN_LAMA": "Old Password",
     "KATA_LALUAN_BARU": "New Password",
     "DAFTAR": "REGISTER",
-    "NO_INTERNET": "No Internet connection"
+    "NO_INTERNET": "No Internet connection",
+    "EMAIL": "Email",
+    "ALAMAT1": "Address1",
+    "ALAMAT2": "Address2",
+    "POSKOD": "Postcode",
+    "BANDAR": "Town",
+    "NEGERI": "State",
+    "BTN_HANTAR": "SEND"
 }

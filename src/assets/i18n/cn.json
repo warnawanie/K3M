@@ -102,5 +102,12 @@
     "KATA_LALUAN_LAMA": "旧密码",
     "KATA_LALUAN_BARU": "新密码",
     "DAFTAR": "寄存器",
-    "NO_INTERNET": "没有网络连接"
+    "NO_INTERNET": "没有网络连接",
+    "EMAIL": "升",
+    "ALAMAT1": "地址1",
+    "ALAMAT2": "地址2",
+    "POSKOD": "邮编",
+    "BANDAR": "市",
+    "NEGERI": "州",
+    "BTN_HANTAR": "发送"
 }
