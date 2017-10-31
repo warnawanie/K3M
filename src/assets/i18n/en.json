@@ -103,5 +103,6 @@
     "KATA_LALUAN_LAMA": "Old Password",
     "KATA_LALUAN_BARU": "New Password",
     "DAFTAR": "REGISTER",
-    "NO_INTERNET": "No Internet connection"
+    "NO_INTERNET": "No Internet connection",
+    "PLS_ACCEPT_TNC": "Please accept terms and conditions"
 }

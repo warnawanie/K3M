@@ -33,7 +33,7 @@ export class AduanV2Page {
   isAttachmentImage:Boolean = false;
   myFile: any = null;
   myFIleURL: any;
-
+  acceptTNC: string;
 
 
   constructor(public navCtrl: NavController,
@@ -65,6 +65,12 @@ export class AduanV2Page {
             
           }
       );
+
+      translateService.get('PLS_ACCEPT_TNC').subscribe(
+        value => {
+          this.acceptTNC = value;
+        }
+      )
 
   }
 
@@ -107,16 +113,13 @@ export class AduanV2Page {
       } else {
         //alert('Sila setuju pada terma dan syarat');
         let alert = this.alertCtrl.create({
-          title: 'Sila setuju pada terma dan syarat',
+          title: this.acceptTNC,
           buttons: ['OK']
             });
           alert.present();
       }
       
    }
-
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AduanPage');
