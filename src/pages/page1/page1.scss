@@ -52,9 +52,11 @@ page-page1 {
     }
 
     ion-row.register-input {
-        position: fixed;
-        bottom: 0px;
-        width: 92%;
+        //position: fixed;
+        //bottom: 0px;
+        position: relative;
+        margin-top: 0px;
+        //width: 92%;
     }
 
     ion-label.label {

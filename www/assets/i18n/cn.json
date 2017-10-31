@@ -102,5 +102,6 @@
     "KATA_LALUAN_LAMA": "旧密码",
     "KATA_LALUAN_BARU": "新密码",
     "DAFTAR": "寄存器",
-    "NO_INTERNET": "没有网络连接"
+    "NO_INTERNET": "没有网络连接",
+    "PLS_ACCEPT_TNC": "请接受条款和条件"
 }
