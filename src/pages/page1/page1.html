@@ -39,7 +39,11 @@
             <ion-input name="town" type="text" [(ngModel)]="account.town" placeholder="{{'BANDAR' | translate}}"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input name="state" type="text" [(ngModel)]="account.state" placeholder="{{'NEGERI' | translate}}"></ion-input>
+            <!-- <ion-input name="state" type="text" [(ngModel)]="account.state" placeholder="{{'NEGERI' | translate}}"></ion-input> -->
+            <ion-label>{{'NEGERI' | translate}}</ion-label>
+            <ion-select name="state" [(ngModel)]="account.state">
+              <ion-option *ngFor="let state of states" value="{{state.name}}" >{{state.name}}</ion-option>
+            </ion-select>
           </ion-item>   
           <ion-item>
             <ion-input name="phone_number" type="number" [(ngModel)]="account.phone_number" placeholder="{{'PHONE_PENGADU' | translate}}"></ion-input>

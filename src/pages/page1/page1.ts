@@ -4,7 +4,7 @@ import { NavController, AlertController, LoadingController } from 'ionic-angular
 import { CustomerApi }  from '../../app/shared/sdk/services';
 import { Customer } from '../../app/shared/sdk/models';
 import { TranslateService } from 'ng2-translate';
-
+import { StateApi } from './../../app/shared/sdk/services/custom/State';
 
 
 @Component({
@@ -17,11 +17,12 @@ export class Page1 {
   public profileSuccess: string;
   public invalidPassword: string;
   public insertOldPassword: string;
-
+  public states: Array<any>;
+  
   posts:any;
   public account: Customer = new Customer();
 
-  constructor(public loadingCtrl: LoadingController, public translateService: TranslateService, public alertCtrl: AlertController, public navCtrl: NavController, private customerApi: CustomerApi) {
+  constructor(private stateApi: StateApi, public loadingCtrl: LoadingController, public translateService: TranslateService, public alertCtrl: AlertController, public navCtrl: NavController, private customerApi: CustomerApi) {
     this.oldPassword = '';
     this.newPassword = '';
 
@@ -55,6 +56,15 @@ export class Page1 {
       }
         //console.log(customerApi)
     ); // This will call from the backend the current user
+
+    this.stateApi.find().subscribe(
+      data => {
+        this.states = data;
+      },
+      err => {
+        console.log( err );
+      }
+    );
 
     this.customerApi.getCachedCurrent(); // This will return the current logged user from memory
 
