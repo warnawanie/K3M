@@ -53,7 +53,11 @@ export class AduanV2Page {
     private geolocation: Geolocation
     ) {
 
-      this.aduan.time = new Date().toISOString();
+      let timeZoneDiff: number = new Date().getTimezoneOffset();
+      let currTime = new Date().getTime();
+      let currLocalTime = currTime - (timeZoneDiff*60*1000);
+      this.aduan.time = new Date(currLocalTime).toISOString();
+      console.log(this.aduan.time);
 
       this.customerApi.getCurrent().subscribe(
         
