@@ -1,5 +1,5 @@
 {
-    "name": "ionic-hello-world",
+    "name": "K3M",
     "author": "Ionic Framework",
     "homepage": "http://ionicframework.com/",
     "private": true,
@@ -84,7 +84,7 @@
         "plugins": {
             "cordova-plugin-network-information": {},
             "cordova-plugin-geolocation": {
-                "GEOLOCATION_USAGE_DESCRIPTION": " "
+                "GEOLOCATION_USAGE_DESCRIPTION": "This app requires access to current location"
             },
             "cordova-plugin-console": {},
             "cordova-plugin-device": {},
@@ -97,8 +97,8 @@
             "ionic-plugin-keyboard": {},
             "cordova-plugin-compat": {},
             "cordova-plugin-camera": {
-                "CAMERA_USAGE_DESCRIPTION": " ",
-                "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+                "CAMERA_USAGE_DESCRIPTION": "This app requires access to your camera",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": "This app requires access to your photo library"
             },
             "cordova-plugin-filepath": {}
         },

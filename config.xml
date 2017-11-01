@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.rakam657960" version="1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.ionicframework.rakam657960" version="1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>K3M</name>
     <description>Aplikasi mobile K3M diwujudkan sebagai saluran komunikasi agensi penguatkuasa dan komuniti maritim secara virtual engagement untuk crowdsourcing maklumat dengan pantas dan tepat dalam memastikan perairan negara selamat.
 
@@ -98,6 +98,7 @@ Dibangunkan dengan 2 pilihan bahasa iaitu Bahasa Melayu dan Bahasa Mandarin, apl
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="loadUrlTimeoutValue" value="70000" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
@@ -105,8 +106,8 @@ Dibangunkan dengan 2 pilihan bahasa iaitu Bahasa Melayu dan Bahasa Mandarin, apl
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1">
-        <variable name="CAMERA_USAGE_DESCRIPTION" value=" " />
-        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="This app requires access to your camera" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app requires access to your photo library" />
     </plugin>
     <plugin name="cordova-plugin-compat" spec="^1.2.0" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
@@ -115,7 +116,7 @@ Dibangunkan dengan 2 pilihan bahasa iaitu Bahasa Melayu dan Bahasa Mandarin, apl
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-filepath" spec="^1.1.0" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3">
-        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value=" " />
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app requires access to current location" />
     </plugin>
     <plugin name="cordova-plugin-network-information" spec="^1.3.3" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />

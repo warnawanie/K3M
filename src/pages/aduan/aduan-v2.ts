@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-// import { NavController, NavParams } from 'ionic-angular';
-// import { Platform, ActionSheetController } from 'ionic-angular';
 import { NavController, AlertController,  ActionSheetController, ToastController, Platform, LoadingController, Loading, NavParams } from 'ionic-angular';
 import { AduanSendPage } from '../aduan-send/aduan-send';
 import { Report } from '../../app/shared/sdk/models';
@@ -8,6 +6,7 @@ import { ReportApi } from '../../app/shared/sdk/services';
 import { CustomerApi, StorageApi }  from '../../app/shared/sdk/services';
 import { TranslateService } from 'ng2-translate';
 import { FilePath } from 'ionic-native';
+import { Geolocation } from '@ionic-native/geolocation';
 
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -34,7 +33,7 @@ export class AduanV2Page {
   isAttachmentImage:Boolean = false;
   myFile: any = null;
   myFIleURL: any;
-
+  acceptTNC: string;
 
 
   constructor(public navCtrl: NavController,
@@ -50,21 +49,53 @@ export class AduanV2Page {
     private file: File,
     private transfer: Transfer,
     private camera: Camera,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private geolocation: Geolocation
     ) {
 
-    this.customerApi.getCurrent().subscribe(
+      let timeZoneDiff: number = new Date().getTimezoneOffset();
+      let currTime = new Date().getTime();
+      let currLocalTime = currTime - (timeZoneDiff*60*1000);
+      this.aduan.time = new Date(currLocalTime).toISOString();
+      console.log(this.aduan.time);
 
-        data => {
-          this.aduan.customer_id = data.id;
-          this.aduan.name = data.fullname;
-          this.aduan.ic_number = data.ic_number;
-          this.aduan.phone_number = data.phone_number;
-          //this.aduan.tnc = data.tnc;
-         // console.log(this.aduan.name);
+      this.customerApi.getCurrent().subscribe(
+        
+          data => {
+            this.aduan.customer_id = data.id;
+            this.aduan.name = data.fullname;
+            this.aduan.ic_number = data.ic_number;
+            this.aduan.phone_number = data.phone_number;
+            
+          }
+      );
+
+      translateService.get('PLS_ACCEPT_TNC').subscribe(
+        value => {
+          this.acceptTNC = value;
         }
-     );
+      )
 
+  }
+
+  updateGeolocation(){
+    
+    let loading = this.loadingCtrl.create({
+      spinner: 'circles'
+    });
+
+    loading.present();
+
+    this.geolocation.getCurrentPosition().then((position) => {
+      loading.dismiss();
+      this.aduan.latitude = position.coords.latitude;
+      this.aduan.longitude = position.coords.longitude;
+      console.log(position);
+      console.log("location aduan updated");
+    }, (err) => {
+      loading.dismiss();
+      console.log(err);
+    });
   }
 
    report() {
@@ -86,7 +117,7 @@ export class AduanV2Page {
       } else {
         //alert('Sila setuju pada terma dan syarat');
         let alert = this.alertCtrl.create({
-          title: 'Sila setuju pada terma dan syarat',
+          title: this.acceptTNC,
           buttons: ['OK']
             });
           alert.present();
@@ -94,11 +125,9 @@ export class AduanV2Page {
       
    }
 
-
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad AduanPage');
+    this.updateGeolocation();
   }
 
 
